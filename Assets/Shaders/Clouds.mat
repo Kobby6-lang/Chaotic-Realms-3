@@ -24,7 +24,8 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Clouds
-  m_Shader: {fileID: -6465566751694194690, guid: 953cb7b70be164a46a97e803e4bfac9c, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: 953cb7b70be164a46a97e803e4bfac9c,
+    type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
@@ -78,7 +79,7 @@ Material:
     - _ExcludeFromTUAndAA: 0
     - _Noise_Height: 100
     - _Noise_Scale: 0.01
-    - _Noise_Speed: 20
+    - _Noise_Speed: 30
     - _OpaqueCullMode: 2
     - _QueueControl: 1
     - _QueueOffset: 0
@@ -115,8 +116,12 @@ Material:
     - _ZTestTransparent: 4
     - _ZWrite: 1
     m_Colors:
+    - _Color_Peak: {r: 0.8569478, g: 0.899371, b: 0.89787376, a: 0}
+    - _Color_Peak_1: {r: 0, g: 0, b: 0, a: 0}
+    - _Color_Valley: {r: 0.3584906, g: 0.34158063, b: 0.34158063, a: 0}
     - _DoubleSidedConstants: {r: 1, g: 1, b: -1, a: 0}
     - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
+    - _Noise_Remap: {r: -0.24, g: 0.95, b: -1.6, a: 0.61}
     - _Rotate_Projection: {r: 1, g: 0, b: 0, a: 50}
   m_BuildTextureStacks: []
 --- !u!114 &6982374091611114321
