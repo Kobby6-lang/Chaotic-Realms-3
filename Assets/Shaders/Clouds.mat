@@ -77,6 +77,7 @@ Material:
     - _DoubleSidedGIMode: 0
     - _DoubleSidedNormalMode: 2
     - _DstBlend: 0
+    - _Emission_Strength: 2
     - _EnableBlendModePreserveSpecularLighting: 1
     - _EnableFogOnTransparent: 1
     - _ExcludeFromTUAndAA: 0
@@ -122,12 +123,12 @@ Material:
     - _ZTestTransparent: 4
     - _ZWrite: 1
     m_Colors:
-    - _Color_Peak: {r: 0.8569478, g: 0.899371, b: 0.89787376, a: 0}
+    - _Color_Peak: {r: 0.7613028, g: 0.8867924, b: 0.8867924, a: 0}
     - _Color_Peak_1: {r: 0, g: 0, b: 0, a: 0}
     - _Color_Valley: {r: 0.22016522, g: 0.57861626, b: 0.5589792, a: 0}
     - _DoubleSidedConstants: {r: 1, g: 1, b: -1, a: 0}
     - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
-    - _Noise_Remap: {r: -0.24, g: 0.95, b: -1.6, a: 0.61}
+    - _Noise_Remap: {r: -0.24, g: 1, b: -1.6, a: 2.7}
     - _Rotate_Projection: {r: 1, g: 0, b: 0, a: 90}
   m_BuildTextureStacks: []
 --- !u!114 &6982374091611114321
