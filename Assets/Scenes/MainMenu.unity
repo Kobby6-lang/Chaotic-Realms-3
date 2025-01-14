@@ -241,7 +241,7 @@ GameObject:
   - component: {fileID: 140432789}
   - component: {fileID: 140432788}
   m_Layer: 5
-  m_Name: Options
+  m_Name: New Adventure
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -414,7 +414,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
+  m_PixelsPerUnitMultiplier: 16.1
 --- !u!222 &1088050461
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -436,7 +436,7 @@ GameObject:
   - component: {fileID: 1514882317}
   - component: {fileID: 1514882316}
   m_Layer: 5
-  m_Name: Options (1)
+  m_Name: Options
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -674,7 +674,7 @@ GameObject:
   - component: {fileID: 1573458665}
   - component: {fileID: 1573458664}
   m_Layer: 5
-  m_Name: Options (2)
+  m_Name: Quit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
