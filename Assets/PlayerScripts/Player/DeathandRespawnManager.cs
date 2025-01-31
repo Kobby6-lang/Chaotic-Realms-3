@@ -1,5 +1,6 @@
 using UnityEngine;
-using TMPro; // Using TextMesh Pro namespace for UI
+using TMPro;
+using UnityEngine.SceneManagement; // Using TextMesh Pro namespace for UI
 
 public class DeathAndRespawnManager : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class DeathAndRespawnManager : MonoBehaviour
     {
         // Load saved death count
         deaths = PlayerPrefs.GetInt("Deaths", 0);
+        deathText = GameObject.Find("deathText").GetComponent<TMP_Text>();
     }
 
     void Start()
@@ -60,7 +62,8 @@ public class DeathAndRespawnManager : MonoBehaviour
         // Reset player's position to the respawn point
         if (respawnPoint != null)
         {
-            playerTransform.position = respawnPoint.position;
+            SceneManager.LoadScene("Level 1");
+            //playerTransform.position = respawnPoint.position;
         }
         else
         {
