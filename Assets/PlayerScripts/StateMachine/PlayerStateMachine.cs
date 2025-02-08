@@ -28,7 +28,7 @@ public class PlayerStateMachine : MonoBehaviour
     // constants
     float _rotationFactorPerFrame = 15.0f;
     public float _runMultiplier = 5.5f;
-    public float _walkMultiplier = 2f;
+    public float _walkMultiplier = 3f;
     int _zero = 0;
 
     // gravity variables

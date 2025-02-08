@@ -2491,6 +2491,7 @@ MonoBehaviour:
   jumpVolume: 0.7
   audioSource: {fileID: 1876463060}
   _runMultiplier: 5.5
+  _walkMultiplier: 2
   footstepSounds:
   - {fileID: 8300000, guid: a86a930989aef8343b28e3292bdc1109, type: 3}
   - {fileID: 8300000, guid: fcb65962d1d28c840b580fe54e024aeb, type: 3}
@@ -2526,7 +2527,7 @@ CharacterController:
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 1.05, z: 0}
+  m_Center: {x: 0, y: 1.2, z: 0}
 --- !u!4 &1876463048 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: ec7c9745108dea943862d551c1b53dff,
@@ -2695,7 +2696,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deaths: 0
   deathText: {fileID: 691994272}
-  threshold: -1
+  threshold: -10
   playerTransform: {fileID: 1876463048}
   respawnPoint: {fileID: 1335989380}
 --- !u!114 &1876463064
