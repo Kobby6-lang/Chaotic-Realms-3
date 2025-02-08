@@ -28,6 +28,7 @@ public class PlayerStateMachine : MonoBehaviour
     // constants
     float _rotationFactorPerFrame = 15.0f;
     public float _runMultiplier = 5.5f;
+    public float _walkMultiplier = 2f;
     int _zero = 0;
 
     // gravity variables
@@ -37,8 +38,8 @@ public class PlayerStateMachine : MonoBehaviour
     // jumping variables
     bool _isJumpPressed = false;
     float _initialJumpVelocity;
-    float _maxJumpHeight = .9f;
-    float _maxJumpTime = .50f;
+    float _maxJumpHeight = .11f;
+    float _maxJumpTime = .70f;
     bool _isJumping = false;
     int _isJumpingHash;
     int _jumpCountHash;
