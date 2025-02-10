@@ -9,15 +9,19 @@ namespace Kwabena.FinalCharacterController
     [DefaultExecutionOrder(-1)]
     public class PlayerController : MonoBehaviour
     {
+        #region Class Variables
         [Header("Components")]
         [SerializeField] private CharacterController _characterController;
         [SerializeField] private Camera _playerCamera;
 
 
         [Header("Base Movement")]
-        public float RunAccelaration = 0.25f;
+        public float runAccelaration = 35f;
         public float runSpeed = 4f;
-        public float drag = 0.1f;
+        public float sprintAcceleration = 50f;
+        public float sprintSpeed = 7f;
+        public float drag = 20f;
+        public float movingThreshold = 0.01f;
 
         [Header("Camera Settings")]
         public float lookSenseH = 0.1f;
@@ -25,32 +29,64 @@ namespace Kwabena.FinalCharacterController
         public float lookLimitV = 89f;
 
         private PlayerLocomotionInput _playerLocomotionInput;
+        private PlayerState _playerState;
         private Vector2 _cameraRotation = Vector2.zero;
         private Vector2 _playerTargetRotation = Vector2.zero;
+        #endregion
 
+        #region Startup
         private void Awake()
         {
             _playerLocomotionInput = GetComponent<PlayerLocomotionInput>();
+            _playerState = GetComponent<PlayerState>();
         }
+        #endregion
 
+        #region Update Logic
         private void Update()
         {
+            UpdateMovementState();
+            HandleLateralMovement();
+        }
+
+        private void UpdateMovementState() 
+        {
+            bool isMovementInput = _playerLocomotionInput.MovementInput != Vector2.zero;//order
+            bool isMovingLaterally = IsMovingLaterally();//.............................//matters
+            bool isSprinting = _playerLocomotionInput.SprintToggledOn && isMovingLaterally; //order matters
+
+            PlayerMovementState lateralState = isSprinting ? PlayerMovementState.Sprinting: 
+            isMovingLaterally || isMovementInput ? PlayerMovementState.Running : PlayerMovementState.Idling;
+            _playerState.SetPlayerMovementState(lateralState);
+        }
+
+        private void HandleLateralMovement()
+        {
+            // Create quick references for current state
+            bool isSprinting = _playerState.CurrentPlayerMovementState == PlayerMovementState.Sprinting;
+
+            // State dependent Acceleration and Speed
+            float lateralAcceleration = isSprinting ? sprintAcceleration : runAccelaration;
+            float clampLateralMagnitude = isSprinting ? sprintSpeed : runSpeed;
+
             Vector3 cameraForwardXZ = new Vector3(_playerCamera.transform.forward.x, 0f, _playerCamera.transform.forward.z).normalized;
             Vector3 cameraRightXZ = new Vector3(_playerCamera.transform.right.x, 0f, _playerCamera.transform.right.z).normalized;
             Vector3 movementDirection = cameraRightXZ * _playerLocomotionInput.MovementInput.x + cameraForwardXZ * _playerLocomotionInput.MovementInput.y;
 
-            Vector3 movementDelta = movementDirection * RunAccelaration * Time.deltaTime;
+            Vector3 movementDelta = movementDirection * lateralAcceleration;
             Vector3 newVelocity = _characterController.velocity + movementDelta;
 
-            //Add drag to player
+            // Add drag to player
             Vector3 currentDrag = newVelocity.normalized * drag * Time.deltaTime;
             newVelocity = (newVelocity.magnitude > drag * Time.deltaTime) ? newVelocity - currentDrag : Vector3.zero;
-            newVelocity = Vector3.ClampMagnitude(newVelocity, runSpeed);
+            newVelocity = Vector3.ClampMagnitude(newVelocity, clampLateralMagnitude);
 
-            // Move character (Unity suggets only calling  this once per tick)
+            // Move character (Unity suggests only calling this once per tick)
             _characterController.Move(newVelocity * Time.deltaTime);
         }
+        #endregion
 
+        #region Late Update Logic
         private void LateUpdate()
         {
             _cameraRotation.x += lookSenseH * _playerLocomotionInput.LookInput.x;
@@ -61,5 +97,16 @@ namespace Kwabena.FinalCharacterController
 
             _playerCamera.transform.rotation = Quaternion.Euler(_cameraRotation.y, _cameraRotation.x, 0f);
         }
+        #endregion
+
+        #region State Checks
+        private bool IsMovingLaterally() 
+        {
+            Vector3 lateralVelocity = new Vector3(_characterController.velocity.x, 0f, _characterController.velocity.z);
+
+            return lateralVelocity.magnitude > movingThreshold;
+        }
+        #endregion
     }
+
 }

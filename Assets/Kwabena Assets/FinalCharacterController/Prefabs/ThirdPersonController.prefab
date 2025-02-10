@@ -270,7 +270,7 @@ Animator:
   m_GameObject: {fileID: 442019415076601259}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: de13a7420582ded45a8d7d3f96889aca, type: 3}
-  m_Controller: {fileID: 9100000, guid: 4c7fe8e1a3919c549a79a706afefd1ce, type: 2}
+  m_Controller: {fileID: 9100000, guid: 6b9f3d3966079f745b921a2d593e378f, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -324,8 +324,8 @@ MonoBehaviour:
   RunAccelaration: 10
   runSpeed: 4
   drag: 0.1
-  lookSenseH: 0.1
-  lookSenseV: 0.1
+  lookSenseH: 1
+  lookSenseV: 1
   lookLimitV: 89
 --- !u!114 &460814991563444698
 MonoBehaviour:

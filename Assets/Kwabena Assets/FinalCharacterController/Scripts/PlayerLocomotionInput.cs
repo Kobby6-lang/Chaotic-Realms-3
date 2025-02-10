@@ -9,9 +9,15 @@ namespace Kwabena.FinalCharacterController
     [DefaultExecutionOrder(-2)]
     public class PlayerLocomotionInput : MonoBehaviour, PlayerControls.IPlayerLocomotionMapActions
     {
+        [SerializeField] private bool holdSprint = true;
+
+        public bool SprintToggledOn {  get; private set; }
         public PlayerControls PlayerControls {  get; private set; }
         public Vector2 MovementInput { get; private set; }
         public Vector2 LookInput { get; private set; }
+
+
+
 
         private void OnEnable()
         {
@@ -36,6 +42,18 @@ namespace Kwabena.FinalCharacterController
         public void OnLook(InputAction.CallbackContext context)
         {
             LookInput = context.ReadValue<Vector2>();
+        }
+
+        public void OnToogleSprint(InputAction.CallbackContext context)
+        {
+            if (context.performed) 
+            {
+                SprintToggledOn = holdSprint || !SprintToggledOn;
+            }
+            else if (context.canceled) 
+            {
+                SprintToggledOn =  !holdSprint && SprintToggledOn;
+            }
         }
     }
 }   
