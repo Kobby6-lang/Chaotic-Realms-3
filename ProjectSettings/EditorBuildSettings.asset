@@ -6,9 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Kwabena Assets/Scenes/ReaLevel 1.unity
-    guid: e39dc44dd2d291a4c97c375536c7aed6
-  - enabled: 1
     path: Assets/Kwabena Assets/Scenes/MainMenu.unity
     guid: 20dda6c1091b7b14f8652c16a02c004d
+  - enabled: 1
+    path: Assets/Kwabena Assets/Scenes/ReaLevel 1.unity
+    guid: e39dc44dd2d291a4c97c375536c7aed6
   m_configObjects: {}

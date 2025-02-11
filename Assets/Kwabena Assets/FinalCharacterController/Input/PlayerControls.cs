@@ -55,6 +55,15 @@ namespace Kwabena.FinalCharacterController
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Jump"",
+                    ""type"": ""Button"",
+                    ""id"": ""f290366d-7001-41d2-999d-da11d5387b34"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -222,6 +231,28 @@ namespace Kwabena.FinalCharacterController
                     ""action"": ""ToogleSprint"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""0d760733-774f-4df2-a01a-da19fe4be304"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Jump"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""410d6957-8461-437e-9c9d-c292625bd1b7"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Jump"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -233,6 +264,7 @@ namespace Kwabena.FinalCharacterController
             m_PlayerLocomotionMap_Movement = m_PlayerLocomotionMap.FindAction("Movement", throwIfNotFound: true);
             m_PlayerLocomotionMap_Look = m_PlayerLocomotionMap.FindAction("Look", throwIfNotFound: true);
             m_PlayerLocomotionMap_ToogleSprint = m_PlayerLocomotionMap.FindAction("ToogleSprint", throwIfNotFound: true);
+            m_PlayerLocomotionMap_Jump = m_PlayerLocomotionMap.FindAction("Jump", throwIfNotFound: true);
         }
 
         public void Dispose()
@@ -297,6 +329,7 @@ namespace Kwabena.FinalCharacterController
         private readonly InputAction m_PlayerLocomotionMap_Movement;
         private readonly InputAction m_PlayerLocomotionMap_Look;
         private readonly InputAction m_PlayerLocomotionMap_ToogleSprint;
+        private readonly InputAction m_PlayerLocomotionMap_Jump;
         public struct PlayerLocomotionMapActions
         {
             private @PlayerControls m_Wrapper;
@@ -304,6 +337,7 @@ namespace Kwabena.FinalCharacterController
             public InputAction @Movement => m_Wrapper.m_PlayerLocomotionMap_Movement;
             public InputAction @Look => m_Wrapper.m_PlayerLocomotionMap_Look;
             public InputAction @ToogleSprint => m_Wrapper.m_PlayerLocomotionMap_ToogleSprint;
+            public InputAction @Jump => m_Wrapper.m_PlayerLocomotionMap_Jump;
             public InputActionMap Get() { return m_Wrapper.m_PlayerLocomotionMap; }
             public void Enable() { Get().Enable(); }
             public void Disable() { Get().Disable(); }
@@ -322,6 +356,9 @@ namespace Kwabena.FinalCharacterController
                 @ToogleSprint.started += instance.OnToogleSprint;
                 @ToogleSprint.performed += instance.OnToogleSprint;
                 @ToogleSprint.canceled += instance.OnToogleSprint;
+                @Jump.started += instance.OnJump;
+                @Jump.performed += instance.OnJump;
+                @Jump.canceled += instance.OnJump;
             }
 
             private void UnregisterCallbacks(IPlayerLocomotionMapActions instance)
@@ -335,6 +372,9 @@ namespace Kwabena.FinalCharacterController
                 @ToogleSprint.started -= instance.OnToogleSprint;
                 @ToogleSprint.performed -= instance.OnToogleSprint;
                 @ToogleSprint.canceled -= instance.OnToogleSprint;
+                @Jump.started -= instance.OnJump;
+                @Jump.performed -= instance.OnJump;
+                @Jump.canceled -= instance.OnJump;
             }
 
             public void RemoveCallbacks(IPlayerLocomotionMapActions instance)
@@ -357,6 +397,7 @@ namespace Kwabena.FinalCharacterController
             void OnMovement(InputAction.CallbackContext context);
             void OnLook(InputAction.CallbackContext context);
             void OnToogleSprint(InputAction.CallbackContext context);
+            void OnJump(InputAction.CallbackContext context);
         }
     }
 }
