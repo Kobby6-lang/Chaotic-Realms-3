@@ -9,18 +9,17 @@ namespace Kwabena.FinalCharacterController
     [DefaultExecutionOrder(-2)]
     public class PlayerLocomotionInput : MonoBehaviour, PlayerControls.IPlayerLocomotionMapActions
     {
-        #region Class Variables 
-        [SerializeField] private bool holdSprint = true;
-
-        public PlayerControls PlayerControls {  get; private set; }
+        #region Class Variables
+        [SerializeField] private bool holdToSprint = true;
+        public PlayerControls PlayerControls { get; private set; }
         public Vector2 MovementInput { get; private set; }
         public Vector2 LookInput { get; private set; }
         public bool JumpPressed { get; private set; }
         public bool SprintToggledOn { get; private set; }
-        public bool WalkToggleOn { get; private set; }
+        public bool WalkToggledOn { get; private set; }
         #endregion
 
-        #region StartUp
+        #region Startup
         private void OnEnable()
         {
             PlayerControls = new PlayerControls();
@@ -48,38 +47,41 @@ namespace Kwabena.FinalCharacterController
         public void OnMovement(InputAction.CallbackContext context)
         {
             MovementInput = context.ReadValue<Vector2>();
+            print(MovementInput);
         }
 
         public void OnLook(InputAction.CallbackContext context)
         {
             LookInput = context.ReadValue<Vector2>();
         }
-
         public void OnToogleSprint(InputAction.CallbackContext context)
         {
-            if (context.performed) 
+            if (context.performed)
             {
-                SprintToggledOn = holdSprint || !SprintToggledOn;
+                SprintToggledOn = holdToSprint || !SprintToggledOn;
             }
-            else if (context.canceled) 
+            else if (context.canceled)
             {
-                SprintToggledOn =  !holdSprint && SprintToggledOn;
+                SprintToggledOn = !holdToSprint && SprintToggledOn;
             }
         }
 
         public void OnJump(InputAction.CallbackContext context)
         {
-            if(!context.performed)
+            if (!context.performed)
                 return;
+
             JumpPressed = true;
         }
 
         public void OnToggleWalk(InputAction.CallbackContext context)
         {
-            if(!context.performed)
+            if (!context.performed)
+                return;
 
-                return; WalkToggleOn = !WalkToggleOn;
+            WalkToggledOn = !WalkToggledOn;
         }
         #endregion
     }
-}   
+}
+

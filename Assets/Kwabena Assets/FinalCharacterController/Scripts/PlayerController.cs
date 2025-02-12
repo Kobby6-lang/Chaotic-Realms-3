@@ -1,10 +1,12 @@
 using Kwabena.FinalCharacterController;
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 
-namespace Kwabena.FinalCharacterController 
+namespace Kwabena.FinalCharacterController
 {
     [DefaultExecutionOrder(-1)]
     public class PlayerController : MonoBehaviour
@@ -16,11 +18,10 @@ namespace Kwabena.FinalCharacterController
         public float RotationMisMatch { get; private set; } = 0f;
         public bool IsRotatingToTarget { get; private set; } = false;
 
-
         [Header("Base Movement")]
         public float walkAcceleration = 0.15f;
         public float walkSpeed = 3f;
-        public float runAccelaration = 35f;
+        public float runAcceleration = 35f; // Fixed typo
         public float runSpeed = 6f;
         public float sprintAcceleration = 50f;
         public float sprintSpeed = 9f;
@@ -65,21 +66,22 @@ namespace Kwabena.FinalCharacterController
             HandleLateralMovement();
         }
 
-        private void UpdateMovementState() 
+        private void UpdateMovementState()
         {
             bool canRun = CanRun();
-            bool isMovementInput = _playerLocomotionInput.MovementInput != Vector2.zero;               //order
-            bool isMovingLaterally = IsMovingLaterally();                                              //matters
-            bool isSprinting = _playerLocomotionInput.SprintToggledOn && isMovingLaterally;          //order 
-            bool isWalking = (isMovingLaterally && !canRun) || _playerLocomotionInput.WalkToggleOn; //matters
+            bool isMovementInput = _playerLocomotionInput.MovementInput != Vector2.zero;
+            bool isMovingLaterally = IsMovingLaterally();
+            bool isSprinting = _playerLocomotionInput.SprintToggledOn && isMovingLaterally;
+            bool isWalking = (isMovingLaterally && !canRun) || _playerLocomotionInput.WalkToggledOn;
             bool isGrounded = IsGrounded();
 
-            PlayerMovementState lateralState = isWalking ? PlayerMovementState.Walking: isSprinting ? PlayerMovementState.Sprinting: 
-            isMovingLaterally || isMovementInput ? PlayerMovementState.Running : PlayerMovementState.Idling;
+            PlayerMovementState lateralState = isWalking ? PlayerMovementState.Walking :
+                isSprinting ? PlayerMovementState.Sprinting :
+                isMovingLaterally || isMovementInput ? PlayerMovementState.Running :
+                PlayerMovementState.Idling;
 
             _playerState.SetPlayerMovementState(lateralState);
 
-            // Control Airborn State
             if (!isGrounded && _characterController.velocity.y > 0f)
             {
                 _playerState.SetPlayerMovementState(PlayerMovementState.Jumping);
@@ -90,7 +92,7 @@ namespace Kwabena.FinalCharacterController
             }
         }
 
-        private void HandleVerticalMovement() 
+        private void HandleVerticalMovement()
         {
             bool isGrounded = _playerState.InGroundedState();
             if (isGrounded && _verticalVelocity < 0)
@@ -100,19 +102,17 @@ namespace Kwabena.FinalCharacterController
 
             if (_playerLocomotionInput.JumpPressed && isGrounded)
             {
-                _verticalVelocity += Mathf.Sqrt(jumpSpeed * 3 * gravity);
+                _verticalVelocity += Mathf.Sqrt(jumpSpeed * 2 * gravity); // Consistent jump calculation
             }
         }
 
         private void HandleLateralMovement()
         {
-            // Create quick references for current state
             bool isSprinting = _playerState.CurrentPlayerMovementState == PlayerMovementState.Sprinting;
             bool isGrounded = _playerState.InGroundedState();
             bool isWalking = _playerState.CurrentPlayerMovementState == PlayerMovementState.Walking;
 
-            // State dependent Acceleration and Speed
-            float lateralAcceleration = isWalking ? walkAcceleration : isSprinting ? sprintAcceleration : runAccelaration;
+            float lateralAcceleration = isWalking ? walkAcceleration : isSprinting ? sprintAcceleration : runAcceleration;
             float clampLateralMagnitude = isWalking ? walkSpeed : isSprinting ? sprintSpeed : runSpeed;
 
             Vector3 cameraForwardXZ = new Vector3(_playerCamera.transform.forward.x, 0f, _playerCamera.transform.forward.z).normalized;
@@ -122,13 +122,11 @@ namespace Kwabena.FinalCharacterController
             Vector3 movementDelta = movementDirection * lateralAcceleration;
             Vector3 newVelocity = _characterController.velocity + movementDelta;
 
-            // Add drag to player
             Vector3 currentDrag = newVelocity.normalized * drag * Time.deltaTime;
             newVelocity = (newVelocity.magnitude > drag * Time.deltaTime) ? newVelocity - currentDrag : Vector3.zero;
             newVelocity = Vector3.ClampMagnitude(newVelocity, clampLateralMagnitude);
             newVelocity.y += _verticalVelocity;
 
-            // Move character (Unity suggests only calling this once per tick)
             _characterController.Move(newVelocity * Time.deltaTime);
         }
         #endregion
@@ -139,7 +137,7 @@ namespace Kwabena.FinalCharacterController
             UpdateCameraRotation();
         }
 
-        private void UpdateCameraRotation() 
+        private void UpdateCameraRotation()
         {
             _cameraRotation.x += lookSenseH * _playerLocomotionInput.LookInput.x;
             _cameraRotation.y = Mathf.Clamp(_cameraRotation.y - lookSenseV * _playerLocomotionInput.LookInput.y, -lookLimitV, lookLimitV);
@@ -150,29 +148,25 @@ namespace Kwabena.FinalCharacterController
             bool isIdling = _playerState.CurrentPlayerMovementState == PlayerMovementState.Idling;
             IsRotatingToTarget = _rotatingToTargetTimer > 0;
 
-            // Also Rotate if we're not idling
-            if (!isIdling) 
+            if (!isIdling)
             {
                 RotatePlayerToTarget();
             }
-            // If rotation mismatch not within torelance, or rotate to target is active, Rotate
-            else if (Mathf.Abs(RotationMisMatch) > rotationTolerance || IsRotatingToTarget) 
+            else if (Mathf.Abs(RotationMisMatch) > rotationTolerance || IsRotatingToTarget)
             {
                 UpdateIdleRotation(rotationTolerance);
             }
 
             _playerCamera.transform.rotation = Quaternion.Euler(_cameraRotation.y, _cameraRotation.x, 0f);
 
-            // Get angle between Camera and Player
             Vector3 camForwardProjectedXZ = new Vector3(_playerCamera.transform.forward.x, 0f, _playerCamera.transform.forward.z).normalized;
             Vector3 crossProduct = Vector3.Cross(transform.forward, camForwardProjectedXZ);
             float sign = Mathf.Sign(Vector3.Dot(crossProduct, transform.up));
             RotationMisMatch = sign * Vector3.Angle(transform.forward, camForwardProjectedXZ);
         }
 
-        private void UpdateIdleRotation(float rotationTolerance) 
+        private void UpdateIdleRotation(float rotationTolerance)
         {
-            // Initate new rotation direction
             if (Mathf.Abs(RotationMisMatch) > rotationTolerance)
             {
                 _rotatingToTargetTimer = rotateToTargetTime;
@@ -180,15 +174,13 @@ namespace Kwabena.FinalCharacterController
             }
             _rotatingToTargetTimer -= Time.deltaTime;
 
-            //Rotate player
-            if (_isRotatingClockwise && RotationMisMatch > 0f || !_isRotatingClockwise && RotationMisMatch < 0f) 
+            if (_isRotatingClockwise && RotationMisMatch > 0f || !_isRotatingClockwise && RotationMisMatch < 0f)
             {
                 RotatePlayerToTarget();
             }
-            
         }
 
-        private void RotatePlayerToTarget() 
+        private void RotatePlayerToTarget()
         {
             Quaternion targetRotationX = Quaternion.Euler(0f, _playerTargetRotation.x, 0f);
             transform.rotation = Quaternion.Lerp(transform.rotation, targetRotationX, playerModeRotationSpeed * Time.deltaTime);
@@ -196,23 +188,21 @@ namespace Kwabena.FinalCharacterController
         #endregion
 
         #region State Checks
-        private bool IsMovingLaterally() 
+        private bool IsMovingLaterally()
         {
             Vector3 lateralVelocity = new Vector3(_characterController.velocity.x, 0f, _characterController.velocity.z);
-
             return lateralVelocity.magnitude > movingThreshold;
         }
-        private bool IsGrounded() 
+
+        private bool IsGrounded()
         {
             return _characterController.isGrounded;
         }
 
-        private bool CanRun() 
+        private bool CanRun()
         {
-            // This means player is moving dagonally at 45 degrees or forward
-           return _playerLocomotionInput.MovementInput.y > Mathf.Abs(_playerLocomotionInput.MovementInput.y);
+            return _playerLocomotionInput.MovementInput.y > Mathf.Abs(_playerLocomotionInput.MovementInput.x); // Corrected logic
         }
-        #endregion
     }
-
+        #endregion
 }

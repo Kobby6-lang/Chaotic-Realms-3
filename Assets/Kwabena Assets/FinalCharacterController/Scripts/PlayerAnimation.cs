@@ -7,7 +7,7 @@ namespace Kwabena.FinalCharacterController
     public class PlayerAnimation : MonoBehaviour
     {
         [SerializeField] private Animator _animator;
-        [SerializeField] private float locomotionBlendSpeed = 0.02f;
+        [SerializeField] private float locomotionBlendSpeed = 4f;
 
         private PlayerLocomotionInput _playerLocomotionInput;
         private PlayerState _playerState;
@@ -21,10 +21,10 @@ namespace Kwabena.FinalCharacterController
         private static int isFallingHash = Animator.StringToHash("isFalling");
         private static int isJumpingHash = Animator.StringToHash("isJumping");
         private static int isRotatingToTargetHash = Animator.StringToHash("isRotatingToTarget");
-        private static int rotationMisMatchHash = Animator.StringToHash("rotationMisMatch");
-
+        private static int rotationMismatchHash = Animator.StringToHash("rotationMismatch");
 
         private Vector3 _currentBlendInput = Vector3.zero;
+
         private void Awake()
         {
             _playerLocomotionInput = GetComponent<PlayerLocomotionInput>();
@@ -37,9 +37,8 @@ namespace Kwabena.FinalCharacterController
             UpdateAnimationState();
         }
 
-        private void UpdateAnimationState() 
+        private void UpdateAnimationState()
         {
-
             bool isIdling = _playerState.CurrentPlayerMovementState == PlayerMovementState.Idling;
             bool isRunning = _playerState.CurrentPlayerMovementState == PlayerMovementState.Running;
             bool isSprinting = _playerState.CurrentPlayerMovementState == PlayerMovementState.Sprinting;
@@ -47,9 +46,9 @@ namespace Kwabena.FinalCharacterController
             bool isFalling = _playerState.CurrentPlayerMovementState == PlayerMovementState.Falling;
             bool isGrounded = _playerState.InGroundedState();
 
+            Vector2 inputTarget = isSprinting ? _playerLocomotionInput.MovementInput * 1.5f :
+                                  isRunning ? _playerLocomotionInput.MovementInput * 1f : _playerLocomotionInput.MovementInput * 0.5f;
 
-
-            Vector2 inputTarget = isSprinting ? _playerLocomotionInput.MovementInput * 1.5f: _playerLocomotionInput.MovementInput;
             _currentBlendInput = Vector3.Lerp(_currentBlendInput, inputTarget, locomotionBlendSpeed * Time.deltaTime);
 
             _animator.SetBool(isGroundedHash, isGrounded);
@@ -61,9 +60,8 @@ namespace Kwabena.FinalCharacterController
             _animator.SetFloat(inputXHash, _currentBlendInput.x);
             _animator.SetFloat(inputYHash, _currentBlendInput.y);
             _animator.SetFloat(inputMagnitudeHash, _currentBlendInput.magnitude);
-            _animator.SetFloat(rotationMisMatchHash, _playerController.RotationMisMatch);
+            _animator.SetFloat(rotationMismatchHash, _playerController.RotationMisMatch);
         }
-
     }
 }
 

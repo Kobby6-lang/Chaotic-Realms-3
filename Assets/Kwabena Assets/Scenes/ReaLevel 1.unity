@@ -903,6 +903,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: ThirdPersonController
       objectReference: {fileID: 0}
+    - target: {fileID: 768194843906133453, guid: a35fb3ebe6703ab41a7ee80c5259b45e,
+        type: 3}
+      propertyPath: lookSenseH
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 768194843906133453, guid: a35fb3ebe6703ab41a7ee80c5259b45e,
+        type: 3}
+      propertyPath: lookSenseV
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 768194843906133453, guid: a35fb3ebe6703ab41a7ee80c5259b45e,
+        type: 3}
+      propertyPath: rotateToTargetTime
+      value: 0.67
+      objectReference: {fileID: 0}
     - target: {fileID: 7888747848837190491, guid: a35fb3ebe6703ab41a7ee80c5259b45e,
         type: 3}
       propertyPath: m_LocalPosition.x
