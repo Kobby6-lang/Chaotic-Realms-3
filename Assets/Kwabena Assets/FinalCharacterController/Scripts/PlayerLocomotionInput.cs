@@ -47,7 +47,6 @@ namespace Kwabena.FinalCharacterController
         public void OnMovement(InputAction.CallbackContext context)
         {
             MovementInput = context.ReadValue<Vector2>();
-            print(MovementInput);
         }
 
         public void OnLook(InputAction.CallbackContext context)
@@ -80,6 +79,7 @@ namespace Kwabena.FinalCharacterController
                 return;
 
             WalkToggledOn = !WalkToggledOn;
+            print(WalkToggledOn);
         }
         #endregion
     }

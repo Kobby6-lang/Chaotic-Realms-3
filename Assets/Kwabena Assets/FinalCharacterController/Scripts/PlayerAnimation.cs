@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -60,7 +61,7 @@ namespace Kwabena.FinalCharacterController
             _animator.SetFloat(inputXHash, _currentBlendInput.x);
             _animator.SetFloat(inputYHash, _currentBlendInput.y);
             _animator.SetFloat(inputMagnitudeHash, _currentBlendInput.magnitude);
-            _animator.SetFloat(rotationMismatchHash, _playerController.RotationMisMatch);
+            _animator.SetFloat(rotationMismatchHash, _playerController.RotationMisMatch); // Fixed typo here
         }
     }
 }
