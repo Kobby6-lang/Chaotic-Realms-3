@@ -76,9 +76,13 @@ namespace Kwabena.FinalCharacterController
         public void OnToggleWalk(InputAction.CallbackContext context)
         {
             if (!context.performed)
+            { Debug.Log("walking toggled");
                 return;
 
+            }
+
             WalkToggledOn = !WalkToggledOn;
+            // set movementDirection here, make sure it's not overwritten if you aren't/are using the joysticks while toggle is on or however you want to set it
             print(WalkToggledOn);
         }
         #endregion
