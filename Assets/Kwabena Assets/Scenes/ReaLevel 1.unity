@@ -918,6 +918,11 @@ PrefabInstance:
       propertyPath: rotateToTargetTime
       value: 0.67
       objectReference: {fileID: 0}
+    - target: {fileID: 3488624695427226212, guid: a35fb3ebe6703ab41a7ee80c5259b45e,
+        type: 3}
+      propertyPath: locomotionBlendSpeed
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 7888747848837190491, guid: a35fb3ebe6703ab41a7ee80c5259b45e,
         type: 3}
       propertyPath: m_LocalPosition.x
