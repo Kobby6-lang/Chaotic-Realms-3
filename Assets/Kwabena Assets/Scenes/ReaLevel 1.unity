@@ -287,24 +287,6 @@ Mesh:
     offset: 0
     size: 0
     path: 
---- !u!1 &599023055 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 442019415076601259, guid: a35fb3ebe6703ab41a7ee80c5259b45e,
-    type: 3}
-  m_PrefabInstance: {fileID: 1991616912644170305}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &599023063
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 599023055}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd88b89bc526fb043a61731378efc642, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &612111441
 GameObject:
   m_ObjectHideFlags: 0
@@ -903,25 +885,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ThirdPersonController
       objectReference: {fileID: 0}
-    - target: {fileID: 768194843906133453, guid: a35fb3ebe6703ab41a7ee80c5259b45e,
-        type: 3}
-      propertyPath: lookSenseH
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 768194843906133453, guid: a35fb3ebe6703ab41a7ee80c5259b45e,
-        type: 3}
-      propertyPath: lookSenseV
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 768194843906133453, guid: a35fb3ebe6703ab41a7ee80c5259b45e,
-        type: 3}
-      propertyPath: rotateToTargetTime
-      value: 0.67
-      objectReference: {fileID: 0}
     - target: {fileID: 3488624695427226212, guid: a35fb3ebe6703ab41a7ee80c5259b45e,
         type: 3}
       propertyPath: locomotionBlendSpeed
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7888747848837190491, guid: a35fb3ebe6703ab41a7ee80c5259b45e,
         type: 3}
@@ -976,11 +943,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 442019415076601259, guid: a35fb3ebe6703ab41a7ee80c5259b45e,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 599023063}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a35fb3ebe6703ab41a7ee80c5259b45e, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
