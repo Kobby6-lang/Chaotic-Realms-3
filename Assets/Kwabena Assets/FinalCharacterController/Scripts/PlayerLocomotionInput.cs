@@ -12,11 +12,12 @@ namespace Kwabena.FinalCharacterController
         #region Class Variables 
         [SerializeField] private bool holdSprint = true;
 
-        public bool SprintToggledOn {  get; private set; }
         public PlayerControls PlayerControls {  get; private set; }
         public Vector2 MovementInput { get; private set; }
         public Vector2 LookInput { get; private set; }
         public bool JumpPressed { get; private set; }
+        public bool SprintToggledOn { get; private set; }
+        public bool WalkToggleOn { get; private set; }
         #endregion
 
         #region StartUp
@@ -71,6 +72,13 @@ namespace Kwabena.FinalCharacterController
             if(!context.performed)
                 return;
             JumpPressed = true;
+        }
+
+        public void OnToggleWalk(InputAction.CallbackContext context)
+        {
+            if(!context.performed)
+
+                return; WalkToggleOn = !WalkToggleOn;
         }
         #endregion
     }
