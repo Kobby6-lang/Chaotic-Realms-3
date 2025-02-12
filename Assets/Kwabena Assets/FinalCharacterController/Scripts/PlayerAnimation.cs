@@ -1,9 +1,8 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Kwabena.FinalCharacterController 
+namespace Kwabena.FinalCharacterController
 {
     public class PlayerAnimation : MonoBehaviour
     {
@@ -61,8 +60,7 @@ namespace Kwabena.FinalCharacterController
             _animator.SetFloat(inputXHash, _currentBlendInput.x);
             _animator.SetFloat(inputYHash, _currentBlendInput.y);
             _animator.SetFloat(inputMagnitudeHash, _currentBlendInput.magnitude);
-            _animator.SetFloat(rotationMismatchHash, _playerController.RotationMisMatch); // Fixed typo here
+            _animator.SetFloat(rotationMismatchHash, _playerController.RotationMismatch);
         }
     }
 }
-

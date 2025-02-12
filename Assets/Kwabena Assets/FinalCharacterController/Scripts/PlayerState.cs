@@ -8,12 +8,12 @@ namespace Kwabena.FinalCharacterController
     {
         [field: SerializeField] public PlayerMovementState CurrentPlayerMovementState { get; private set; } = PlayerMovementState.Idling;
 
-        public void SetPlayerMovementState(PlayerMovementState playerMovementState) 
+        public void SetPlayerMovementState(PlayerMovementState playerMovementState)
         {
             CurrentPlayerMovementState = playerMovementState;
         }
 
-        public bool InGroundedState() 
+        public bool InGroundedState()
         {
             return CurrentPlayerMovementState == PlayerMovementState.Idling ||
                    CurrentPlayerMovementState == PlayerMovementState.Walking ||
@@ -21,7 +21,6 @@ namespace Kwabena.FinalCharacterController
                    CurrentPlayerMovementState == PlayerMovementState.Sprinting;
         }
     }
-
     public enum PlayerMovementState
     {
         Idling = 0,

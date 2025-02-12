@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-
-namespace Kwabena.FinalCharacterController 
+namespace Kwabena.FinalCharacterController
 {
     [DefaultExecutionOrder(-2)]
     public class PlayerLocomotionInput : MonoBehaviour, PlayerControls.IPlayerLocomotionMapActions
@@ -47,13 +46,15 @@ namespace Kwabena.FinalCharacterController
         public void OnMovement(InputAction.CallbackContext context)
         {
             MovementInput = context.ReadValue<Vector2>();
+            print(MovementInput);
         }
 
         public void OnLook(InputAction.CallbackContext context)
         {
             LookInput = context.ReadValue<Vector2>();
         }
-        public void OnToogleSprint(InputAction.CallbackContext context)
+
+        public void OnToggleSprint(InputAction.CallbackContext context)
         {
             if (context.performed)
             {
@@ -76,16 +77,10 @@ namespace Kwabena.FinalCharacterController
         public void OnToggleWalk(InputAction.CallbackContext context)
         {
             if (!context.performed)
-            { Debug.Log("walking toggled");
                 return;
 
-            }
-
             WalkToggledOn = !WalkToggledOn;
-            // set movementDirection here, make sure it's not overwritten if you aren't/are using the joysticks while toggle is on or however you want to set it
-            print(WalkToggledOn);
         }
         #endregion
     }
 }
-

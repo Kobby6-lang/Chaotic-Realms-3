@@ -27,12 +27,12 @@ namespace Kwabena.FinalCharacterController
     ""maps"": [
         {
             ""name"": ""PlayerLocomotionMap"",
-            ""id"": ""c3a88fb5-e896-431c-8e14-d190f20b38cc"",
+            ""id"": ""99c7a40c-414b-41ce-aefb-43a75cf7cb1a"",
             ""actions"": [
                 {
                     ""name"": ""Movement"",
                     ""type"": ""Value"",
-                    ""id"": ""216291aa-417e-4c9f-9526-b68701e14cfd"",
+                    ""id"": ""f65f8738-2d69-4baa-9110-6adcd338d01e"",
                     ""expectedControlType"": ""Vector2"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -41,16 +41,16 @@ namespace Kwabena.FinalCharacterController
                 {
                     ""name"": ""Look"",
                     ""type"": ""Value"",
-                    ""id"": ""62b7f519-cd74-4de1-a2f9-0ab0b76a8291"",
+                    ""id"": ""8ad346e4-fb0d-48ed-a3d2-85680ad98bf0"",
                     ""expectedControlType"": ""Vector2"",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
                 },
                 {
-                    ""name"": ""ToogleSprint"",
+                    ""name"": ""ToggleSprint"",
                     ""type"": ""Button"",
-                    ""id"": ""8f9fc391-211e-46b6-a840-c9d5bcb2f4a5"",
+                    ""id"": ""26f076e1-6600-499b-be76-d8e00fce186f"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -59,7 +59,7 @@ namespace Kwabena.FinalCharacterController
                 {
                     ""name"": ""Jump"",
                     ""type"": ""Button"",
-                    ""id"": ""f290366d-7001-41d2-999d-da11d5387b34"",
+                    ""id"": ""6288fd7d-84f3-47ec-8125-f857073b3edd"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -68,7 +68,7 @@ namespace Kwabena.FinalCharacterController
                 {
                     ""name"": ""ToggleWalk"",
                     ""type"": ""Button"",
-                    ""id"": ""b3bfc053-5e86-4411-a107-532e7324cecd"",
+                    ""id"": ""a9b4e835-5351-426f-9c91-4637ccd9b65b"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -78,7 +78,7 @@ namespace Kwabena.FinalCharacterController
             ""bindings"": [
                 {
                     ""name"": ""WASD"",
-                    ""id"": ""4284c973-87ae-4b92-9552-fc48f5888956"",
+                    ""id"": ""fd9cbc08-f27c-4d05-b4f0-443443160973"",
                     ""path"": ""2DVector"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -89,7 +89,7 @@ namespace Kwabena.FinalCharacterController
                 },
                 {
                     ""name"": ""up"",
-                    ""id"": ""6296b416-d0a6-406c-8cab-14b0bf89fbcb"",
+                    ""id"": ""b479106e-7c72-4c7d-939d-78aa74ae84fa"",
                     ""path"": ""<Keyboard>/w"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -100,7 +100,7 @@ namespace Kwabena.FinalCharacterController
                 },
                 {
                     ""name"": ""down"",
-                    ""id"": ""87f36e9e-d834-484b-8667-f54c4deb1d2b"",
+                    ""id"": ""132a7e5b-9eb0-4cae-a877-f464b2b2d5a9"",
                     ""path"": ""<Keyboard>/s"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -111,7 +111,7 @@ namespace Kwabena.FinalCharacterController
                 },
                 {
                     ""name"": ""left"",
-                    ""id"": ""f87b6f9c-d496-4569-b4c5-c21094442018"",
+                    ""id"": ""b9c5703c-505b-4d2d-aa0b-970eff9fe8b5"",
                     ""path"": ""<Keyboard>/a"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -122,7 +122,7 @@ namespace Kwabena.FinalCharacterController
                 },
                 {
                     ""name"": ""right"",
-                    ""id"": ""b5dc3203-c6f7-49a2-b809-1aac0d26b137"",
+                    ""id"": ""56422530-e3d8-4343-b086-d78c1b41bb7e"",
                     ""path"": ""<Keyboard>/d"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -133,7 +133,7 @@ namespace Kwabena.FinalCharacterController
                 },
                 {
                     ""name"": ""Arrow Keys"",
-                    ""id"": ""26fe6985-2bfd-4e37-89ab-5fe50d627f9d"",
+                    ""id"": ""3463614f-c550-47ec-abeb-aff42b078aa3"",
                     ""path"": ""2DVector"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -144,7 +144,7 @@ namespace Kwabena.FinalCharacterController
                 },
                 {
                     ""name"": ""up"",
-                    ""id"": ""229a3173-8718-46c9-b839-216d5e1d1eb1"",
+                    ""id"": ""2dd03fda-7a17-4423-b17e-f310140af257"",
                     ""path"": ""<Keyboard>/upArrow"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -155,7 +155,7 @@ namespace Kwabena.FinalCharacterController
                 },
                 {
                     ""name"": ""down"",
-                    ""id"": ""6b871c99-a525-4eb5-86be-41075952fb8a"",
+                    ""id"": ""08be676d-97c6-4db1-99a0-412b748245b4"",
                     ""path"": ""<Keyboard>/downArrow"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -166,7 +166,7 @@ namespace Kwabena.FinalCharacterController
                 },
                 {
                     ""name"": ""left"",
-                    ""id"": ""f3a99c4e-f987-432f-bfb3-fd9bcf21422f"",
+                    ""id"": ""a080663e-1552-41e7-8907-1ab4caf80297"",
                     ""path"": ""<Keyboard>/leftArrow"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -177,7 +177,7 @@ namespace Kwabena.FinalCharacterController
                 },
                 {
                     ""name"": ""right"",
-                    ""id"": ""9d43c5ad-f24a-4027-a335-2921fc9f20aa"",
+                    ""id"": ""8e2c4950-28f9-44e8-84d9-52a5e218ad89"",
                     ""path"": ""<Keyboard>/rightArrow"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -188,7 +188,7 @@ namespace Kwabena.FinalCharacterController
                 },
                 {
                     ""name"": """",
-                    ""id"": ""b2cf4a07-35f2-4ddb-b937-59bcf64fbb49"",
+                    ""id"": ""464e302d-cf34-4e93-8624-4d1f2efb7f93"",
                     ""path"": ""<Gamepad>/leftStick"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -199,7 +199,7 @@ namespace Kwabena.FinalCharacterController
                 },
                 {
                     ""name"": """",
-                    ""id"": ""3e14c7f3-faf8-4211-9a01-3e861aefb8ab"",
+                    ""id"": ""68e24bf7-da2b-4d0d-9da6-3306cdcb2d5c"",
                     ""path"": ""<Mouse>/delta"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -210,7 +210,7 @@ namespace Kwabena.FinalCharacterController
                 },
                 {
                     ""name"": """",
-                    ""id"": ""cf126e50-b817-4a88-b490-0c2337e716f7"",
+                    ""id"": ""e8c9149b-26c2-401c-a793-8f9df0926ee3"",
                     ""path"": ""<Gamepad>/rightStick"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -221,40 +221,29 @@ namespace Kwabena.FinalCharacterController
                 },
                 {
                     ""name"": """",
-                    ""id"": ""18c199d4-737b-468a-be97-c3b240b549f1"",
-                    ""path"": ""<Keyboard>/leftShift"",
+                    ""id"": ""d9ae697b-2f43-49aa-856d-aff5c2fc5883"",
+                    ""path"": ""<Keyboard>/shift"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""ToogleSprint"",
+                    ""action"": ""ToggleSprint"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
-                    ""id"": ""c38e4d49-5eaa-49fe-a2bf-7b28315ec3e3"",
+                    ""id"": ""6d94e00f-bde4-4f21-abd6-1b19a7105928"",
                     ""path"": ""<Gamepad>/rightTrigger"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""ToogleSprint"",
+                    ""action"": ""ToggleSprint"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
-                    ""id"": ""0d760733-774f-4df2-a01a-da19fe4be304"",
-                    ""path"": ""<Keyboard>/space"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Jump"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""410d6957-8461-437e-9c9d-c292625bd1b7"",
+                    ""id"": ""5db45b58-554e-4376-b17b-9e138d37ef64"",
                     ""path"": ""<Gamepad>/buttonSouth"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -265,8 +254,19 @@ namespace Kwabena.FinalCharacterController
                 },
                 {
                     ""name"": """",
-                    ""id"": ""517f2e8d-40b3-4acb-ab63-2c7bca10970d"",
-                    ""path"": ""<Keyboard>/ctrl"",
+                    ""id"": ""f3894147-6b97-4d0f-b1fd-b4308016e10e"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Jump"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""1eda5725-2de6-4fac-89d5-8bcd979dca38"",
+                    ""path"": ""<Gamepad>/buttonEast"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -276,8 +276,8 @@ namespace Kwabena.FinalCharacterController
                 },
                 {
                     ""name"": """",
-                    ""id"": ""f5325757-4427-4b04-8514-0d81ed6234f4"",
-                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""id"": ""dcf1c582-79db-4d45-8756-bcb3569a5197"",
+                    ""path"": ""<Keyboard>/ctrl"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -294,7 +294,7 @@ namespace Kwabena.FinalCharacterController
             m_PlayerLocomotionMap = asset.FindActionMap("PlayerLocomotionMap", throwIfNotFound: true);
             m_PlayerLocomotionMap_Movement = m_PlayerLocomotionMap.FindAction("Movement", throwIfNotFound: true);
             m_PlayerLocomotionMap_Look = m_PlayerLocomotionMap.FindAction("Look", throwIfNotFound: true);
-            m_PlayerLocomotionMap_ToogleSprint = m_PlayerLocomotionMap.FindAction("ToogleSprint", throwIfNotFound: true);
+            m_PlayerLocomotionMap_ToggleSprint = m_PlayerLocomotionMap.FindAction("ToggleSprint", throwIfNotFound: true);
             m_PlayerLocomotionMap_Jump = m_PlayerLocomotionMap.FindAction("Jump", throwIfNotFound: true);
             m_PlayerLocomotionMap_ToggleWalk = m_PlayerLocomotionMap.FindAction("ToggleWalk", throwIfNotFound: true);
         }
@@ -360,7 +360,7 @@ namespace Kwabena.FinalCharacterController
         private List<IPlayerLocomotionMapActions> m_PlayerLocomotionMapActionsCallbackInterfaces = new List<IPlayerLocomotionMapActions>();
         private readonly InputAction m_PlayerLocomotionMap_Movement;
         private readonly InputAction m_PlayerLocomotionMap_Look;
-        private readonly InputAction m_PlayerLocomotionMap_ToogleSprint;
+        private readonly InputAction m_PlayerLocomotionMap_ToggleSprint;
         private readonly InputAction m_PlayerLocomotionMap_Jump;
         private readonly InputAction m_PlayerLocomotionMap_ToggleWalk;
         public struct PlayerLocomotionMapActions
@@ -369,7 +369,7 @@ namespace Kwabena.FinalCharacterController
             public PlayerLocomotionMapActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
             public InputAction @Movement => m_Wrapper.m_PlayerLocomotionMap_Movement;
             public InputAction @Look => m_Wrapper.m_PlayerLocomotionMap_Look;
-            public InputAction @ToogleSprint => m_Wrapper.m_PlayerLocomotionMap_ToogleSprint;
+            public InputAction @ToggleSprint => m_Wrapper.m_PlayerLocomotionMap_ToggleSprint;
             public InputAction @Jump => m_Wrapper.m_PlayerLocomotionMap_Jump;
             public InputAction @ToggleWalk => m_Wrapper.m_PlayerLocomotionMap_ToggleWalk;
             public InputActionMap Get() { return m_Wrapper.m_PlayerLocomotionMap; }
@@ -387,9 +387,9 @@ namespace Kwabena.FinalCharacterController
                 @Look.started += instance.OnLook;
                 @Look.performed += instance.OnLook;
                 @Look.canceled += instance.OnLook;
-                @ToogleSprint.started += instance.OnToogleSprint;
-                @ToogleSprint.performed += instance.OnToogleSprint;
-                @ToogleSprint.canceled += instance.OnToogleSprint;
+                @ToggleSprint.started += instance.OnToggleSprint;
+                @ToggleSprint.performed += instance.OnToggleSprint;
+                @ToggleSprint.canceled += instance.OnToggleSprint;
                 @Jump.started += instance.OnJump;
                 @Jump.performed += instance.OnJump;
                 @Jump.canceled += instance.OnJump;
@@ -406,9 +406,9 @@ namespace Kwabena.FinalCharacterController
                 @Look.started -= instance.OnLook;
                 @Look.performed -= instance.OnLook;
                 @Look.canceled -= instance.OnLook;
-                @ToogleSprint.started -= instance.OnToogleSprint;
-                @ToogleSprint.performed -= instance.OnToogleSprint;
-                @ToogleSprint.canceled -= instance.OnToogleSprint;
+                @ToggleSprint.started -= instance.OnToggleSprint;
+                @ToggleSprint.performed -= instance.OnToggleSprint;
+                @ToggleSprint.canceled -= instance.OnToggleSprint;
                 @Jump.started -= instance.OnJump;
                 @Jump.performed -= instance.OnJump;
                 @Jump.canceled -= instance.OnJump;
@@ -436,7 +436,7 @@ namespace Kwabena.FinalCharacterController
         {
             void OnMovement(InputAction.CallbackContext context);
             void OnLook(InputAction.CallbackContext context);
-            void OnToogleSprint(InputAction.CallbackContext context);
+            void OnToggleSprint(InputAction.CallbackContext context);
             void OnJump(InputAction.CallbackContext context);
             void OnToggleWalk(InputAction.CallbackContext context);
         }
