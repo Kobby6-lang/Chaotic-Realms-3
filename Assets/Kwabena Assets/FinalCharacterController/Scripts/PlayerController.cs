@@ -289,6 +289,16 @@ namespace Kwabena.FinalCharacterController
             // This means player is moving diagonally at 45 degrees or forward, if so, we can run
             return _playerLocomotionInput.MovementInput.y >= Mathf.Abs(_playerLocomotionInput.MovementInput.x);
         }
+
+        void OnControllerColliderHit(ControllerColliderHit hit)
+        {
+            if (hit.collider.CompareTag("TrapDoor"))
+            {
+                hit.collider.GetComponent<TrapDoor>().Open();
+            }
+        }
         #endregion
     }
+
+   
 }
