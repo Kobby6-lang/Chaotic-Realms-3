@@ -39,10 +39,3 @@ namespace Kwabena.FinalCharacterController
         }
     }
 }
-
-
-
-
-
-
-
