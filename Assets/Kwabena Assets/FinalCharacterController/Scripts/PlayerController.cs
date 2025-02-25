@@ -1,8 +1,6 @@
-using Kwabena.FinalController;
+using Kwabena.FinalCharacterController;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 namespace Kwabena.FinalCharacterController
 {
@@ -23,6 +21,7 @@ namespace Kwabena.FinalCharacterController
         public float runSpeed = 4f;
         public float sprintAcceleration = 50f;
         public float sprintSpeed = 7f;
+        public float crouchSpeed = 1.5f; // Speed while crouching
         public float inAirAcceleration = 25f;
         public float drag = 20f;
         public float inAirDrag = 5f;
@@ -30,6 +29,11 @@ namespace Kwabena.FinalCharacterController
         public float terminalVelocity = 50f;
         public float jumpSpeed = 1.0f;
         public float movingThreshold = 0.01f;
+
+        [Header("Crouching Settings")]
+        public float crouchHeight = 0.5f; // Height of the character when crouched
+        public float standHeight = 1.0f; // Height of the character when standing
+        private bool isCrouching = false; // Track crouching state
 
         [Header("Animation")]
         public float playerModelRotationSpeed = 10f;
@@ -67,6 +71,9 @@ namespace Kwabena.FinalCharacterController
 
             _antiBump = sprintSpeed;
             _stepOffset = _characterController.stepOffset;
+
+            // Set initial height
+            _characterController.height = standHeight;
         }
         #endregion
 
@@ -76,6 +83,7 @@ namespace Kwabena.FinalCharacterController
             UpdateMovementState();
             HandleVerticalMovement();
             HandleLateralMovement();
+            HandleCrouching(); // Add crouching handling
         }
 
         private void UpdateMovementState()
@@ -83,16 +91,18 @@ namespace Kwabena.FinalCharacterController
             _lastMovementState = _playerState.CurrentPlayerMovementState;
 
             bool canRun = CanRun();
-            bool isMovementInput = _playerLocomotionInput.MovementInput != Vector2.zero;             //order
-            bool isMovingLaterally = IsMovingLaterally();                                            //matters
-            bool isSprinting = _playerLocomotionInput.SprintToggledOn && isMovingLaterally;          //order
-            bool isWalking = isMovingLaterally && (!canRun || _playerLocomotionInput.WalkToggledOn); //matters
+            bool isMovementInput = _playerLocomotionInput.MovementInput != Vector2.zero;
+            bool isMovingLaterally = IsMovingLaterally();
+            bool isSprinting = _playerLocomotionInput.SprintToggledOn && isMovingLaterally;
+            bool isWalking = isMovingLaterally && (!canRun || _playerLocomotionInput.WalkToggledOn);
             bool isGrounded = IsGrounded();
 
+            // Determine the lateral movement state
             PlayerMovementState lateralState = isWalking ? PlayerMovementState.Walking :
                                                isSprinting ? PlayerMovementState.Sprinting :
                                                isMovingLaterally || isMovementInput ? PlayerMovementState.Running : PlayerMovementState.Idling;
 
+            // Update the player state
             _playerState.SetPlayerMovementState(lateralState);
 
             // Control Airborn State
@@ -134,7 +144,7 @@ namespace Kwabena.FinalCharacterController
                 _verticalVelocity += _antiBump;
             }
 
-            if (Mathf.Abs(_verticalVelocity) > Mathf.Abs(terminalVelocity ))
+            if (Mathf.Abs(_verticalVelocity) > Mathf.Abs(terminalVelocity))
             {
                 _verticalVelocity = -1f * Mathf.Abs(terminalVelocity);
             }
@@ -146,6 +156,7 @@ namespace Kwabena.FinalCharacterController
             bool isSprinting = _playerState.CurrentPlayerMovementState == PlayerMovementState.Sprinting;
             bool isGrounded = _playerState.InGroundedState();
             bool isWalking = _playerState.CurrentPlayerMovementState == PlayerMovementState.Walking;
+            bool isCrouching = _playerState.CurrentPlayerMovementState == PlayerMovementState.Crouching;
 
             // State dependent acceleration and speed
             float lateralAcceleration = !isGrounded ? inAirAcceleration :
@@ -153,7 +164,7 @@ namespace Kwabena.FinalCharacterController
                                         isSprinting ? sprintAcceleration : runAcceleration;
 
             float clampLateralMagnitude = !isGrounded ? sprintSpeed :
-                                          isWalking ? walkSpeed :
+                                          isWalking ? (isCrouching ? crouchSpeed : walkSpeed) : // Adjust for crouching
                                           isSprinting ? sprintSpeed : runSpeed;
 
             Vector3 cameraForwardXZ = new Vector3(_playerCamera.transform.forward.x, 0f, _playerCamera.transform.forward.z).normalized;
@@ -164,7 +175,7 @@ namespace Kwabena.FinalCharacterController
             Vector3 newVelocity = _characterController.velocity + movementDelta;
 
             // Add drag to player
-            float dragMagnitude = isGrounded ? drag: inAirDrag;
+            float dragMagnitude = isGrounded ? drag : inAirDrag;
             Vector3 currentDrag = newVelocity.normalized * dragMagnitude * Time.deltaTime;
             newVelocity = (newVelocity.magnitude > dragMagnitude * Time.deltaTime) ? newVelocity - currentDrag : Vector3.zero;
             newVelocity = Vector3.ClampMagnitude(new Vector3(newVelocity.x, 0f, newVelocity.z), clampLateralMagnitude);
@@ -173,6 +184,22 @@ namespace Kwabena.FinalCharacterController
 
             // Move character (Unity suggests only calling this once per tick)
             _characterController.Move(newVelocity * Time.deltaTime);
+        }
+
+        private void HandleCrouching()
+        {
+            if (_playerLocomotionInput.CrouchToggledOn) // Assuming you have a CrouchToggledOn input
+            {
+                ToggleCrouch();
+            }
+        }
+
+        private void ToggleCrouch()
+        {
+            isCrouching = !isCrouching; // Toggle crouching state
+            _characterController.height = isCrouching ? crouchHeight : standHeight; // Adjust height
+            _characterController.center = new Vector3(0, isCrouching ? crouchHeight / 2 : standHeight / 2, 0); // Adjust center
+            _playerState.SetPlayerMovementState(isCrouching ? PlayerMovementState.Crouching : PlayerMovementState.Walking);
         }
 
         private Vector3 HandleSteepWalls(Vector3 velocity)
@@ -254,23 +281,19 @@ namespace Kwabena.FinalCharacterController
         private bool IsMovingLaterally()
         {
             Vector3 lateralVelocity = new Vector3(_characterController.velocity.x, 0f, _characterController.velocity.z);
-
             return lateralVelocity.magnitude > movingThreshold;
         }
 
         private bool IsGrounded()
         {
             bool grounded = _playerState.InGroundedState() ? IsGroundedWhileGrounded() : IsGroundedWhileAirborne();
-
             return grounded;
         }
 
         private bool IsGroundedWhileGrounded()
         {
             Vector3 spherePosition = new Vector3(transform.position.x, transform.position.y - _characterController.radius, transform.position.z);
-
             bool grounded = Physics.CheckSphere(spherePosition, _characterController.radius, _groundLayers, QueryTriggerInteraction.Ignore);
-
             return grounded;
         }
 
@@ -278,9 +301,7 @@ namespace Kwabena.FinalCharacterController
         {
             Vector3 normal = CharacterControllerUtils.GetNormalWithSphereCast(_characterController, _groundLayers);
             float angle = Vector3.Angle(normal, Vector3.up);
-         
             bool validAngle = angle <= _characterController.slopeLimit;
-
             return _characterController.isGrounded && validAngle;
         }
 
@@ -289,10 +310,6 @@ namespace Kwabena.FinalCharacterController
             // This means player is moving diagonally at 45 degrees or forward, if so, we can run
             return _playerLocomotionInput.MovementInput.y >= Mathf.Abs(_playerLocomotionInput.MovementInput.x);
         }
-
-
         #endregion
     }
-
-   
 }

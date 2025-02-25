@@ -1,8 +1,9 @@
+using Kwabena.FinalCharacterController;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Kwabena.FinalController 
+namespace Kwabena.FinalCharacterController 
 {
     public static class CharacterControllerUtils
     {

@@ -1,3 +1,4 @@
+using Kwabena.FinalCharacterController;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -15,12 +16,13 @@ namespace Kwabena.FinalCharacterController
         public bool JumpPressed { get; private set; }
         public bool SprintToggledOn { get; private set; }
         public bool WalkToggledOn { get; private set; }
+        public bool CrouchToggledOn { get; private set; } // Added for crouching
         #endregion
 
         #region Startup
         private void OnEnable()
         {
-            if (PlayerInputManager.Instance ?.PlayerControls == null) 
+            if (PlayerInputManager.Instance?.PlayerControls == null)
             {
                 Debug.LogError("Player Controls is not initialized - Cannot enable");
                 return;
@@ -45,7 +47,7 @@ namespace Kwabena.FinalCharacterController
         #region Late Update Logic
         private void LateUpdate()
         {
-            JumpPressed = false;
+            JumpPressed = false; // Reset jump input
         }
         #endregion
 
@@ -86,6 +88,14 @@ namespace Kwabena.FinalCharacterController
                 return;
 
             WalkToggledOn = !WalkToggledOn;
+        }
+
+        public void OnToggleCrouch(InputAction.CallbackContext context)
+        {
+            if (!context.performed)
+                return;
+
+            CrouchToggledOn = !CrouchToggledOn; // Toggle crouch state
         }
         #endregion
     }

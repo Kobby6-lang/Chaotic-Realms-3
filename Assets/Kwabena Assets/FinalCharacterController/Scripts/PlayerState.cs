@@ -1,3 +1,4 @@
+using Kwabena.FinalCharacterController;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -23,9 +24,11 @@ namespace Kwabena.FinalCharacterController
             return movementState == PlayerMovementState.Idling ||
                    movementState == PlayerMovementState.Walking ||
                    movementState == PlayerMovementState.Running ||
-                   movementState == PlayerMovementState.Sprinting;
+                   movementState == PlayerMovementState.Sprinting ||
+                   movementState == PlayerMovementState.Crouching; // Include crouching state
         }
     }
+
     public enum PlayerMovementState
     {
         Idling = 0,
@@ -35,5 +38,6 @@ namespace Kwabena.FinalCharacterController
         Jumping = 4,
         Falling = 5,
         Strafing = 6,
+        Crouching = 7 // New crouching state
     }
 }
