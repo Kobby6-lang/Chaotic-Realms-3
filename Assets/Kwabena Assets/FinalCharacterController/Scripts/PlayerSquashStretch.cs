@@ -1,10 +1,10 @@
 using UnityEngine;
 using System.Collections;
 
-public class PlayerSplat : MonoBehaviour
+public class PlayerSquashStretch : MonoBehaviour
 {
-    public Vector3 originalScale;
-    private bool isSplat = false;
+    private Vector3 originalScale;
+    private bool isSquashed = false;
     public Transform respawnPoint; // Reference to the respawn point
 
     void Start()
@@ -15,11 +15,11 @@ public class PlayerSplat : MonoBehaviour
     void OnControllerColliderHit(ControllerColliderHit hit)
     {
         // Check if the player collides with the ground (or any specific object)
-        if (hit.gameObject.CompareTag("Ground") && !isSplat)
+        if (hit.gameObject.CompareTag("Ground") && !isSquashed)
         {
-            // Create a "splat" effect by changing the player's scale
-            transform.localScale = new Vector3(originalScale.x * 1.2f, originalScale.y * 0.6f, originalScale.z * 1.2f);
-            isSplat = true;
+            // Create a "squash and stretch" effect by changing the player's scale
+            transform.localScale = new Vector3(originalScale.x * -0.9f, originalScale.y * 0.09f, originalScale.z);
+            isSquashed = true;
 
             // Optionally, disable the CharacterController to stop further movement
             GetComponent<CharacterController>().enabled = false;
@@ -43,8 +43,9 @@ public class PlayerSplat : MonoBehaviour
         // Re-enable the CharacterController
         GetComponent<CharacterController>().enabled = true;
 
-        // Reset the splat flag
-        isSplat = false;
+        // Reset the squashed flag
+        isSquashed = false;
     }
 }
+
 
