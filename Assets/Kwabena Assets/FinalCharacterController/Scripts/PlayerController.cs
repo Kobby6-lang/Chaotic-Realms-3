@@ -188,15 +188,12 @@ namespace Kwabena.FinalCharacterController
 
         private void HandleCrouching()
         {
-            if (_playerLocomotionInput.CrouchToggledOn) // Assuming you have a CrouchToggledOn input
-            {
-                ToggleCrouch();
-            }
+            ToggleCrouch();
         }
 
         private void ToggleCrouch()
-        {
-            isCrouching = !isCrouching; // Toggle crouching state
+        {// Toggle crouching state
+            isCrouching = _playerLocomotionInput.CrouchToggledOn;
             _characterController.height = isCrouching ? crouchHeight : standHeight; // Adjust height
             _characterController.center = new Vector3(0, isCrouching ? crouchHeight / 2 : standHeight / 2, 0); // Adjust center
             _playerState.SetPlayerMovementState(isCrouching ? PlayerMovementState.Crouching : PlayerMovementState.Walking);
