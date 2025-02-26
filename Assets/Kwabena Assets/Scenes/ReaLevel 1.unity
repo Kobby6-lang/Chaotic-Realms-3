@@ -1900,6 +1900,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: ThirdPersonController
       objectReference: {fileID: 0}
+    - target: {fileID: 7516317272183158810, guid: aa0dc18b8b0e3924a831420e4edc1397,
+        type: 3}
+      propertyPath: respawnPoint
+      value: 
+      objectReference: {fileID: 199083408}
     - target: {fileID: 8213313510310394569, guid: aa0dc18b8b0e3924a831420e4edc1397,
         type: 3}
       propertyPath: m_LocalPosition.y
