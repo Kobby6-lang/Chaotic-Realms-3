@@ -24,7 +24,7 @@ namespace Kwabena.FinalCharacterController
         {
             if (PlayerInputManager.Instance?.PlayerControls == null)
             {
-                Debug.LogError("Player Controls is not initialized - Cannot enable");
+                Debug.LogError("Player Controls is not initialized - Cannot enable");  
                 return;
             }
 
