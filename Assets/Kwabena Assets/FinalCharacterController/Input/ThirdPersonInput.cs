@@ -6,7 +6,7 @@ using Cinemachine;
 
 
 
-namespace Kwabena.FinalCharacterController 
+namespace Kwabena.FinalCharacterController
 {
     [DefaultExecutionOrder(-2)]
     public class ThirdPersonInput : MonoBehaviour, PlayerControls.IThirdPersonMapActions
@@ -26,7 +26,7 @@ namespace Kwabena.FinalCharacterController
 
         #region Startup
 
-        private void Awake() 
+        private void Awake()
         {
             _thirdPersonFollow = _virtualCamera.GetCinemachineComponent<Cinemachine3rdPersonFollow>();
         }
@@ -55,12 +55,12 @@ namespace Kwabena.FinalCharacterController
         #endregion
 
         #region Update
-        private void Update() 
+        private void Update()
         {
             _thirdPersonFollow.CameraDistance = Mathf.Clamp(_thirdPersonFollow.CameraDistance + ScrollInput, _cameraMinZoom, _cameraMaxZoom);
         }
 
-        private void LateUpdate() 
+        private void LateUpdate()
         {
             ScrollInput = new();
         }
@@ -78,4 +78,3 @@ namespace Kwabena.FinalCharacterController
         #endregion
     }
 }
-    

@@ -18,7 +18,7 @@ public class PlayerSquashStretch : MonoBehaviour
         if (hit.gameObject.CompareTag("Ground") && !isSquashed)
         {
             // Create a "squash and stretch" effect by changing the player's scale
-            transform.localScale = new Vector3(originalScale.x * -0.9f, originalScale.y * 0.09f, originalScale.z);
+            transform.localScale = new Vector3(originalScale.x * 3f, originalScale.y * 0.13f, originalScale.z);
             isSquashed = true;
 
             // Optionally, disable the CharacterController to stop further movement
