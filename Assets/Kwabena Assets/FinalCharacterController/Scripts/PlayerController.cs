@@ -186,17 +186,19 @@ namespace Kwabena.FinalCharacterController
 
         private void HandleCrouchInput()
         {
-            if (_playerLocomotionInput.CrouchToggledOn)
-            {
+            bool crouch = _playerLocomotionInput.CrouchToggledOn;
+            if (crouch != isCrouching) {
                 ToggleCrouch();
             }
         }
 
         private void ToggleCrouch()
         {
+            Debug.Log("Toggle crouch");
             isCrouching = !isCrouching;
             var characterController = GetComponent<CharacterController>();
             characterController.height = isCrouching ? crouchHeight : originalHeight;
+            characterController.center = Vector3.up * characterController.height * 0.5f;
 
             // Update Animator
             Animator animator = GetComponent<Animator>();

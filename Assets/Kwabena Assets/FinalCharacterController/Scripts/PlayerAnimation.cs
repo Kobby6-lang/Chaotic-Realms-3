@@ -9,7 +9,6 @@ namespace Kwabena.FinalCharacterController
     {
         [SerializeField] private Animator _animator;
         [SerializeField] private float locomotionBlendSpeed = 4f;
-        [SerializeField] private float crouchHeight = 0.5f;
 
         private PlayerLocomotionInput _playerLocomotionInput;
         private PlayerState _playerState;
@@ -66,27 +65,12 @@ namespace Kwabena.FinalCharacterController
             _animator.SetBool(isFallingHash, isFalling);
             _animator.SetBool(isJumpingHash, isJumping);
             _animator.SetBool(isRotatingToTargetHash, _playerController.IsRotatingToTarget);
-            _animator.SetBool(isCrouchingHash, isCrouching);
+            //_animator.SetBool(isCrouchingHash, isCrouching);
 
             _animator.SetFloat(inputXHash, _currentBlendInput.x);
             _animator.SetFloat(inputYHash, _currentBlendInput.y);
             _animator.SetFloat(inputMagnitudeHash, _currentBlendInput.magnitude);
             _animator.SetFloat(rotationMismatchHash, _playerController.RotationMismatch);
-        }
-
-        public void OnCrouch(InputAction.CallbackContext context)
-        {
-            if (context.started)
-            {
-                ToggleCrouch();
-            }
-        }
-
-        private void ToggleCrouch()
-        {
-            isCrouching = !isCrouching;
-            var characterController = GetComponent<CharacterController>();
-            characterController.height = isCrouching ? crouchHeight : originalHeight;
         }
     }
 }

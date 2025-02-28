@@ -10,7 +10,6 @@ namespace Kwabena.FinalCharacterController
     {
         #region Class Variables
         [SerializeField] private bool holdToSprint = true;
-        [SerializeField] private bool holdToCrouch = true;
         public Vector2 MovementInput { get; private set; }
         public Vector2 LookInput { get; private set; }
         public bool JumpPressed { get; private set; }
