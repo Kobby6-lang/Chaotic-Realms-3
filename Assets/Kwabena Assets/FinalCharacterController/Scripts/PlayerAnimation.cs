@@ -29,7 +29,6 @@ namespace Kwabena.FinalCharacterController
         private float _sprintMaxBlendValue = 1.5f;
         private float _runMaxBlendValue = 1.0f;
         private float _walkMaxBlendValue = 0.5f;
-        private bool isCrouching = false;
         private float originalHeight;
 
         private void Awake()
