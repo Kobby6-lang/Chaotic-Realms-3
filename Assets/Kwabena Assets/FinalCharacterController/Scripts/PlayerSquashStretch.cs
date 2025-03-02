@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement; // For resetting the level
 
 public class PlayerSquashStretch : MonoBehaviour
 {
@@ -24,28 +25,17 @@ public class PlayerSquashStretch : MonoBehaviour
             // Optionally, disable the CharacterController to stop further movement
             GetComponent<CharacterController>().enabled = false;
 
-            // Start the respawn process
-            StartCoroutine(Respawn());
+            // Start the level reset process
+            StartCoroutine(ResetLevel());
         }
     }
 
-    IEnumerator Respawn()
+    IEnumerator ResetLevel()
     {
-        // Wait for a short delay before respawning
+        // Wait for a short delay before resetting the level
         yield return new WaitForSeconds(1.0f); // Adjust the delay as needed
 
-        // Reset the player's scale
-        transform.localScale = originalScale;
-
-        // Move the player to the respawn point
-        transform.position = respawnPoint.position;
-
-        // Re-enable the CharacterController
-        GetComponent<CharacterController>().enabled = true;
-
-        // Reset the squashed flag
-        isSquashed = false;
+        // Reset the entire level by reloading the active scene
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
-
-
