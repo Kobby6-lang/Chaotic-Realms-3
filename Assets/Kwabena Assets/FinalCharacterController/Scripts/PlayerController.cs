@@ -35,10 +35,10 @@ namespace Kwabena.FinalCharacterController
         public float playerModelRotationSpeed = 10f;
         public float rotateToTargetTime = 0.67f;
 
-        [Header("Crouch Settings")]
-        [SerializeField] private float crouchHeight = 0.5f;
-        private float originalHeight;
-        private bool isCrouching = false;
+        //[Header("Crouch Settings")]
+        //[SerializeField] private float crouchHeight = 0.5f;
+        //private float originalHeight;
+        ////private bool isCrouching = false;
 
         [Header("Camera Settings")]
         public float lookSenseH = 0.1f;
@@ -63,7 +63,7 @@ namespace Kwabena.FinalCharacterController
 
         private PlayerMovementState _lastMovementState = PlayerMovementState.Falling;
 
-        private static int isCrouchingHash = Animator.StringToHash("isCrouching");
+        //private static int isCrouchingHash = Animator.StringToHash("isCrouching");
         #endregion
 
         #region Startup
@@ -74,7 +74,7 @@ namespace Kwabena.FinalCharacterController
 
             _antiBump = sprintSpeed;
             _stepOffset = _characterController.stepOffset;
-            originalHeight = _characterController.height;
+            //originalHeight = _characterController.height;
         }
         #endregion
 
@@ -84,7 +84,7 @@ namespace Kwabena.FinalCharacterController
             UpdateMovementState();
             HandleVerticalMovement();
             HandleLateralMovement();
-            HandleCrouchInput();
+            //HandleCrouchInput();
         }
 
         private void UpdateMovementState()
@@ -184,26 +184,26 @@ namespace Kwabena.FinalCharacterController
             _characterController.Move(newVelocity * Time.deltaTime);
         }
 
-        private void HandleCrouchInput()
-        {
-            bool crouch = _playerLocomotionInput.CrouchToggledOn;
-            if (crouch != isCrouching) {
-                ToggleCrouch();
-            }
-        }
+        ////private void HandleCrouchInput()
+        //{
+        //    bool crouch = _playerLocomotionInput.CrouchToggledOn;
+        //    if (crouch != isCrouching) {
+        //        ToggleCrouch();
+        //    }
+        //}
 
-        private void ToggleCrouch()
-        {
-            Debug.Log("Toggle crouch");
-            isCrouching = !isCrouching;
-            var characterController = GetComponent<CharacterController>();
-            characterController.height = isCrouching ? crouchHeight : originalHeight;
-            characterController.center = Vector3.up * characterController.height * 0.5f;
+        //private void ToggleCrouch()
+        //{
+        //    Debug.Log("Toggle crouch");
+        //    isCrouching = !isCrouching;
+        //    var characterController = GetComponent<CharacterController>();
+        //    characterController.height = isCrouching ? crouchHeight : originalHeight;
+        //    characterController.center = Vector3.up * characterController.height * 0.5f;
 
-            // Update Animator
-            Animator animator = GetComponent<Animator>();
-            animator.SetBool(isCrouchingHash, isCrouching);
-        }
+        //    // Update Animator
+        //    Animator animator = GetComponent<Animator>();
+        //    animator.SetBool(isCrouchingHash, isCrouching);
+        //}
         #endregion
 
         #region HandleSteep Walls
