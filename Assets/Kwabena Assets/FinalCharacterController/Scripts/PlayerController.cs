@@ -66,6 +66,10 @@ namespace Kwabena.FinalCharacterController
         //private static int isCrouchingHash = Animator.StringToHash("isCrouching");
         #endregion
 
+        private void Start()
+        {
+            Cursor.visible = false;
+        }
         #region Startup
         private void Awake()
         {
