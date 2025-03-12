@@ -8,6 +8,13 @@ public class PlayerSquashStretch : MonoBehaviour
     private bool isSquashed = false;
     public Transform respawnPoint; // Reference to the respawn point
 
+    AudioManager audioManager;
+
+    private void Awake()
+    {
+        audioManager =GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
+
     void Start()
     {
         originalScale = transform.localScale;
@@ -19,8 +26,10 @@ public class PlayerSquashStretch : MonoBehaviour
         if (hit.gameObject.CompareTag("Ground") && !isSquashed)
         {
             // Create a "squash and stretch" effect by changing the player's scale
+            
             transform.localScale = new Vector3(originalScale.x * 3f, originalScale.y * 0.13f, originalScale.z);
             isSquashed = true;
+            audioManager.PlaySFX(audioManager.death);
 
             // Optionally, disable the CharacterController to stop further movement
             GetComponent<CharacterController>().enabled = false;

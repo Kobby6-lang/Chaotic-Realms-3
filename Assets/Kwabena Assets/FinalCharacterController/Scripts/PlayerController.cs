@@ -13,6 +13,8 @@ namespace Kwabena.FinalCharacterController
         [Header("Components")]
         [SerializeField] private CharacterController _characterController;
         [SerializeField] private Camera _playerCamera;
+
+        AudioManager audioManager;
         public float RotationMismatch { get; private set; } = 0f;
         public bool IsRotatingToTarget { get; private set; } = false;
 
@@ -30,6 +32,7 @@ namespace Kwabena.FinalCharacterController
         public float terminalVelocity = 50f;
         public float jumpSpeed = 1.0f;
         public float movingThreshold = 0.01f;
+
 
         [Header("Animation")]
         public float playerModelRotationSpeed = 10f;
@@ -75,6 +78,7 @@ namespace Kwabena.FinalCharacterController
         {
             _playerLocomotionInput = GetComponent<PlayerLocomotionInput>();
             _playerState = GetComponent<PlayerState>();
+            audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
 
             _antiBump = sprintSpeed;
             _stepOffset = _characterController.stepOffset;
@@ -140,6 +144,7 @@ namespace Kwabena.FinalCharacterController
             {
                 _verticalVelocity += Mathf.Sqrt(jumpSpeed * 3 * gravity);
                 _jumpedLastFrame = true;
+                audioManager.PlaySFX(audioManager.jump);
             }
 
             if (_playerState.IsStateGroundedState(_lastMovementState) && !isGrounded)
@@ -297,8 +302,10 @@ namespace Kwabena.FinalCharacterController
         private bool IsGrounded()
         {
             bool grounded = _playerState.InGroundedState() ? IsGroundedWhileGrounded() : IsGroundedWhileAirborne();
-
+            audioManager.PlaySFX(audioManager.landing);
             return grounded;
+
+            
         }
 
         private bool IsGroundedWhileGrounded()
