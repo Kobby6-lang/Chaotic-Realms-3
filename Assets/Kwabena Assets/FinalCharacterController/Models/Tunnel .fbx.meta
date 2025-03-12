@@ -1,5 +1,9 @@
 fileFormatVersion: 2
-guid: 25e7bae470757694e8abfc3b5c92a12f
+<<<<<<<< Updated upstream:Assets/Kwabena Assets/FinalCharacterController/Models/Level 43 Remake_009_autosave_autosave.fbx.meta
+guid: 2ba5ec848c8081340b3273dffeaeb135
+========
+guid: bc258bcd253d7f246bd41a1c89c7a56b
+>>>>>>>> Stashed changes:Assets/Kwabena Assets/FinalCharacterController/Models/Tunnel .fbx.meta
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -35,7 +39,7 @@ ModelImporter:
     isReadable: 0
   meshes:
     lODScreenPercentages: []
-    globalScale: 2.5
+    globalScale: 3
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
@@ -90,7 +94,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 2.5
+    globalScale: 3
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
