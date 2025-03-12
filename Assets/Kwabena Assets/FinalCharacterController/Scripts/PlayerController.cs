@@ -302,10 +302,8 @@ namespace Kwabena.FinalCharacterController
         private bool IsGrounded()
         {
             bool grounded = _playerState.InGroundedState() ? IsGroundedWhileGrounded() : IsGroundedWhileAirborne();
-            audioManager.PlaySFX(audioManager.landing);
-            return grounded;
 
-            
+            return grounded;
         }
 
         private bool IsGroundedWhileGrounded()
