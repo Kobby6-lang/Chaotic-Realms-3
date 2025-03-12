@@ -384,7 +384,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   musicSource: {fileID: 469854420}
   SFXSource: {fileID: 1073441237}
-  background: {fileID: 8300000, guid: 42bbe06b797240e4eb1438b9eab878df, type: 3}
+  background: {fileID: 8300000, guid: c9ff0a1bd331f394f9742847251dfb97, type: 3}
   jump: {fileID: 8300000, guid: 3de26a12eb743184e9d1552dd261f827, type: 3}
   death: {fileID: 8300000, guid: f9bb5c13d904fa44c9b9aa5a20bd723a, type: 3}
   slicing: {fileID: 8300000, guid: f0fb35dccf96a8f49affe8aca8a48bf1, type: 3}
