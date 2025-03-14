@@ -28,7 +28,7 @@ namespace Kwabena.FinalCharacterController
 
         private void Awake()
         {
-            _thirdPersonFollow = _virtualCamera.GetCinemachineComponent<Cinemachine3rdPersonFollow>();
+            //_thirdPersonFollow = _virtualCamera.GetCinemachineComponent<Cinemachine3rdPersonFollow>();
         }
         private void OnEnable()
         {
@@ -38,8 +38,8 @@ namespace Kwabena.FinalCharacterController
                 return;
             }
 
-            PlayerInputManager.Instance.PlayerControls.ThirdPersonMap.Enable();
-            PlayerInputManager.Instance.PlayerControls.ThirdPersonMap.SetCallbacks(this);
+            //PlayerInputManager.Instance.PlayerControls.ThirdPersonMap.Enable();
+            //PlayerInputManager.Instance.PlayerControls.ThirdPersonMap.SetCallbacks(this);
         }
 
         private void OnDisable()
@@ -49,8 +49,8 @@ namespace Kwabena.FinalCharacterController
                 Debug.LogError("Player Controls is not initialized - Cannot disable");
                 return;
             }
-            PlayerInputManager.Instance.PlayerControls.ThirdPersonMap.Disable();
-            PlayerInputManager.Instance.PlayerControls.ThirdPersonMap.RemoveCallbacks(this);
+            //PlayerInputManager.Instance.PlayerControls.ThirdPersonMap.Disable();
+            //PlayerInputManager.Instance.PlayerControls.ThirdPersonMap.RemoveCallbacks(this);
         }
         #endregion
 

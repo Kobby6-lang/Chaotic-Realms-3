@@ -248,7 +248,7 @@ namespace Kwabena.FinalCharacterController
             IsRotatingToTarget = _rotatingToTargetTimer > 0;
 
             // ROTATE if we're not idling
-            if (!isIdling)
+            if (true/*!isIdling*/)
             {
                 RotatePlayerToTarget();
             }
@@ -258,7 +258,7 @@ namespace Kwabena.FinalCharacterController
                 UpdateIdleRotation(rotationTolerance);
             }
 
-            _playerCamera.transform.rotation = Quaternion.Euler(_cameraRotation.y, _cameraRotation.x, 0f);
+            //_playerCamera.transform.rotation = Quaternion.Euler(_cameraRotation.y, _cameraRotation.x, 0f);
 
             // Get angle between camera and player
             Vector3 camForwardProjectedXZ = new Vector3(_playerCamera.transform.forward.x, 0f, _playerCamera.transform.forward.z).normalized;
