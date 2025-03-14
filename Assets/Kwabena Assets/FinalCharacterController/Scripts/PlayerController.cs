@@ -83,6 +83,7 @@ namespace Kwabena.FinalCharacterController
             _antiBump = sprintSpeed;
             _stepOffset = _characterController.stepOffset;
             //originalHeight = _characterController.height;
+
         }
         #endregion
 
