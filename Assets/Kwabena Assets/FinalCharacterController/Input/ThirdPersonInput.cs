@@ -57,7 +57,7 @@ namespace Kwabena.FinalCharacterController
         #region Update
         private void Update()
         {
-            _thirdPersonFollow.CameraDistance = Mathf.Clamp(_thirdPersonFollow.CameraDistance + ScrollInput, _cameraMinZoom, _cameraMaxZoom);
+            //_thirdPersonFollow.CameraDistance = Mathf.Clamp(_thirdPersonFollow.CameraDistance + ScrollInput, _cameraMinZoom, _cameraMaxZoom);
         }
 
         private void LateUpdate()
