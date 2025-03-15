@@ -26,8 +26,24 @@ public class RebindUI : MonoBehaviour
     [SerializeField] private TextMeshProUGUI rebindText;
     [SerializeField] private Button resetButton;
 
+
+    private void OnEnable()
+    {
+        rebindButton.onClick.AddListener(() => DoRebind());
+        resetButton.onClick.AddListener(() => ResetBinding());
+
+        if (inputActionReference != null) 
+        {
+            GetBindingInfo();
+            UpdateUI();
+        }
+    }
+
     private void OnValidate()
     {
+        if(inputActionReference != null)
+            return;
+
         GetBindingInfo();
         UpdateUI();
     }
@@ -56,6 +72,16 @@ public class RebindUI : MonoBehaviour
             else
                 rebindText.text = inputActionReference.action.GetBindingDisplayString(bindingIndex);
         }
+    }
+
+    private void DoRebind() 
+    {
+
+    }
+
+    private void ResetBinding()
+    {
+        
     }
 
 }

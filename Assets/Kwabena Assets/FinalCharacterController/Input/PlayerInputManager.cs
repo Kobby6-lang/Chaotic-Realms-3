@@ -1,18 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem; // Required for Input System
 
-namespace Kwabena.FinalCharacterController 
+namespace Kwabena.FinalCharacterController
 {
     [DefaultExecutionOrder(-3)]
     public class PlayerInputManager : MonoBehaviour
     {
         public static PlayerInputManager Instance;
-        public PlayerControls PlayerControls {  get; private set; }
+        public PlayerControls PlayerControls { get; private set; }
 
-        private void Awake() 
+        private void Awake()
         {
-            if (Instance == null && Instance == this) 
+            if (Instance != null && Instance != this)
             {
                 Destroy(gameObject);
                 return;
@@ -22,20 +23,21 @@ namespace Kwabena.FinalCharacterController
             DontDestroyOnLoad(gameObject);
         }
 
-        private void OnEnable() 
+        private void OnEnable()
         {
             PlayerControls = new PlayerControls();
             PlayerControls.Enable();
         }
 
-        private void OnDisable() 
+        private void OnDisable()
         {
-            if(PlayerControls != null) 
+            if (PlayerControls != null)
             {
                 PlayerControls.Disable();
             }
-            
         }
+        
     }
 }
+
 
