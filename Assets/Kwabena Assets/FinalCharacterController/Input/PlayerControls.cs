@@ -73,15 +73,6 @@ namespace Kwabena.FinalCharacterController
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""ToggleCrouch"",
-                    ""type"": ""Button"",
-                    ""id"": ""628b10aa-5fe3-4fbf-b977-5a18771a5e71"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -102,7 +93,7 @@ namespace Kwabena.FinalCharacterController
                     ""path"": ""<Keyboard>/w"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Keyboard"",
+                    ""groups"": """",
                     ""action"": ""Movement"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -113,7 +104,7 @@ namespace Kwabena.FinalCharacterController
                     ""path"": ""<Keyboard>/s"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Keyboard"",
+                    ""groups"": """",
                     ""action"": ""Movement"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -124,7 +115,7 @@ namespace Kwabena.FinalCharacterController
                     ""path"": ""<Keyboard>/a"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Keyboard"",
+                    ""groups"": """",
                     ""action"": ""Movement"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -135,7 +126,7 @@ namespace Kwabena.FinalCharacterController
                     ""path"": ""<Keyboard>/d"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Keyboard"",
+                    ""groups"": """",
                     ""action"": ""Movement"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -157,7 +148,7 @@ namespace Kwabena.FinalCharacterController
                     ""path"": ""<Keyboard>/upArrow"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Keyboard"",
+                    ""groups"": """",
                     ""action"": ""Movement"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -168,7 +159,7 @@ namespace Kwabena.FinalCharacterController
                     ""path"": ""<Keyboard>/downArrow"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Keyboard"",
+                    ""groups"": """",
                     ""action"": ""Movement"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -179,7 +170,7 @@ namespace Kwabena.FinalCharacterController
                     ""path"": ""<Keyboard>/leftArrow"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Keyboard"",
+                    ""groups"": """",
                     ""action"": ""Movement"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -190,7 +181,7 @@ namespace Kwabena.FinalCharacterController
                     ""path"": ""<Keyboard>/rightArrow"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Keyboard"",
+                    ""groups"": """",
                     ""action"": ""Movement"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -201,7 +192,7 @@ namespace Kwabena.FinalCharacterController
                     ""path"": ""<Gamepad>/leftStick"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Gamepad"",
+                    ""groups"": """",
                     ""action"": ""Movement"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -212,7 +203,7 @@ namespace Kwabena.FinalCharacterController
                     ""path"": ""<Mouse>/delta"",
                     ""interactions"": """",
                     ""processors"": ""ScaleVector2(x=0.5,y=0.5)"",
-                    ""groups"": ""Mouse"",
+                    ""groups"": """",
                     ""action"": ""Look"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -223,7 +214,7 @@ namespace Kwabena.FinalCharacterController
                     ""path"": ""<Gamepad>/rightStick"",
                     ""interactions"": """",
                     ""processors"": ""ScaleVector2(x=5,y=5)"",
-                    ""groups"": ""Gamepad"",
+                    ""groups"": """",
                     ""action"": ""Look"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -234,7 +225,7 @@ namespace Kwabena.FinalCharacterController
                     ""path"": ""<Keyboard>/shift"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Keyboard"",
+                    ""groups"": """",
                     ""action"": ""ToggleSprint"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -245,7 +236,7 @@ namespace Kwabena.FinalCharacterController
                     ""path"": ""<Gamepad>/rightTrigger"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Gamepad"",
+                    ""groups"": """",
                     ""action"": ""ToggleSprint"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -256,7 +247,7 @@ namespace Kwabena.FinalCharacterController
                     ""path"": ""<Gamepad>/buttonSouth"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Gamepad"",
+                    ""groups"": """",
                     ""action"": ""Jump"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -267,7 +258,7 @@ namespace Kwabena.FinalCharacterController
                     ""path"": ""<Keyboard>/space"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Gamepad;Keyboard"",
+                    ""groups"": """",
                     ""action"": ""Jump"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -278,7 +269,7 @@ namespace Kwabena.FinalCharacterController
                     ""path"": ""<Gamepad>/buttonEast"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Gamepad"",
+                    ""groups"": """",
                     ""action"": ""ToggleWalk"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -289,30 +280,8 @@ namespace Kwabena.FinalCharacterController
                     ""path"": ""<Keyboard>/ctrl"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Keyboard"",
+                    ""groups"": """",
                     ""action"": ""ToggleWalk"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""78cbfeec-abc5-4e16-8e84-bed7e698d0af"",
-                    ""path"": ""<Gamepad>/buttonWest"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""ToggleCrouch"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""c85876de-0ad8-4760-8462-ed076aad2f49"",
-                    ""path"": ""<Keyboard>/c"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""ToggleCrouch"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -350,7 +319,7 @@ namespace Kwabena.FinalCharacterController
                     ""path"": ""<Mouse>/scroll/up"",
                     ""interactions"": """",
                     ""processors"": ""Scale(factor=0.01)"",
-                    ""groups"": ""Mouse"",
+                    ""groups"": """",
                     ""action"": ""ScrollCamera"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -361,7 +330,7 @@ namespace Kwabena.FinalCharacterController
                     ""path"": ""<Mouse>/scroll/down"",
                     ""interactions"": """",
                     ""processors"": ""Scale(factor=0.01)"",
-                    ""groups"": ""Mouse"",
+                    ""groups"": """",
                     ""action"": ""ScrollCamera"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -383,7 +352,7 @@ namespace Kwabena.FinalCharacterController
                     ""path"": ""<Gamepad>/leftShoulder"",
                     ""interactions"": """",
                     ""processors"": ""Scale(factor=5)"",
-                    ""groups"": ""Gamepad"",
+                    ""groups"": """",
                     ""action"": ""ScrollCamera"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -394,7 +363,7 @@ namespace Kwabena.FinalCharacterController
                     ""path"": ""<Gamepad>/rightShoulder"",
                     ""interactions"": """",
                     ""processors"": ""Scale(factor=5)"",
-                    ""groups"": ""Gamepad"",
+                    ""groups"": """",
                     ""action"": ""ScrollCamera"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -402,41 +371,7 @@ namespace Kwabena.FinalCharacterController
             ]
         }
     ],
-    ""controlSchemes"": [
-        {
-            ""name"": ""Keyboard"",
-            ""bindingGroup"": ""Keyboard"",
-            ""devices"": [
-                {
-                    ""devicePath"": ""<Keyboard>"",
-                    ""isOptional"": true,
-                    ""isOR"": false
-                }
-            ]
-        },
-        {
-            ""name"": ""Gamepad"",
-            ""bindingGroup"": ""Gamepad"",
-            ""devices"": [
-                {
-                    ""devicePath"": ""<Gamepad>"",
-                    ""isOptional"": true,
-                    ""isOR"": false
-                }
-            ]
-        },
-        {
-            ""name"": ""Mouse"",
-            ""bindingGroup"": ""Mouse"",
-            ""devices"": [
-                {
-                    ""devicePath"": ""<Mouse>"",
-                    ""isOptional"": true,
-                    ""isOR"": false
-                }
-            ]
-        }
-    ]
+    ""controlSchemes"": []
 }");
             // PlayerLocomotionMap
             m_PlayerLocomotionMap = asset.FindActionMap("PlayerLocomotionMap", throwIfNotFound: true);
@@ -445,7 +380,6 @@ namespace Kwabena.FinalCharacterController
             m_PlayerLocomotionMap_ToggleSprint = m_PlayerLocomotionMap.FindAction("ToggleSprint", throwIfNotFound: true);
             m_PlayerLocomotionMap_Jump = m_PlayerLocomotionMap.FindAction("Jump", throwIfNotFound: true);
             m_PlayerLocomotionMap_ToggleWalk = m_PlayerLocomotionMap.FindAction("ToggleWalk", throwIfNotFound: true);
-            m_PlayerLocomotionMap_ToggleCrouch = m_PlayerLocomotionMap.FindAction("ToggleCrouch", throwIfNotFound: true);
             // ThirdPersonMap
             m_ThirdPersonMap = asset.FindActionMap("ThirdPersonMap", throwIfNotFound: true);
             m_ThirdPersonMap_ScrollCamera = m_ThirdPersonMap.FindAction("ScrollCamera", throwIfNotFound: true);
@@ -515,7 +449,6 @@ namespace Kwabena.FinalCharacterController
         private readonly InputAction m_PlayerLocomotionMap_ToggleSprint;
         private readonly InputAction m_PlayerLocomotionMap_Jump;
         private readonly InputAction m_PlayerLocomotionMap_ToggleWalk;
-        private readonly InputAction m_PlayerLocomotionMap_ToggleCrouch;
         public struct PlayerLocomotionMapActions
         {
             private @PlayerControls m_Wrapper;
@@ -525,7 +458,6 @@ namespace Kwabena.FinalCharacterController
             public InputAction @ToggleSprint => m_Wrapper.m_PlayerLocomotionMap_ToggleSprint;
             public InputAction @Jump => m_Wrapper.m_PlayerLocomotionMap_Jump;
             public InputAction @ToggleWalk => m_Wrapper.m_PlayerLocomotionMap_ToggleWalk;
-            public InputAction @ToggleCrouch => m_Wrapper.m_PlayerLocomotionMap_ToggleCrouch;
             public InputActionMap Get() { return m_Wrapper.m_PlayerLocomotionMap; }
             public void Enable() { Get().Enable(); }
             public void Disable() { Get().Disable(); }
@@ -550,9 +482,6 @@ namespace Kwabena.FinalCharacterController
                 @ToggleWalk.started += instance.OnToggleWalk;
                 @ToggleWalk.performed += instance.OnToggleWalk;
                 @ToggleWalk.canceled += instance.OnToggleWalk;
-                @ToggleCrouch.started += instance.OnToggleCrouch;
-                @ToggleCrouch.performed += instance.OnToggleCrouch;
-                @ToggleCrouch.canceled += instance.OnToggleCrouch;
             }
 
             private void UnregisterCallbacks(IPlayerLocomotionMapActions instance)
@@ -572,9 +501,6 @@ namespace Kwabena.FinalCharacterController
                 @ToggleWalk.started -= instance.OnToggleWalk;
                 @ToggleWalk.performed -= instance.OnToggleWalk;
                 @ToggleWalk.canceled -= instance.OnToggleWalk;
-                @ToggleCrouch.started -= instance.OnToggleCrouch;
-                @ToggleCrouch.performed -= instance.OnToggleCrouch;
-                @ToggleCrouch.canceled -= instance.OnToggleCrouch;
             }
 
             public void RemoveCallbacks(IPlayerLocomotionMapActions instance)
@@ -638,33 +564,6 @@ namespace Kwabena.FinalCharacterController
             }
         }
         public ThirdPersonMapActions @ThirdPersonMap => new ThirdPersonMapActions(this);
-        private int m_KeyboardSchemeIndex = -1;
-        public InputControlScheme KeyboardScheme
-        {
-            get
-            {
-                if (m_KeyboardSchemeIndex == -1) m_KeyboardSchemeIndex = asset.FindControlSchemeIndex("Keyboard");
-                return asset.controlSchemes[m_KeyboardSchemeIndex];
-            }
-        }
-        private int m_GamepadSchemeIndex = -1;
-        public InputControlScheme GamepadScheme
-        {
-            get
-            {
-                if (m_GamepadSchemeIndex == -1) m_GamepadSchemeIndex = asset.FindControlSchemeIndex("Gamepad");
-                return asset.controlSchemes[m_GamepadSchemeIndex];
-            }
-        }
-        private int m_MouseSchemeIndex = -1;
-        public InputControlScheme MouseScheme
-        {
-            get
-            {
-                if (m_MouseSchemeIndex == -1) m_MouseSchemeIndex = asset.FindControlSchemeIndex("Mouse");
-                return asset.controlSchemes[m_MouseSchemeIndex];
-            }
-        }
         public interface IPlayerLocomotionMapActions
         {
             void OnMovement(InputAction.CallbackContext context);
@@ -672,7 +571,6 @@ namespace Kwabena.FinalCharacterController
             void OnToggleSprint(InputAction.CallbackContext context);
             void OnJump(InputAction.CallbackContext context);
             void OnToggleWalk(InputAction.CallbackContext context);
-            void OnToggleCrouch(InputAction.CallbackContext context);
         }
         public interface IThirdPersonMapActions
         {

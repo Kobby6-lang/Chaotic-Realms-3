@@ -253,7 +253,7 @@ namespace Kwabena.FinalCharacterController
                 RotatePlayerToTarget();
             }
             // If rotation mismatch not within tolerance, or rotate to target is active, ROTATE
-            else if (Mathf.Abs(RotationMismatch) > rotationTolerance || IsRotatingToTarget)
+            //else if (Mathf.Abs(RotationMismatch) > rotationTolerance || IsRotatingToTarget)
             {
                 UpdateIdleRotation(rotationTolerance);
             }
