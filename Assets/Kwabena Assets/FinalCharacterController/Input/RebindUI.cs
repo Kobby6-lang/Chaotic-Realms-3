@@ -5,56 +5,75 @@ using UnityEngine.InputSystem;
 using UnityEngine.UI;
 using TMPro;
 
-public class RebindUI : MonoBehaviour
-{
-    [SerializeField] private InputActionReference inputActionReference;
 
-    [SerializeField] private bool excludeMouse = true;
+public class ReBindUI : MonoBehaviour
+{
+    [SerializeField]
+    private InputActionReference inputActionReference; //this is on the SO
+
+    [SerializeField]
+    private bool excludeMouse = true;
     [Range(0, 10)]
-    [SerializeField] private int selectedBinding;
-    [SerializeField] private InputBinding.DisplayStringOptions displayStringOptions;
+    [SerializeField]
+    private int selectedBinding;
+    [SerializeField]
+    private InputBinding.DisplayStringOptions displayStringOptions;
     [Header("Binding Info - DO NOT EDIT")]
-    [SerializeField] private InputBinding InputBinding;
+    [SerializeField]
+    private InputBinding inputBinding;
     private int bindingIndex;
 
     private string actionName;
 
     [Header("UI Fields")]
     [SerializeField]
-    private TextMeshProUGUI actionText;
-    [SerializeField] private Button rebindButton;
-    [SerializeField] private TextMeshProUGUI rebindText;
-    [SerializeField] private Button resetButton;
-
+    private Text actionText;
+    [SerializeField]
+    private Button rebindButton;
+    [SerializeField]
+    private Text rebindText;
+    [SerializeField]
+    private Button resetButton;
 
     private void OnEnable()
     {
         rebindButton.onClick.AddListener(() => DoRebind());
         resetButton.onClick.AddListener(() => ResetBinding());
 
-        if (inputActionReference != null) 
+        if(inputActionReference != null)
         {
+            InputManager.LoadBindingOverride(actionName);
             GetBindingInfo();
             UpdateUI();
         }
+
+        InputManager.rebindComplete += UpdateUI;
+        InputManager.rebindCanceled += UpdateUI;
+    }
+
+    private void OnDisable()
+    {
+        InputManager.rebindComplete -= UpdateUI;
+        InputManager.rebindCanceled -= UpdateUI;
     }
 
     private void OnValidate()
     {
-        if(inputActionReference != null)
-            return;
+        if (inputActionReference == null)
+            return; 
 
         GetBindingInfo();
         UpdateUI();
     }
 
-    private void GetBindingInfo() 
+    private void GetBindingInfo()
     {
         if (inputActionReference.action != null)
-             actionName = inputActionReference.action.name;
-        if (inputActionReference.action.bindings.Count > selectedBinding) 
+            actionName = inputActionReference.action.name;
+
+        if(inputActionReference.action.bindings.Count > selectedBinding)
         {
-           InputBinding = inputActionReference.action.bindings[selectedBinding];
+            inputBinding = inputActionReference.action.bindings[selectedBinding];
             bindingIndex = selectedBinding;
         }
     }
@@ -63,25 +82,26 @@ public class RebindUI : MonoBehaviour
     {
         if (actionText != null)
             actionText.text = actionName;
-        if (rebindText != null)
+
+        if(rebindText != null)
         {
             if (Application.isPlaying)
             {
-                // grab info from Input Manager
+                rebindText.text = InputManager.GetBindingName(actionName, bindingIndex);
             }
             else
                 rebindText.text = inputActionReference.action.GetBindingDisplayString(bindingIndex);
         }
     }
 
-    private void DoRebind() 
+    private void DoRebind()
     {
-
+        InputManager.StartRebind(actionName, bindingIndex, rebindText, excludeMouse);
     }
 
     private void ResetBinding()
     {
-        
+        InputManager.ResetBinding(actionName, bindingIndex);
+        UpdateUI();
     }
-
 }

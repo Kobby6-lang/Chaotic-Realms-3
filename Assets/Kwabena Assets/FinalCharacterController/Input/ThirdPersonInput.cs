@@ -20,8 +20,6 @@ namespace Kwabena.FinalCharacterController
         [SerializeField] private float _cameraMinZoom = 1f;
         [SerializeField] private float _cameraMaxZoom = 5f;
 
-        private Cinemachine3rdPersonFollow _thirdPersonFollow;
-
         #endregion
 
         #region Startup
