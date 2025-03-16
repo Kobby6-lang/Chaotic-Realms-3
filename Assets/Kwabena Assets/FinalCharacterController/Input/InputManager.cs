@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 using System;
+using Kwabena.FinalCharacterController;
 
 namespace Kwabena.FinalCharacterController 
 {
