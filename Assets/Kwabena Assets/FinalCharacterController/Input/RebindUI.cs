@@ -1,12 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 using TMPro;
-using Kwabena.FinalCharacterController;
 
-namespace Kwabena.FinalCharacterController 
+namespace Kwabena.FinalCharacterController
 {
     public class ReBindUI : MonoBehaviour
     {
