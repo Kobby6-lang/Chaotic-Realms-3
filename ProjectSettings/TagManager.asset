@@ -8,6 +8,8 @@ TagManager:
   - FallTrigger
   - Audio
   - Trap
+  - TrapDoor
+  - Hazard
   layers:
   - Default
   - TransparentFX
