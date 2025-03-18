@@ -103,12 +103,11 @@ namespace Kwabena.FinalCharacterController
             bool canRun = CanRun();
             bool isMovementInput = _playerLocomotionInput.MovementInput != Vector2.zero;             //order
             bool isMovingLaterally = IsMovingLaterally();                                            //matters
-            bool isSprinting = _playerLocomotionInput.SprintToggledOn && isMovingLaterally;          //order
-            bool isWalking = isMovingLaterally && (!canRun || _playerLocomotionInput.WalkToggledOn); //matters
+            //bool isSprinting = _playerLocomotionInput.SprintToggledOn && isMovingLaterally;          //order
+            //bool isWalking = isMovingLaterally && (!canRun || _playerLocomotionInput.WalkToggledOn); //matters
             bool isGrounded = IsGrounded();
 
-            PlayerMovementState lateralState = isWalking ? PlayerMovementState.Walking :
-                                               isSprinting ? PlayerMovementState.Sprinting :
+            PlayerMovementState lateralState =  
                                                isMovingLaterally || isMovementInput ? PlayerMovementState.Running : PlayerMovementState.Idling;
 
             _playerState.SetPlayerMovementState(lateralState);
@@ -194,26 +193,7 @@ namespace Kwabena.FinalCharacterController
             _characterController.Move(newVelocity * Time.deltaTime);
         }
 
-        ////private void HandleCrouchInput()
-        //{
-        //    bool crouch = _playerLocomotionInput.CrouchToggledOn;
-        //    if (crouch != isCrouching) {
-        //        ToggleCrouch();
-        //    }
-        //}
-
-        //private void ToggleCrouch()
-        //{
-        //    Debug.Log("Toggle crouch");
-        //    isCrouching = !isCrouching;
-        //    var characterController = GetComponent<CharacterController>();
-        //    characterController.height = isCrouching ? crouchHeight : originalHeight;
-        //    characterController.center = Vector3.up * characterController.height * 0.5f;
-
-        //    // Update Animator
-        //    Animator animator = GetComponent<Animator>();
-        //    animator.SetBool(isCrouchingHash, isCrouching);
-        //}
+ 
         #endregion
 
         #region HandleSteep Walls

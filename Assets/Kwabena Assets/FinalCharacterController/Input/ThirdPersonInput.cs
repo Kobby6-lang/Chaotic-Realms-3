@@ -17,8 +17,6 @@ namespace Kwabena.FinalCharacterController
 
         [SerializeField] private CinemachineVirtualCamera _virtualCamera;
         [SerializeField] private float _cameraZoomSpeed = 0.2f;
-        [SerializeField] private float _cameraMinZoom = 1f;
-        [SerializeField] private float _cameraMaxZoom = 5f;
 
         #endregion
 

@@ -24,27 +24,9 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "ToggleSprint",
-                    "type": "Button",
-                    "id": "26f076e1-6600-499b-be76-d8e00fce186f",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
                     "name": "Jump",
                     "type": "Button",
                     "id": "6288fd7d-84f3-47ec-8125-f857073b3edd",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "ToggleWalk",
-                    "type": "Button",
-                    "id": "a9b4e835-5351-426f-9c91-4637ccd9b65b",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -197,28 +179,6 @@
                 },
                 {
                     "name": "",
-                    "id": "d9ae697b-2f43-49aa-856d-aff5c2fc5883",
-                    "path": "<Keyboard>/shift",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "ToggleSprint",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "6d94e00f-bde4-4f21-abd6-1b19a7105928",
-                    "path": "<Gamepad>/rightTrigger",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "ToggleSprint",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "5db45b58-554e-4376-b17b-9e138d37ef64",
                     "path": "<Gamepad>/buttonSouth",
                     "interactions": "",
@@ -236,28 +196,6 @@
                     "processors": "",
                     "groups": "",
                     "action": "Jump",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "1eda5725-2de6-4fac-89d5-8bcd979dca38",
-                    "path": "<Gamepad>/buttonEast",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "ToggleWalk",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "dcf1c582-79db-4d45-8756-bcb3569a5197",
-                    "path": "<Keyboard>/ctrl",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "ToggleWalk",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

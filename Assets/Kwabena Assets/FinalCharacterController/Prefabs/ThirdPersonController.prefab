@@ -2646,6 +2646,7 @@ GameObject:
   - component: {fileID: 412843715707566737}
   - component: {fileID: 8007937728106949819}
   - component: {fileID: 7516317272183158810}
+  - component: {fileID: 2445070906007677426}
   m_Layer: 6
   m_Name: ThirdPersonController
   m_TagString: Player
@@ -2735,14 +2736,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _characterController: {fileID: 1459228644294326337}
   _playerCamera: {fileID: 3822927564161998416}
-  walkAcceleration: 25
-  walkSpeed: 2
+  walkAcceleration: 0
+  walkSpeed: 0
   runAcceleration: 35
   runSpeed: 10
-  sprintAcceleration: 50
-  sprintSpeed: 7
+  sprintAcceleration: 0
+  sprintSpeed: 0
   inAirAcceleration: 25
-  drag: 24
+  drag: 30
   inAirDrag: 7.5
   gravity: 25
   terminalVelocity: 50
@@ -2750,9 +2751,9 @@ MonoBehaviour:
   movingThreshold: 0.01
   playerModelRotationSpeed: 10
   rotateToTargetTime: 0.68
-  lookSenseH: 0.25
-  lookSenseV: 0.25
-  lookLimitV: 89
+  lookSenseH: 0.2
+  lookSenseV: 0.2
+  lookLimitV: 70
   _groundLayers:
     serializedVersion: 2
     m_Bits: 1
@@ -2768,7 +2769,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 490eb3a69b8a8cf4b8d8cf676effd1b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  holdToSprint: 0
 --- !u!114 &3391622028761012007
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2809,9 +2809,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _virtualCamera: {fileID: 0}
-  _cameraZoomSpeed: 0.2
-  _cameraMinZoom: 1
-  _cameraMaxZoom: 5
+  _cameraZoomSpeed: 0.1
 --- !u!114 &7516317272183158810
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2825,6 +2823,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   respawnPoint: {fileID: 0}
+--- !u!114 &2445070906007677426
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4389807745426357149}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e2f98460ba00134091f5c46ec4d841b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  respawnPoint: {fileID: 0}
+  deathAnimation: {fileID: 0}
+  resetLevel: 0
 --- !u!1 &4447334899436784638
 GameObject:
   m_ObjectHideFlags: 0
@@ -4377,7 +4390,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2489236537803590186}
   - component: {fileID: 3822927564161998416}
-  - component: {fileID: 1856048055645400407}
   - component: {fileID: 2970230055649097046}
   m_Layer: 6
   m_Name: DummyCamera
@@ -4454,14 +4466,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!81 &1856048055645400407
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6031866397155370899}
-  m_Enabled: 0
 --- !u!114 &2970230055649097046
 MonoBehaviour:
   m_ObjectHideFlags: 0

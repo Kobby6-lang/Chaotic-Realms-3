@@ -22,9 +22,8 @@ namespace Kwabena.FinalCharacterController
         {
             return movementState == PlayerMovementState.Idling ||
                    movementState == PlayerMovementState.Walking ||
-                   movementState == PlayerMovementState.Running ||
-                   movementState == PlayerMovementState.Sprinting ||
-                   movementState == PlayerMovementState.Crouching;
+                   movementState == PlayerMovementState.Running;
+               
         }
     }
     public enum PlayerMovementState
@@ -32,11 +31,10 @@ namespace Kwabena.FinalCharacterController
         Idling = 0,
         Walking = 1,
         Running = 2,
-        Sprinting = 3,
-        Jumping = 4,
-        Falling = 5,
-        Strafing = 6,
-        Crouching = 7,
+        Jumping = 3,
+        Falling = 4,
+        Strafing = 5,
+        Sprinting = 6,
     }
 }
 
