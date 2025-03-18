@@ -2836,8 +2836,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   respawnPoint: {fileID: 0}
-  deathAnimation: {fileID: 0}
-  resetLevel: 0
 --- !u!1 &4447334899436784638
 GameObject:
   m_ObjectHideFlags: 0
@@ -6517,7 +6515,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: BlobShadow
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2818022756770980431, guid: 137448fd05379ad46b682d864dc97a1d, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -6596,7 +6595,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: BlobShadow
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2818022756770980431, guid: 137448fd05379ad46b682d864dc97a1d, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
