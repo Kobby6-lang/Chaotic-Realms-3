@@ -23,7 +23,6 @@ namespace Kwabena.FinalCharacterController
         private static int isJumpingHash = Animator.StringToHash("isJumping");
         private static int isRotatingToTargetHash = Animator.StringToHash("isRotatingToTarget");
         private static int rotationMismatchHash = Animator.StringToHash("rotationMismatch");
-        private static int isCrouchingHash = Animator.StringToHash("isCrouching");
 
         private Vector3 _currentBlendInput = Vector3.zero;
         private float _sprintMaxBlendValue = 1.5f;
@@ -64,7 +63,6 @@ namespace Kwabena.FinalCharacterController
             _animator.SetBool(isFallingHash, isFalling);
             _animator.SetBool(isJumpingHash, isJumping);
             _animator.SetBool(isRotatingToTargetHash, _playerController.IsRotatingToTarget);
-            //_animator.SetBool(isCrouchingHash, isCrouching);
 
             _animator.SetFloat(inputXHash, _currentBlendInput.x);
             _animator.SetFloat(inputYHash, _currentBlendInput.y);
@@ -73,5 +71,3 @@ namespace Kwabena.FinalCharacterController
         }
     }
 }
-
-

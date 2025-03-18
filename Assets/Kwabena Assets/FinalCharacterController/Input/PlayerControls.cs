@@ -55,6 +55,24 @@ namespace Kwabena.FinalCharacterController
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ToggleWalk"",
+                    ""type"": ""Button"",
+                    ""id"": ""ab5b0fad-9e23-470e-a010-28f0c69e7242"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ToggleSprint"",
+                    ""type"": ""Button"",
+                    ""id"": ""844bdd79-7884-43c5-8f65-8e881cc58cc5"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -222,6 +240,50 @@ namespace Kwabena.FinalCharacterController
                     ""action"": ""Jump"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""bbb80e32-f930-4556-9706-c1683b4a8c7a"",
+                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ToggleWalk"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""85e2d029-2ba3-4e0c-8c60-7acf7e2d6dba"",
+                    ""path"": ""<Keyboard>/ctrl"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ToggleWalk"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""5a467ee8-080a-4304-8f51-983a1e09a848"",
+                    ""path"": ""<Keyboard>/shift"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ToggleSprint"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ecdaed6e-d574-4997-823b-c7206cab514a"",
+                    ""path"": ""<Gamepad>/rightTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ToggleSprint"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -316,6 +378,8 @@ namespace Kwabena.FinalCharacterController
             m_PlayerLocomotionMap_Movement = m_PlayerLocomotionMap.FindAction("Movement", throwIfNotFound: true);
             m_PlayerLocomotionMap_Look = m_PlayerLocomotionMap.FindAction("Look", throwIfNotFound: true);
             m_PlayerLocomotionMap_Jump = m_PlayerLocomotionMap.FindAction("Jump", throwIfNotFound: true);
+            m_PlayerLocomotionMap_ToggleWalk = m_PlayerLocomotionMap.FindAction("ToggleWalk", throwIfNotFound: true);
+            m_PlayerLocomotionMap_ToggleSprint = m_PlayerLocomotionMap.FindAction("ToggleSprint", throwIfNotFound: true);
             // ThirdPersonMap
             m_ThirdPersonMap = asset.FindActionMap("ThirdPersonMap", throwIfNotFound: true);
             m_ThirdPersonMap_ScrollCamera = m_ThirdPersonMap.FindAction("ScrollCamera", throwIfNotFound: true);
@@ -383,6 +447,8 @@ namespace Kwabena.FinalCharacterController
         private readonly InputAction m_PlayerLocomotionMap_Movement;
         private readonly InputAction m_PlayerLocomotionMap_Look;
         private readonly InputAction m_PlayerLocomotionMap_Jump;
+        private readonly InputAction m_PlayerLocomotionMap_ToggleWalk;
+        private readonly InputAction m_PlayerLocomotionMap_ToggleSprint;
         public struct PlayerLocomotionMapActions
         {
             private @PlayerControls m_Wrapper;
@@ -390,6 +456,8 @@ namespace Kwabena.FinalCharacterController
             public InputAction @Movement => m_Wrapper.m_PlayerLocomotionMap_Movement;
             public InputAction @Look => m_Wrapper.m_PlayerLocomotionMap_Look;
             public InputAction @Jump => m_Wrapper.m_PlayerLocomotionMap_Jump;
+            public InputAction @ToggleWalk => m_Wrapper.m_PlayerLocomotionMap_ToggleWalk;
+            public InputAction @ToggleSprint => m_Wrapper.m_PlayerLocomotionMap_ToggleSprint;
             public InputActionMap Get() { return m_Wrapper.m_PlayerLocomotionMap; }
             public void Enable() { Get().Enable(); }
             public void Disable() { Get().Disable(); }
@@ -408,6 +476,12 @@ namespace Kwabena.FinalCharacterController
                 @Jump.started += instance.OnJump;
                 @Jump.performed += instance.OnJump;
                 @Jump.canceled += instance.OnJump;
+                @ToggleWalk.started += instance.OnToggleWalk;
+                @ToggleWalk.performed += instance.OnToggleWalk;
+                @ToggleWalk.canceled += instance.OnToggleWalk;
+                @ToggleSprint.started += instance.OnToggleSprint;
+                @ToggleSprint.performed += instance.OnToggleSprint;
+                @ToggleSprint.canceled += instance.OnToggleSprint;
             }
 
             private void UnregisterCallbacks(IPlayerLocomotionMapActions instance)
@@ -421,6 +495,12 @@ namespace Kwabena.FinalCharacterController
                 @Jump.started -= instance.OnJump;
                 @Jump.performed -= instance.OnJump;
                 @Jump.canceled -= instance.OnJump;
+                @ToggleWalk.started -= instance.OnToggleWalk;
+                @ToggleWalk.performed -= instance.OnToggleWalk;
+                @ToggleWalk.canceled -= instance.OnToggleWalk;
+                @ToggleSprint.started -= instance.OnToggleSprint;
+                @ToggleSprint.performed -= instance.OnToggleSprint;
+                @ToggleSprint.canceled -= instance.OnToggleSprint;
             }
 
             public void RemoveCallbacks(IPlayerLocomotionMapActions instance)
@@ -489,6 +569,8 @@ namespace Kwabena.FinalCharacterController
             void OnMovement(InputAction.CallbackContext context);
             void OnLook(InputAction.CallbackContext context);
             void OnJump(InputAction.CallbackContext context);
+            void OnToggleWalk(InputAction.CallbackContext context);
+            void OnToggleSprint(InputAction.CallbackContext context);
         }
         public interface IThirdPersonMapActions
         {
