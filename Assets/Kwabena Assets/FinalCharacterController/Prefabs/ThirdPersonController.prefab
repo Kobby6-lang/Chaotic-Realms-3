@@ -2640,12 +2640,12 @@ GameObject:
   - component: {fileID: 321673858646865718}
   - component: {fileID: 8066352358851958603}
   - component: {fileID: 1459228644294326337}
-  - component: {fileID: 2445070906007677426}
   - component: {fileID: 3537141761879057930}
   - component: {fileID: 3833562913010806829}
   - component: {fileID: 294863335071667802}
   - component: {fileID: 3551161665307689764}
   - component: {fileID: 8686433385683614057}
+  - component: {fileID: 2445070906007677426}
   m_Layer: 6
   m_Name: ThirdPersonController
   m_TagString: Player
@@ -2719,19 +2719,6 @@ CharacterController:
   m_SkinWidth: 0.01
   m_MinMoveDistance: 0.00001
   m_Center: {x: 0, y: 1, z: 0}
---- !u!114 &2445070906007677426
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4389807745426357149}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0e2f98460ba00134091f5c46ec4d841b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  respawnPoint: {fileID: 0}
 --- !u!114 &3537141761879057930
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2744,8 +2731,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19bdf25b8aaee6f4eb5183b1290dacea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _characterController: {fileID: 0}
-  _playerCamera: {fileID: 0}
+  _characterController: {fileID: 1459228644294326337}
+  _playerCamera: {fileID: 3822927564161998416}
   walkAcceleration: 25
   walkSpeed: 2
   runAcceleration: 35
@@ -2766,7 +2753,7 @@ MonoBehaviour:
   lookLimitV: 89
   _groundLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 1
 --- !u!114 &3833562913010806829
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2821,6 +2808,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   holdToSprint: 0
+--- !u!114 &2445070906007677426
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4389807745426357149}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e2f98460ba00134091f5c46ec4d841b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  respawnPoint: {fileID: 0}
 --- !u!1 &4447334899436784638
 GameObject:
   m_ObjectHideFlags: 0
