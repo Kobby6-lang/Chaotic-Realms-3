@@ -807,6 +807,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tunnel With Holes 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7339356831882890532, guid: 1c0d1ecbd2ed2df4c82c05a1ef7c36c6,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: c37846ac7ac095e4386dbfcf352d606f, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
