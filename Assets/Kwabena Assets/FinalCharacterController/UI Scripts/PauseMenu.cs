@@ -72,5 +72,8 @@ public class PauseMenu : MonoBehaviour
     public void MainMenuButton() 
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+        Time.timeScale = 1;
+        pauseUI.SetActive(false);
+        isPaused = false;
     }
 }
