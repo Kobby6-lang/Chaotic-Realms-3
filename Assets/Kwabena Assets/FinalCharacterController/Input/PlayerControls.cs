@@ -369,6 +369,45 @@ namespace Kwabena.FinalCharacterController
                     ""isPartOfComposite"": true
                 }
             ]
+        },
+        {
+            ""name"": ""PauseMenu"",
+            ""id"": ""5f58c834-f97a-459a-a7ab-70364ad2dee4"",
+            ""actions"": [
+                {
+                    ""name"": ""Pause"",
+                    ""type"": ""Button"",
+                    ""id"": ""9049f667-ae3e-4e45-ae5d-f4aee48220ea"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""0d66c470-d265-477a-848c-f7192eea92e8"",
+                    ""path"": ""<Keyboard>/p"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2d5e0109-f5de-4606-a3b2-c9ea7f517643"",
+                    ""path"": ""<Gamepad>/start"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": []
@@ -383,6 +422,9 @@ namespace Kwabena.FinalCharacterController
             // ThirdPersonMap
             m_ThirdPersonMap = asset.FindActionMap("ThirdPersonMap", throwIfNotFound: true);
             m_ThirdPersonMap_ScrollCamera = m_ThirdPersonMap.FindAction("ScrollCamera", throwIfNotFound: true);
+            // PauseMenu
+            m_PauseMenu = asset.FindActionMap("PauseMenu", throwIfNotFound: true);
+            m_PauseMenu_Pause = m_PauseMenu.FindAction("Pause", throwIfNotFound: true);
         }
 
         public void Dispose()
@@ -564,6 +606,52 @@ namespace Kwabena.FinalCharacterController
             }
         }
         public ThirdPersonMapActions @ThirdPersonMap => new ThirdPersonMapActions(this);
+
+        // PauseMenu
+        private readonly InputActionMap m_PauseMenu;
+        private List<IPauseMenuActions> m_PauseMenuActionsCallbackInterfaces = new List<IPauseMenuActions>();
+        private readonly InputAction m_PauseMenu_Pause;
+        public struct PauseMenuActions
+        {
+            private @PlayerControls m_Wrapper;
+            public PauseMenuActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
+            public InputAction @Pause => m_Wrapper.m_PauseMenu_Pause;
+            public InputActionMap Get() { return m_Wrapper.m_PauseMenu; }
+            public void Enable() { Get().Enable(); }
+            public void Disable() { Get().Disable(); }
+            public bool enabled => Get().enabled;
+            public static implicit operator InputActionMap(PauseMenuActions set) { return set.Get(); }
+            public void AddCallbacks(IPauseMenuActions instance)
+            {
+                if (instance == null || m_Wrapper.m_PauseMenuActionsCallbackInterfaces.Contains(instance)) return;
+                m_Wrapper.m_PauseMenuActionsCallbackInterfaces.Add(instance);
+                @Pause.started += instance.OnPause;
+                @Pause.performed += instance.OnPause;
+                @Pause.canceled += instance.OnPause;
+            }
+
+            private void UnregisterCallbacks(IPauseMenuActions instance)
+            {
+                @Pause.started -= instance.OnPause;
+                @Pause.performed -= instance.OnPause;
+                @Pause.canceled -= instance.OnPause;
+            }
+
+            public void RemoveCallbacks(IPauseMenuActions instance)
+            {
+                if (m_Wrapper.m_PauseMenuActionsCallbackInterfaces.Remove(instance))
+                    UnregisterCallbacks(instance);
+            }
+
+            public void SetCallbacks(IPauseMenuActions instance)
+            {
+                foreach (var item in m_Wrapper.m_PauseMenuActionsCallbackInterfaces)
+                    UnregisterCallbacks(item);
+                m_Wrapper.m_PauseMenuActionsCallbackInterfaces.Clear();
+                AddCallbacks(instance);
+            }
+        }
+        public PauseMenuActions @PauseMenu => new PauseMenuActions(this);
         public interface IPlayerLocomotionMapActions
         {
             void OnMovement(InputAction.CallbackContext context);
@@ -575,6 +663,10 @@ namespace Kwabena.FinalCharacterController
         public interface IThirdPersonMapActions
         {
             void OnScrollCamera(InputAction.CallbackContext context);
+        }
+        public interface IPauseMenuActions
+        {
+            void OnPause(InputAction.CallbackContext context);
         }
     }
 }
