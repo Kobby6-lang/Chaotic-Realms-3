@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class ProjectileSpawner : MonoBehaviour
+public class ProjectileSpawnReverse : MonoBehaviour
 {
     public GameObject projectilePrefab; // Assign your projectile prefab here
     public Transform spawnPoint; // Assign the spawn point here
@@ -19,20 +19,14 @@ public class ProjectileSpawner : MonoBehaviour
         // Calculate the position at the tip of the spawn point
         Vector3 tipPosition = spawnPoint.position + spawnPoint.forward * spawnOffset;
 
-        // Instantiate the projectile without overriding its original transform
-        GameObject projectile = Instantiate(projectilePrefab);
+        // Instantiate the projectile at the tip position
+        GameObject projectile = Instantiate(projectilePrefab, tipPosition, spawnPoint.rotation);
 
-        // Retain the projectile's original transform, but set its position at the spawn point tip
-        projectile.transform.position = tipPosition;
-
-        // Optionally, rotate the projectile to face the same direction as the spawn point
-        projectile.transform.rotation = projectilePrefab.transform.rotation; // Keeps original rotation
-
-        // Apply forward velocity if Rigidbody is attached
+        // Apply backward velocity if Rigidbody is attached
         Rigidbody rb = projectile.GetComponent<Rigidbody>();
         if (rb != null)
         {
-            rb.velocity = spawnPoint.forward * projectileSpeed; // Ensures it moves straight forward
+            rb.velocity = -spawnPoint.forward * projectileSpeed; // Moves backward
         }
 
         // Destroy the projectile after 3 seconds to clean up
