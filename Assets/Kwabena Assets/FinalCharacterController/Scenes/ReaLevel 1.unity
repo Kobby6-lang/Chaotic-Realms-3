@@ -5612,10 +5612,25 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 288333566}
     m_Modifications:
+    - target: {fileID: 1017874029992707402, guid: b26881f715e7038468e9897d503ac24d,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -2114
+      objectReference: {fileID: 0}
     - target: {fileID: 1518996704030814819, guid: b26881f715e7038468e9897d503ac24d,
         type: 3}
       propertyPath: m_Name
       value: ControlsMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 1518996704030814819, guid: b26881f715e7038468e9897d503ac24d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2585520307861105685, guid: b26881f715e7038468e9897d503ac24d,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -2084
       objectReference: {fileID: 0}
     - target: {fileID: 3266014383392237531, guid: b26881f715e7038468e9897d503ac24d,
         type: 3}
@@ -5632,6 +5647,11 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgument
       value: 
       objectReference: {fileID: 1230195697}
+    - target: {fileID: 3872767705352343956, guid: b26881f715e7038468e9897d503ac24d,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 5059388612211723168, guid: b26881f715e7038468e9897d503ac24d,
         type: 3}
       propertyPath: m_Pivot.x
@@ -5731,6 +5751,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5660981849067118225, guid: b26881f715e7038468e9897d503ac24d,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -1781
+      objectReference: {fileID: 0}
+    - target: {fileID: 8697692040769060644, guid: b26881f715e7038468e9897d503ac24d,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -1773
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
