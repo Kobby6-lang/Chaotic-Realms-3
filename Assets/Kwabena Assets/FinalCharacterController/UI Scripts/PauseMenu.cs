@@ -29,14 +29,18 @@ public class PauseMenu : MonoBehaviour
 
     private void OnEnable()
     {
+        
         pauseMenu = playerControls.PauseMenu.Pause;
         pauseMenu.Enable();
 
         pauseMenu.performed += Pause;
+
+
     }
 
     private void OnDisable()
     {
+        
         pauseMenu.Disable();
     }
 
