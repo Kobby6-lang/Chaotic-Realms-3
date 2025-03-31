@@ -213,7 +213,7 @@ namespace Kwabena.FinalCharacterController
                     ""id"": ""e8c9149b-26c2-401c-a793-8f9df0926ee3"",
                     ""path"": ""<Gamepad>/rightStick"",
                     ""interactions"": """",
-                    ""processors"": ""ScaleVector2(x=5,y=5)"",
+                    ""processors"": ""ScaleVector2(x=10,y=10)"",
                     ""groups"": """",
                     ""action"": ""Look"",
                     ""isComposite"": false,
