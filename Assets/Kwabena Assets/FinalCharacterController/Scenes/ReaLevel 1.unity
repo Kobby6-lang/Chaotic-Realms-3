@@ -10470,12 +10470,6 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 470244253}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &470244255 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4112199585021155162, guid: b26881f715e7038468e9897d503ac24d,
-    type: 3}
-  m_PrefabInstance: {fileID: 470244253}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &470244256 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1518996704030814819, guid: b26881f715e7038468e9897d503ac24d,
@@ -21593,7 +21587,7 @@ GameObject:
   - component: {fileID: 923902859}
   - component: {fileID: 923902858}
   - component: {fileID: 923902857}
-  - component: {fileID: 923902856}
+  - component: {fileID: 923902860}
   m_Layer: 0
   m_Name: Virtual Camera
   m_TagString: Untagged
@@ -21601,27 +21595,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!95 &923902856
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 923902855}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!320 &923902857
 PlayableDirector:
   m_ObjectHideFlags: 0
@@ -21637,8 +21610,8 @@ PlayableDirector:
   m_DirectorUpdateMode: 1
   m_InitialTime: 0
   m_SceneBindings:
-  - key: {fileID: -2229235044285601235, guid: 0653f299161e57f4c8b231720d96d2ff, type: 2}
-    value: {fileID: 923902856}
+  - key: {fileID: 1463490942889710016, guid: 0653f299161e57f4c8b231720d96d2ff, type: 2}
+    value: {fileID: 923902860}
   m_ExposedReferences:
     m_References: []
 --- !u!114 &923902858
@@ -21695,14 +21668,35 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 923902855}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.176838, y: 0.7880655, z: -0.2725713, w: 0.5228633}
-  m_LocalPosition: {x: 4.1978793, y: 2.1717713, z: -40.302002}
+  m_LocalRotation: {x: 0.11817275, y: 0.6971623, z: -0.12375392, w: 0.6961932}
+  m_LocalPosition: {x: 34.08, y: 1.02, z: -4.07}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1944655685}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 19.7, y: 90, z: -0.459}
+--- !u!95 &923902860
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 923902855}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &927758998
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -29715,7 +29709,7 @@ MonoBehaviour:
         m_MethodName: SetSelectedGameObject
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 470244255}
+          m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -36612,7 +36606,7 @@ PrefabInstance:
     - target: {fileID: 321673858646865718, guid: aa0dc18b8b0e3924a831420e4edc1397,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 9.8
+      value: 36.29
       objectReference: {fileID: 0}
     - target: {fileID: 321673858646865718, guid: aa0dc18b8b0e3924a831420e4edc1397,
         type: 3}
@@ -36622,7 +36616,7 @@ PrefabInstance:
     - target: {fileID: 321673858646865718, guid: aa0dc18b8b0e3924a831420e4edc1397,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -42.32
+      value: -5.49
       objectReference: {fileID: 0}
     - target: {fileID: 321673858646865718, guid: aa0dc18b8b0e3924a831420e4edc1397,
         type: 3}
@@ -36668,6 +36662,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ThirdPersonController
+      objectReference: {fileID: 0}
+    - target: {fileID: 4389807745426357149, guid: aa0dc18b8b0e3924a831420e4edc1397,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -45416,8 +45415,6 @@ GameObject:
   - component: {fileID: 2089734475}
   - component: {fileID: 2089734474}
   - component: {fileID: 2089734473}
-  - component: {fileID: 2089734472}
-  - component: {fileID: 2089734471}
   - component: {fileID: 2089734470}
   m_Layer: 0
   m_Name: UICamera
@@ -45460,44 +45457,6 @@ MonoBehaviour:
   m_CameraActivatedEvent:
     m_PersistentCalls:
       m_Calls: []
---- !u!320 &2089734471
-PlayableDirector:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2089734469}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_PlayableAsset: {fileID: 11400000, guid: c41f0032a33601744bb3bb0ac452fc14, type: 2}
-  m_InitialState: 1
-  m_WrapMode: 2
-  m_DirectorUpdateMode: 1
-  m_InitialTime: 0
-  m_SceneBindings: []
-  m_ExposedReferences:
-    m_References: []
---- !u!95 &2089734472
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2089734469}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 149bd111e59f3094faa17c338b911df0, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &2089734473
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45609,8 +45568,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2089734469}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.176838, y: 0.7880655, z: -0.2725713, w: 0.5228633}
-  m_LocalPosition: {x: 4.1978793, y: 2.1717713, z: -40.302002}
+  m_LocalRotation: {x: 0.11817275, y: 0.6971623, z: -0.12375392, w: 0.6961932}
+  m_LocalPosition: {x: 34.08, y: 1.02, z: -4.07}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -48207,6 +48166,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6764164491409246706, guid: d33ac1c9247c6924889b6b248c950c03,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
