@@ -9,9 +9,6 @@ EditorBuildSettings:
     path: Assets/Kwabena Assets/FinalCharacterController/Scenes/MainMenu.unity
     guid: 20dda6c1091b7b14f8652c16a02c004d
   - enabled: 1
-    path: Assets/Kwabena Assets/FinalCharacterController/Scenes/PauseMenu.unity
-    guid: b23b69facdb160646b435bb610ee1d2c
-  - enabled: 1
     path: Assets/Kwabena Assets/FinalCharacterController/Scenes/ReaLevel 1.unity
     guid: 07bb19db63d328d4f9860e824c9600ea
   m_configObjects: {}
