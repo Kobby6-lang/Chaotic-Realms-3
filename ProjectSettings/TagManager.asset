@@ -10,6 +10,7 @@ TagManager:
   - Trap
   - TrapDoor
   - Hazard
+  - WayPoints
   layers:
   - Default
   - TransparentFX
