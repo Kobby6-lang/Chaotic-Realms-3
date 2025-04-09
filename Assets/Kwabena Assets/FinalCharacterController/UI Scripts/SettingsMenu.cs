@@ -55,6 +55,7 @@ public class SettingsManager : MonoBehaviour
     public void OnResolutionChange() 
     {
         Screen.SetResolution(resolutions[resolutionDropdown.value].width, resolutions[resolutionDropdown.value].height, Screen.fullScreen);
+        gameSettings.resolutionIndex = resolutionDropdown.value;
     }
 
     public void OnTextureQualityChange() 
@@ -106,6 +107,7 @@ public class SettingsManager : MonoBehaviour
         textureQualityDropdown.value = gameSettings.textureQuality;
         resolutionDropdown.value = gameSettings.resolutionIndex;
         fullScreenToggle.isOn = gameSettings.fullscreen;
+        Screen.fullScreen = gameSettings.fullscreen;
 
         resolutionDropdown.RefreshShownValue();
     }
