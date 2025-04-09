@@ -14,9 +14,10 @@ public class SettingsManager : MonoBehaviour
     public TMP_Dropdown antialiasingDropdown; // TextMesh Pro dropdown
     public TMP_Dropdown vSyncDropdown; // TextMesh Pro dropdown
     public Slider musicVolumeSlider; // Slider remains unchanged
-    public Button applyButton;
+    public Slider sfxVolumeSlider;
 
     public AudioSource musicSource;
+    public List<AudioSource> sfxSources;
     public Resolution[] resolutions;
     public GameSettings gameSettings;
 
@@ -30,7 +31,7 @@ public class SettingsManager : MonoBehaviour
         antialiasingDropdown.onValueChanged.AddListener(delegate { OnAntialiasingChange(); });
         vSyncDropdown.onValueChanged.AddListener(delegate { OnVSyncChange(); });
         musicVolumeSlider.onValueChanged.AddListener(delegate { OnMusicVolumeChange(); });
-        applyButton.onClick.AddListener(delegate { OnApplyButtonClick(); });
+        sfxVolumeSlider.onValueChanged.AddListener(delegate { OnSfxVolumeChange(); });
 
         resolutions = Screen.resolutions;
         foreach(Resolution resolution in resolutions) 
@@ -75,11 +76,19 @@ public class SettingsManager : MonoBehaviour
     {
         musicSource.volume = gameSettings.musicVolume = musicVolumeSlider.value;
     }
-
-    public void OnApplyButtonClick() 
+    public void OnSfxVolumeChange()
     {
-        SaveSettings();
+        // Update the volume for each sound effect
+        foreach (AudioSource sfxSource in sfxSources)
+        {
+            sfxSource.volume = sfxVolumeSlider.value; // Set the volume based on the slider value
+        }
+
+        // Optionally, update game settings if needed
+        gameSettings.sfxVolume = sfxVolumeSlider.value;
     }
+
+
 
     public void SaveSettings() 
     {
