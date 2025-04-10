@@ -7,11 +7,39 @@ public class MovingTrap : MonoBehaviour
     public bool movingUp = true; // Public variable to control movement direction
     private Vector3 initialPosition;
 
+    [Header("Trap Settings")]
+    [SerializeField] private int trapSoundIndex; // Index of the trap's sound effect
+    private AudioManager audioManager; // Reference to AudioManager
+
+
     void Start()
     {
+        audioManager = FindObjectOfType<AudioManager>();
         initialPosition = transform.position;
+        ActivateTrap();
     }
 
+    public void ActivateTrap()
+    {
+        // Trigger looping sound for the trap
+        if (audioManager != null)
+        {
+            audioManager.PlayLoopingTrapSound(trapSoundIndex);
+        }
+
+        Debug.Log("Trap activated with looping sound!");
+    }
+
+    public void DeactivateTrap()
+    {
+        // Stop looping sound when trap is deactivated
+        if (audioManager != null)
+        {
+            audioManager.StopLoopingTrapSound();
+        }
+
+        Debug.Log("Trap deactivated and looping sound stopped!");
+    }
     void Update()
     {
         if (movingUp)
