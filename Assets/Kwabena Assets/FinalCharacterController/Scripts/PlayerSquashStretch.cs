@@ -1,50 +1,50 @@
-using UnityEngine;
-using System.Collections;
-using UnityEngine.SceneManagement; // For resetting the level
+//using UnityEngine;
+//using System.Collections;
+//using UnityEngine.SceneManagement; // For resetting the level
 
-public class PlayerSquashStretch : MonoBehaviour
-{
-    private Vector3 originalScale;
-    private bool isSquashed = false;
-    public Transform respawnPoint; // Reference to the respawn point
+//public class PlayerSquashStretch : MonoBehaviour
+//{
+//    private Vector3 originalScale;
+//    private bool isSquashed = false;
+//    public Transform respawnPoint; // Reference to the respawn point
 
-    AudioManager audioManager;
+//    AudioManager audioManager;
 
-    private void Awake()
-    {
-        audioManager =GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
-    }
+//    private void Awake()
+//    {
+//        audioManager =GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+//    }
 
-    void Start()
-    {
-        originalScale = transform.localScale;
-    }
+//    void Start()
+//    {
+//        originalScale = transform.localScale;
+//    }
 
-    void OnControllerColliderHit(ControllerColliderHit hit)
-    {
-        // Check if the player collides with the ground (or any specific object)
-        if (hit.gameObject.CompareTag("Ground") && !isSquashed)
-        {
-            // Create a "squash and stretch" effect by changing the player's scale
+//    void OnControllerColliderHit(ControllerColliderHit hit)
+//    {
+//        // Check if the player collides with the ground (or any specific object)
+//        if (hit.gameObject.CompareTag("Ground") && !isSquashed)
+//        {
+//            // Create a "squash and stretch" effect by changing the player's scale
             
-            transform.localScale = new Vector3(originalScale.x * 3f, originalScale.y * 0.13f, originalScale.z);
-            isSquashed = true;
-            audioManager.PlaySFX(audioManager.death);
+//            transform.localScale = new Vector3(originalScale.x * 3f, originalScale.y * 0.13f, originalScale.z);
+//            isSquashed = true;
+//            audioManager.PlaySFX(audioManager.death);
 
-            // Optionally, disable the CharacterController to stop further movement
-            GetComponent<CharacterController>().enabled = false;
+//            // Optionally, disable the CharacterController to stop further movement
+//            GetComponent<CharacterController>().enabled = false;
 
-            // Start the level reset process
-            StartCoroutine(ResetLevel());
-        }
-    }
+//            // Start the level reset process
+//            StartCoroutine(ResetLevel());
+//        }
+//    }
 
-    IEnumerator ResetLevel()
-    {
-        // Wait for a short delay before resetting the level
-        yield return new WaitForSeconds(1.0f); // Adjust the delay as needed
+//    IEnumerator ResetLevel()
+//    {
+//        // Wait for a short delay before resetting the level
+//        yield return new WaitForSeconds(1.0f); // Adjust the delay as needed
 
-        // Reset the entire level by reloading the active scene
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-    }
-}
+//        // Reset the entire level by reloading the active scene
+//        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+//    }
+//}

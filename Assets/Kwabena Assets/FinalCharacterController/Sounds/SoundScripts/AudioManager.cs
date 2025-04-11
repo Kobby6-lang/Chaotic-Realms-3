@@ -11,13 +11,24 @@ public class AudioManager : MonoBehaviour
     [Header("Audio Clips")]
     public AudioClip background;
     public AudioClip jump;
-    public AudioClip death;
     public List<AudioClip> trapSounds; // List for all trap sound effects
+
+    [Header("Player Reference")]
+    [SerializeField] private Transform playerTransform; // Reference to the player's position
+    [SerializeField] private List<Transform> trapSoundLocations; // Positions of trap sound emitters
+    [SerializeField] private List<AudioSource> trapAudioSources; // Audio sources for trap sounds
+    [SerializeField] private float maxDistance = 20f; // Maximum distance for audible sound
 
     private void Start()
     {
         PlayBackgroundMusic(background);
         SFXSource.ignoreListenerPause = true;
+    }
+
+    private void Update()
+    {
+        AdjustVolumeBasedOnDistance();
+        UpdateTrapSoundsVolume();
     }
 
     public void PlayBackgroundMusic(AudioClip clip)
@@ -43,42 +54,40 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    public void PlayLoopingTrapSound(int trapIndex, AudioSource source = null)
+    private void AdjustVolumeBasedOnDistance()
     {
-        if (source == null)
+        if (playerTransform != null && musicSource != null && SFXSource != null)
         {
-            source = SFXSource;
-        }
-        if (trapSounds != null && trapIndex >= 0 && trapIndex < trapSounds.Count)
-        {
-            // Set the clip to the SFXSource and enable looping
-            source.clip = trapSounds[trapIndex];
-            source.loop = true;
-            source.Play();
-        }
-        else
-        {
-            Debug.LogWarning("Invalid trap sound index or trapSounds list is not populated!");
+            float distance = Vector3.Distance(playerTransform.position, transform.position);
+            float volumeFactor = Mathf.Clamp01(1 - (distance / maxDistance));
+            float minVolume = 0.1f;
+            musicSource.volume = Mathf.Max(volumeFactor, minVolume);
+            SFXSource.volume = Mathf.Max(volumeFactor, minVolume);
         }
     }
 
-    public void StopLoopingTrapSound(AudioSource source  = null)
+    private void UpdateTrapSoundsVolume()
     {
-        if (source == null)
-        {
-            source = SFXSource;
-        }
-        // Stop the looping sound and disable looping
-        source.Stop();
-        source.loop = false;
-    }
+        if (playerTransform == null || trapSoundLocations == null || trapAudioSources == null) return;
 
-    public void PlayTrapSound(int trapIndex)
-    {
-        if (trapSounds != null && trapIndex >= 0 && trapIndex < trapSounds.Count)
+        for (int i = 0; i < trapSoundLocations.Count; i++)
         {
-            // Play the sound corresponding to the specific trap
-            PlaySFX(trapSounds[trapIndex]);
+            if (i >= trapAudioSources.Count) break;
+
+            float distance = Vector3.Distance(playerTransform.position, trapSoundLocations[i].position);
+            float volumeFactor = Mathf.Clamp01(1 - (distance / maxDistance));
+            float minVolume = 0.1f;
+
+            trapAudioSources[i].volume = Mathf.Max(volumeFactor, minVolume);
+
+            if (distance > maxDistance && trapAudioSources[i].isPlaying)
+            {
+                trapAudioSources[i].Stop(); // Stop sound if beyond threshold
+            }
+            else if (distance <= maxDistance && !trapAudioSources[i].isPlaying)
+            {
+                trapAudioSources[i].Play(); // Resume sound if within range
+            }
         }
     }
 }

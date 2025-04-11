@@ -9,45 +9,13 @@ public class ProjectileSpawner : MonoBehaviour
     public float projectileSpeed = 10f; // Adjust the projectile's speed here
     public float spawnOffset = 1f; // Distance from the spawn point tip
 
-    [Header("Trap Settings")]
-    [SerializeField] private int trapSoundIndex; // Index of the trap's sound effect
-    private AudioManager audioManager; // Reference to AudioManager
-    public AudioSource soundSource;
-
+   
     private void Start()
     {
-        // Find the AudioManager in the scene
-        audioManager = FindObjectOfType<AudioManager>();
-
         // Begin spawning projectiles repeatedly
         InvokeRepeating(nameof(SpawnProjectile), 0f, spawnInterval);
 
-        // Activate the trap and play looping sound
-        ActivateTrap();
     }
-
-    public void ActivateTrap()
-    {
-        // Trigger looping sound for the trap
-        if (audioManager != null && soundSource != null)
-        {
-            audioManager.PlayLoopingTrapSound(trapSoundIndex, soundSource);
-        }
-
-        Debug.Log("Trap activated with looping sound!");
-    }
-
-    public void DeactivateTrap()
-    {
-        // Stop looping sound when trap is deactivated
-        if (audioManager != null && soundSource != null)
-        {
-            audioManager.StopLoopingTrapSound(soundSource);
-        }
-
-        Debug.Log("Trap deactivated and looping sound stopped!");
-    }
-
     private void SpawnProjectile()
     {
         // Calculate the position at the tip of the spawn point

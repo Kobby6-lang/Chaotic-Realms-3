@@ -257,7 +257,6 @@ MonoBehaviour:
   moveSpeed: 0.7
   moveHeight: 1
   movingUp: 1
-  trapSoundIndex: 0
 --- !u!23 &717303
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -385,7 +384,6 @@ MonoBehaviour:
   moveSpeed: 0.7
   moveHeight: 1
   movingUp: 1
-  trapSoundIndex: 0
 --- !u!23 &6184921
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -627,7 +625,6 @@ MonoBehaviour:
   moveSpeed: 0.7
   moveHeight: 1
   movingUp: 1
-  trapSoundIndex: 0
 --- !u!23 &19247540
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -997,7 +994,6 @@ MonoBehaviour:
   moveSpeed: 0.7
   moveHeight: 1
   movingUp: 1
-  trapSoundIndex: 0
 --- !u!114 &41329558
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1311,7 +1307,6 @@ MonoBehaviour:
   moveSpeed: 0.7
   moveHeight: 1
   movingUp: 1
-  trapSoundIndex: 0
 --- !u!23 &42709293
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1516,7 +1511,6 @@ MonoBehaviour:
   moveSpeed: 1
   moveHeight: 1
   movingUp: 1
-  trapSoundIndex: 0
 --- !u!23 &49520759
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1638,7 +1632,6 @@ MonoBehaviour:
   moveSpeed: 1
   moveHeight: 1
   movingUp: 1
-  trapSoundIndex: 0
 --- !u!23 &51097340
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1936,7 +1929,6 @@ MonoBehaviour:
   moveSpeed: 0.7
   moveHeight: 1
   movingUp: 1
-  trapSoundIndex: 0
 --- !u!23 &57139169
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2224,7 +2216,6 @@ MonoBehaviour:
   moveSpeed: 1
   moveHeight: 1
   movingUp: 1
-  trapSoundIndex: 0
 --- !u!23 &63334947
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2346,7 +2337,6 @@ MonoBehaviour:
   moveSpeed: 0.7
   moveHeight: 1
   movingUp: 1
-  trapSoundIndex: 0
 --- !u!23 &65995045
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2468,8 +2458,6 @@ MonoBehaviour:
   spawnInterval: 1
   projectileSpeed: 1
   spawnOffset: 0
-  trapSoundIndex: 0
-  soundSource: {fileID: 0}
 --- !u!1 &68845965
 GameObject:
   m_ObjectHideFlags: 0
@@ -2521,7 +2509,6 @@ MonoBehaviour:
   moveSpeed: 0.7
   moveHeight: 1
   movingUp: 1
-  trapSoundIndex: 0
 --- !u!114 &68845968
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2804,8 +2791,6 @@ MonoBehaviour:
   spawnInterval: 1
   projectileSpeed: 1
   spawnOffset: 0
-  trapSoundIndex: 0
-  soundSource: {fileID: 0}
 --- !u!1001 &75115441
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3263,7 +3248,6 @@ MonoBehaviour:
   moveSpeed: 1
   moveHeight: 1
   movingUp: 1
-  trapSoundIndex: 0
 --- !u!23 &85891549
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3510,8 +3494,6 @@ MonoBehaviour:
   spawnInterval: 1
   projectileSpeed: 1
   spawnOffset: 0
-  trapSoundIndex: 0
-  soundSource: {fileID: 0}
 --- !u!1 &94098928
 GameObject:
   m_ObjectHideFlags: 0
@@ -3905,8 +3887,6 @@ MonoBehaviour:
   spawnInterval: 1
   projectileSpeed: 1
   spawnOffset: 0
-  trapSoundIndex: 0
-  soundSource: {fileID: 0}
 --- !u!4 &112484987 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 47f7a032c38d6be42a6abb591017a431,
@@ -4046,8 +4026,6 @@ MonoBehaviour:
   spawnInterval: 1
   projectileSpeed: 1
   spawnOffset: 0
-  trapSoundIndex: 0
-  soundSource: {fileID: 0}
 --- !u!4 &122692866 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 47f7a032c38d6be42a6abb591017a431,
@@ -4540,8 +4518,6 @@ MonoBehaviour:
   spawnInterval: 1
   projectileSpeed: 1
   spawnOffset: 0
-  trapSoundIndex: 0
-  soundSource: {fileID: 0}
 --- !u!4 &138231974 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 47f7a032c38d6be42a6abb591017a431,
@@ -4674,7 +4650,6 @@ MonoBehaviour:
   moveSpeed: 0.7
   moveHeight: 1
   movingUp: 1
-  trapSoundIndex: 0
 --- !u!23 &145347137
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5209,7 +5184,6 @@ MonoBehaviour:
   moveSpeed: 1
   moveHeight: 1
   movingUp: 1
-  trapSoundIndex: 0
 --- !u!23 &160801163
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5331,8 +5305,6 @@ MonoBehaviour:
   spawnInterval: 1
   projectileSpeed: 1
   spawnOffset: 0
-  trapSoundIndex: 0
-  soundSource: {fileID: 0}
 --- !u!1001 &170277577
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6443,7 +6415,6 @@ MonoBehaviour:
   moveSpeed: 1
   moveHeight: 1
   movingUp: 1
-  trapSoundIndex: 0
 --- !u!23 &214963926
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6772,7 +6743,6 @@ MonoBehaviour:
   moveSpeed: 0.7
   moveHeight: 1
   movingUp: 1
-  trapSoundIndex: 0
 --- !u!23 &224866342
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6906,7 +6876,6 @@ MonoBehaviour:
   moveSpeed: 0.7
   moveHeight: 1
   movingUp: 1
-  trapSoundIndex: 0
 --- !u!23 &230371114
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -7530,7 +7499,6 @@ MonoBehaviour:
   moveSpeed: 1
   moveHeight: 1
   movingUp: 1
-  trapSoundIndex: 0
 --- !u!23 &254575515
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -8307,7 +8275,6 @@ MonoBehaviour:
   moveSpeed: 1
   moveHeight: 1
   movingUp: 1
-  trapSoundIndex: 0
 --- !u!23 &301122927
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -8611,7 +8578,6 @@ MonoBehaviour:
   moveSpeed: 0.7
   moveHeight: 1
   movingUp: 1
-  trapSoundIndex: 0
 --- !u!23 &308742149
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -9213,8 +9179,6 @@ MonoBehaviour:
   spawnInterval: 1
   projectileSpeed: 1
   spawnOffset: 0
-  trapSoundIndex: 0
-  soundSource: {fileID: 0}
 --- !u!1 &333295193
 GameObject:
   m_ObjectHideFlags: 0
@@ -9320,8 +9284,6 @@ MonoBehaviour:
   spawnInterval: 1
   projectileSpeed: 1
   spawnOffset: 0
-  trapSoundIndex: 0
-  soundSource: {fileID: 0}
 --- !u!4 &343048980 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 47f7a032c38d6be42a6abb591017a431,
@@ -9993,7 +9955,6 @@ MonoBehaviour:
   moveSpeed: 0.7
   moveHeight: 1
   movingUp: 1
-  trapSoundIndex: 0
 --- !u!23 &366587166
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -11196,7 +11157,6 @@ MonoBehaviour:
   moveSpeed: 0.7
   moveHeight: 1
   movingUp: 1
-  trapSoundIndex: 0
 --- !u!23 &388634207
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -11324,7 +11284,6 @@ MonoBehaviour:
   moveSpeed: 0.7
   moveHeight: 1
   movingUp: 1
-  trapSoundIndex: 0
 --- !u!23 &403475011
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -11610,7 +11569,6 @@ MonoBehaviour:
   moveSpeed: 0.7
   moveHeight: 1
   movingUp: 1
-  trapSoundIndex: 0
 --- !u!23 &408238182
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -11732,8 +11690,6 @@ MonoBehaviour:
   spawnInterval: 1
   projectileSpeed: 1
   spawnOffset: 0
-  trapSoundIndex: 0
-  soundSource: {fileID: 0}
 --- !u!1 &410667636
 GameObject:
   m_ObjectHideFlags: 0
@@ -12145,10 +12101,17 @@ MonoBehaviour:
   SFXSource: {fileID: 1073441237}
   background: {fileID: 8300000, guid: c9ff0a1bd331f394f9742847251dfb97, type: 3}
   jump: {fileID: 8300000, guid: 89c23c0f00aba42daab13371654384b4, type: 3}
-  death: {fileID: 8300000, guid: f9bb5c13d904fa44c9b9aa5a20bd723a, type: 3}
   trapSounds:
   - {fileID: 8300000, guid: fc0e26fa0fefb404b89094451eb310bc, type: 3}
   - {fileID: 8300000, guid: 159550cafaa766440903010105d63a16, type: 3}
+  playerTransform: {fileID: 1029893794}
+  trapSoundLocations:
+  - {fileID: 474184778}
+  - {fileID: 1659114193}
+  trapAudioSources:
+  - {fileID: 474184777}
+  - {fileID: 1659114194}
+  maxDistance: 10
 --- !u!4 &431360278
 Transform:
   m_ObjectHideFlags: 0
@@ -12222,7 +12185,6 @@ MonoBehaviour:
   moveSpeed: 0.7
   moveHeight: 1
   movingUp: 1
-  trapSoundIndex: 0
 --- !u!23 &443336262
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -13670,7 +13632,7 @@ AudioSource:
   MinDistance: 1.2019482
   MaxDistance: 500
   Pan2D: 0
-  rolloffMode: 0
+  rolloffMode: 1
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -13922,7 +13884,6 @@ MonoBehaviour:
   moveSpeed: 0.7
   moveHeight: 1
   movingUp: 1
-  trapSoundIndex: 0
 --- !u!23 &489819588
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -14391,7 +14352,6 @@ MonoBehaviour:
   moveSpeed: 0.7
   moveHeight: 1
   movingUp: 1
-  trapSoundIndex: 0
 --- !u!23 &507602783
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -14618,7 +14578,6 @@ MonoBehaviour:
   moveSpeed: 1
   moveHeight: 1
   movingUp: 1
-  trapSoundIndex: 0
 --- !u!23 &508878581
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -14740,7 +14699,6 @@ MonoBehaviour:
   moveSpeed: 0.7
   moveHeight: 1
   movingUp: 1
-  trapSoundIndex: 0
 --- !u!23 &509948249
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -15173,7 +15131,6 @@ MonoBehaviour:
   moveSpeed: 0.7
   moveHeight: 1
   movingUp: 1
-  trapSoundIndex: 0
 --- !u!23 &530343813
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -15609,7 +15566,6 @@ MonoBehaviour:
   moveSpeed: 0.7
   moveHeight: 1
   movingUp: 1
-  trapSoundIndex: 0
 --- !u!23 &537268456
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -15936,7 +15892,6 @@ MonoBehaviour:
   moveSpeed: 0.7
   moveHeight: 1
   movingUp: 1
-  trapSoundIndex: 0
 --- !u!23 &541875317
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -16506,7 +16461,6 @@ MonoBehaviour:
   moveSpeed: 0.7
   moveHeight: 1
   movingUp: 1
-  trapSoundIndex: 0
 --- !u!23 &566156701
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -16978,7 +16932,6 @@ MonoBehaviour:
   moveSpeed: 0.7
   moveHeight: 1
   movingUp: 1
-  trapSoundIndex: 0
 --- !u!23 &585001403
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -17254,7 +17207,6 @@ MonoBehaviour:
   moveSpeed: 1
   moveHeight: 1
   movingUp: 1
-  trapSoundIndex: 0
 --- !u!23 &600356090
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -17382,8 +17334,6 @@ MonoBehaviour:
   spawnInterval: 1
   projectileSpeed: 1
   spawnOffset: 0
-  trapSoundIndex: 0
-  soundSource: {fileID: 0}
 --- !u!1001 &604109530
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17826,8 +17776,6 @@ MonoBehaviour:
   spawnInterval: 1
   projectileSpeed: 1
   spawnOffset: 0
-  trapSoundIndex: 0
-  soundSource: {fileID: 0}
 --- !u!1 &625997579
 GameObject:
   m_ObjectHideFlags: 0
@@ -17878,8 +17826,6 @@ MonoBehaviour:
   spawnInterval: 1
   projectileSpeed: 1
   spawnOffset: 0
-  trapSoundIndex: 0
-  soundSource: {fileID: 0}
 --- !u!1 &633524632
 GameObject:
   m_ObjectHideFlags: 0
@@ -17931,7 +17877,6 @@ MonoBehaviour:
   moveSpeed: 0.7
   moveHeight: 1
   movingUp: 1
-  trapSoundIndex: 0
 --- !u!114 &633524635
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18781,7 +18726,6 @@ MonoBehaviour:
   moveSpeed: 0.7
   moveHeight: 1
   movingUp: 1
-  trapSoundIndex: 0
 --- !u!23 &663814522
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -19026,7 +18970,6 @@ MonoBehaviour:
   moveSpeed: 0.7
   moveHeight: 1
   movingUp: 1
-  trapSoundIndex: 0
 --- !u!114 &670394414
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20250,8 +20193,6 @@ MonoBehaviour:
   spawnInterval: 1
   projectileSpeed: 1
   spawnOffset: 0
-  trapSoundIndex: 0
-  soundSource: {fileID: 0}
 --- !u!1 &720817913
 GameObject:
   m_ObjectHideFlags: 0
@@ -20556,7 +20497,6 @@ MonoBehaviour:
   moveSpeed: 1
   moveHeight: 1
   movingUp: 1
-  trapSoundIndex: 0
 --- !u!23 &729041385
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -21477,7 +21417,6 @@ MonoBehaviour:
   moveSpeed: 0.7
   moveHeight: 1
   movingUp: 1
-  trapSoundIndex: 0
 --- !u!23 &766612649
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -21769,8 +21708,6 @@ MonoBehaviour:
   spawnInterval: 1
   projectileSpeed: 1
   spawnOffset: 0
-  trapSoundIndex: 0
-  soundSource: {fileID: 0}
 --- !u!1001 &780205868
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21904,7 +21841,6 @@ MonoBehaviour:
   moveSpeed: 0.7
   moveHeight: 1
   movingUp: 1
-  trapSoundIndex: 0
 --- !u!23 &784594150
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -22294,7 +22230,6 @@ MonoBehaviour:
   moveSpeed: 0.7
   moveHeight: 1
   movingUp: 1
-  trapSoundIndex: 0
 --- !u!23 &805437941
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -22689,7 +22624,6 @@ MonoBehaviour:
   moveSpeed: 0.7
   moveHeight: 1
   movingUp: 1
-  trapSoundIndex: 0
 --- !u!23 &814055084
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -22823,7 +22757,6 @@ MonoBehaviour:
   moveSpeed: 0.7
   moveHeight: 1
   movingUp: 1
-  trapSoundIndex: 0
 --- !u!23 &818960675
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -22945,7 +22878,6 @@ MonoBehaviour:
   moveSpeed: 0.7
   moveHeight: 1
   movingUp: 1
-  trapSoundIndex: 0
 --- !u!23 &820113224
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -23156,7 +23088,6 @@ MonoBehaviour:
   moveSpeed: 0.7
   moveHeight: 1
   movingUp: 1
-  trapSoundIndex: 0
 --- !u!23 &832301087
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -23278,7 +23209,6 @@ MonoBehaviour:
   moveSpeed: 1
   moveHeight: 1
   movingUp: 1
-  trapSoundIndex: 0
 --- !u!23 &832374907
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -23400,7 +23330,6 @@ MonoBehaviour:
   moveSpeed: 0.7
   moveHeight: 1
   movingUp: 1
-  trapSoundIndex: 0
 --- !u!23 &845263637
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -23611,8 +23540,6 @@ MonoBehaviour:
   spawnInterval: 1
   projectileSpeed: 1
   spawnOffset: 0
-  trapSoundIndex: 0
-  soundSource: {fileID: 0}
 --- !u!1 &851023301
 GameObject:
   m_ObjectHideFlags: 0
@@ -23663,8 +23590,6 @@ MonoBehaviour:
   spawnInterval: 1
   projectileSpeed: 1
   spawnOffset: 0
-  trapSoundIndex: 0
-  soundSource: {fileID: 0}
 --- !u!1 &851646104
 GameObject:
   m_ObjectHideFlags: 0
@@ -24086,8 +24011,6 @@ MonoBehaviour:
   spawnInterval: 1
   projectileSpeed: 1
   spawnOffset: 0
-  trapSoundIndex: 0
-  soundSource: {fileID: 0}
 --- !u!4 &875447261 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 47f7a032c38d6be42a6abb591017a431,
@@ -24144,7 +24067,6 @@ MonoBehaviour:
   moveSpeed: 0.7
   moveHeight: 1
   movingUp: 1
-  trapSoundIndex: 0
 --- !u!23 &878194689
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -24349,8 +24271,6 @@ MonoBehaviour:
   spawnInterval: 1
   projectileSpeed: 1
   spawnOffset: 0
-  trapSoundIndex: 0
-  soundSource: {fileID: 0}
 --- !u!4 &889695313 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 47f7a032c38d6be42a6abb591017a431,
@@ -24678,7 +24598,6 @@ MonoBehaviour:
   moveSpeed: 0.7
   moveHeight: 1
   movingUp: 1
-  trapSoundIndex: 0
 --- !u!23 &898462337
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -25398,7 +25317,6 @@ MonoBehaviour:
   moveSpeed: 0.7
   moveHeight: 1
   movingUp: 1
-  trapSoundIndex: 0
 --- !u!23 &909616149
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -26092,7 +26010,6 @@ MonoBehaviour:
   moveSpeed: 0.7
   moveHeight: 1
   movingUp: 1
-  trapSoundIndex: 0
 --- !u!23 &937433258
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -26599,8 +26516,6 @@ MonoBehaviour:
   spawnInterval: 1
   projectileSpeed: 1
   spawnOffset: 0
-  trapSoundIndex: 0
-  soundSource: {fileID: 0}
 --- !u!1 &951002516
 GameObject:
   m_ObjectHideFlags: 0
@@ -26651,8 +26566,6 @@ MonoBehaviour:
   spawnInterval: 1
   projectileSpeed: 1
   spawnOffset: 0
-  trapSoundIndex: 0
-  soundSource: {fileID: 0}
 --- !u!1 &951016660
 GameObject:
   m_ObjectHideFlags: 0
@@ -26704,7 +26617,6 @@ MonoBehaviour:
   moveSpeed: 1
   moveHeight: 1
   movingUp: 1
-  trapSoundIndex: 0
 --- !u!114 &951016663
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27018,7 +26930,6 @@ MonoBehaviour:
   moveSpeed: 1
   moveHeight: 1
   movingUp: 1
-  trapSoundIndex: 0
 --- !u!23 &960736399
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -27223,7 +27134,6 @@ MonoBehaviour:
   moveSpeed: 0.7
   moveHeight: 1
   movingUp: 1
-  trapSoundIndex: 0
 --- !u!23 &964531835
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -27853,7 +27763,6 @@ MonoBehaviour:
   moveSpeed: 0.7
   moveHeight: 1
   movingUp: 1
-  trapSoundIndex: 0
 --- !u!23 &993970795
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -27981,8 +27890,6 @@ MonoBehaviour:
   spawnInterval: 1
   projectileSpeed: 1
   spawnOffset: 0
-  trapSoundIndex: 0
-  soundSource: {fileID: 0}
 --- !u!4 &998036902 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 47f7a032c38d6be42a6abb591017a431,
@@ -28211,8 +28118,6 @@ MonoBehaviour:
   spawnInterval: 1
   projectileSpeed: 1
   spawnOffset: 0
-  trapSoundIndex: 0
-  soundSource: {fileID: 0}
 --- !u!4 &1006453734 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 47f7a032c38d6be42a6abb591017a431,
@@ -28358,8 +28263,6 @@ MonoBehaviour:
   spawnInterval: 1
   projectileSpeed: 1
   spawnOffset: 0
-  trapSoundIndex: 0
-  soundSource: {fileID: 0}
 --- !u!1 &1012690172
 GameObject:
   m_ObjectHideFlags: 0
@@ -28489,7 +28392,6 @@ MonoBehaviour:
   moveSpeed: 1
   moveHeight: 1
   movingUp: 1
-  trapSoundIndex: 0
 --- !u!23 &1014449474
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -29008,6 +28910,12 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!4 &1029893794 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 321673858646865718, guid: aa0dc18b8b0e3924a831420e4edc1397,
+    type: 3}
+  m_PrefabInstance: {fileID: 1618142605}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1030785505
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -29448,7 +29356,6 @@ MonoBehaviour:
   moveSpeed: 1
   moveHeight: 1
   movingUp: 1
-  trapSoundIndex: 0
 --- !u!114 &1038460075
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29920,7 +29827,6 @@ MonoBehaviour:
   moveSpeed: 0.7
   moveHeight: 1
   movingUp: 1
-  trapSoundIndex: 0
 --- !u!23 &1044953855
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -30781,7 +30687,6 @@ MonoBehaviour:
   moveSpeed: 1
   moveHeight: 1
   movingUp: 1
-  trapSoundIndex: 0
 --- !u!23 &1072040440
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -31168,7 +31073,6 @@ MonoBehaviour:
   moveSpeed: 1
   moveHeight: 1
   movingUp: 1
-  trapSoundIndex: 0
 --- !u!23 &1074744635
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -31504,8 +31408,6 @@ MonoBehaviour:
   spawnInterval: 1
   projectileSpeed: 1
   spawnOffset: 0
-  trapSoundIndex: 0
-  soundSource: {fileID: 0}
 --- !u!4 &1092607549 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 47f7a032c38d6be42a6abb591017a431,
@@ -31657,7 +31559,6 @@ MonoBehaviour:
   moveSpeed: 1
   moveHeight: 1
   movingUp: 1
-  trapSoundIndex: 0
 --- !u!23 &1098910643
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -32048,7 +31949,6 @@ MonoBehaviour:
   moveSpeed: 0.7
   moveHeight: 1
   movingUp: 1
-  trapSoundIndex: 0
 --- !u!23 &1108956404
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -32696,7 +32596,6 @@ MonoBehaviour:
   moveSpeed: 1
   moveHeight: 1
   movingUp: 1
-  trapSoundIndex: 0
 --- !u!23 &1143708816
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -33038,8 +32937,6 @@ MonoBehaviour:
   spawnInterval: 1
   projectileSpeed: 1
   spawnOffset: 0
-  trapSoundIndex: 0
-  soundSource: {fileID: 0}
 --- !u!1 &1168556599
 GameObject:
   m_ObjectHideFlags: 0
@@ -33356,8 +33253,6 @@ MonoBehaviour:
   spawnInterval: 1
   projectileSpeed: 1
   spawnOffset: 0
-  trapSoundIndex: 0
-  soundSource: {fileID: 1659114194}
 --- !u!1 &1173572078
 GameObject:
   m_ObjectHideFlags: 0
@@ -33408,7 +33303,6 @@ MonoBehaviour:
   moveSpeed: 0.7
   moveHeight: 1
   movingUp: 1
-  trapSoundIndex: 0
 --- !u!23 &1173572081
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -33530,7 +33424,6 @@ MonoBehaviour:
   moveSpeed: 1
   moveHeight: 1
   movingUp: 1
-  trapSoundIndex: 0
 --- !u!23 &1179837240
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -34464,7 +34357,6 @@ MonoBehaviour:
   moveSpeed: 0.7
   moveHeight: 1
   movingUp: 1
-  trapSoundIndex: 0
 --- !u!23 &1211391804
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -34688,7 +34580,6 @@ MonoBehaviour:
   moveSpeed: 1
   moveHeight: 1
   movingUp: 1
-  trapSoundIndex: 0
 --- !u!23 &1217647448
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -34929,7 +34820,6 @@ MonoBehaviour:
   moveSpeed: 0.7
   moveHeight: 1
   movingUp: 1
-  trapSoundIndex: 0
 --- !u!23 &1227861908
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -35324,7 +35214,6 @@ MonoBehaviour:
   moveSpeed: 0.7
   moveHeight: 1
   movingUp: 1
-  trapSoundIndex: 0
 --- !u!23 &1235540826
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -35619,7 +35508,6 @@ MonoBehaviour:
   moveSpeed: 0.7
   moveHeight: 1
   movingUp: 1
-  trapSoundIndex: 0
 --- !u!114 &1250424575
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35927,7 +35815,6 @@ MonoBehaviour:
   moveSpeed: 0.7
   moveHeight: 1
   movingUp: 1
-  trapSoundIndex: 0
 --- !u!23 &1259942751
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -36803,7 +36690,6 @@ MonoBehaviour:
   moveSpeed: 1
   moveHeight: 1
   movingUp: 1
-  trapSoundIndex: 0
 --- !u!23 &1294260629
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -37523,7 +37409,6 @@ MonoBehaviour:
   moveSpeed: 1
   moveHeight: 1
   movingUp: 1
-  trapSoundIndex: 0
 --- !u!23 &1348388310
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -38206,7 +38091,6 @@ MonoBehaviour:
   moveSpeed: 0.7
   moveHeight: 1
   movingUp: 1
-  trapSoundIndex: 0
 --- !u!23 &1389644767
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -39188,8 +39072,6 @@ MonoBehaviour:
   spawnInterval: 1
   projectileSpeed: 1
   spawnOffset: 0
-  trapSoundIndex: 0
-  soundSource: {fileID: 0}
 --- !u!1 &1447649953
 GameObject:
   m_ObjectHideFlags: 0
@@ -39240,8 +39122,6 @@ MonoBehaviour:
   spawnInterval: 1
   projectileSpeed: 1
   spawnOffset: 0
-  trapSoundIndex: 0
-  soundSource: {fileID: 0}
 --- !u!1001 &1447696815
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -40038,6 +39918,8 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 2c72495c7f03f9b4087534b35abf6e40, type: 3}
   - name: Slider Sounds
     clip: {fileID: 8300000, guid: c0342b3be4a5fa14c83745d1b9a8b947, type: 3}
+  playerTransform: {fileID: 0}
+  maxDistance: 20
 --- !u!1001 &1500588291
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -40600,7 +40482,6 @@ MonoBehaviour:
   moveSpeed: 1
   moveHeight: 1
   movingUp: 1
-  trapSoundIndex: 0
 --- !u!23 &1519166235
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -40810,7 +40691,6 @@ MonoBehaviour:
   moveSpeed: 0.7
   moveHeight: 1
   movingUp: 1
-  trapSoundIndex: 0
 --- !u!23 &1524792859
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -41615,7 +41495,6 @@ MonoBehaviour:
   moveSpeed: 1
   moveHeight: 1
   movingUp: 1
-  trapSoundIndex: 0
 --- !u!23 &1584395255
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -42087,7 +41966,6 @@ MonoBehaviour:
   moveSpeed: 1
   moveHeight: 1
   movingUp: 1
-  trapSoundIndex: 0
 --- !u!23 &1605104733
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -42255,7 +42133,6 @@ MonoBehaviour:
   moveSpeed: 1
   moveHeight: 1
   movingUp: 1
-  trapSoundIndex: 0
 --- !u!23 &1611072521
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -42715,7 +42592,6 @@ MonoBehaviour:
   moveSpeed: 1
   moveHeight: 1
   movingUp: 1
-  trapSoundIndex: 0
 --- !u!23 &1620506873
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -42920,8 +42796,6 @@ MonoBehaviour:
   spawnInterval: 1
   projectileSpeed: 1
   spawnOffset: 0
-  trapSoundIndex: 0
-  soundSource: {fileID: 0}
 --- !u!1 &1628602131
 GameObject:
   m_ObjectHideFlags: 0
@@ -42973,7 +42847,6 @@ MonoBehaviour:
   moveSpeed: 0.7
   moveHeight: 1
   movingUp: 1
-  trapSoundIndex: 0
 --- !u!114 &1628602134
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -43147,7 +43020,6 @@ MonoBehaviour:
   moveSpeed: 1
   moveHeight: 1
   movingUp: 1
-  trapSoundIndex: 0
 --- !u!114 &1631850309
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -43289,8 +43161,6 @@ MonoBehaviour:
   spawnInterval: 1
   projectileSpeed: 1
   spawnOffset: 0
-  trapSoundIndex: 0
-  soundSource: {fileID: 0}
 --- !u!1 &1636520996
 GameObject:
   m_ObjectHideFlags: 0
@@ -43705,7 +43575,6 @@ MonoBehaviour:
   moveSpeed: 0.7
   moveHeight: 1
   movingUp: 1
-  trapSoundIndex: 0
 --- !u!23 &1654498148
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -43962,8 +43831,6 @@ MonoBehaviour:
   spawnInterval: 1
   projectileSpeed: 1
   spawnOffset: 0
-  trapSoundIndex: 0
-  soundSource: {fileID: 0}
 --- !u!1001 &1667916645
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -44409,8 +44276,6 @@ MonoBehaviour:
   spawnInterval: 1
   projectileSpeed: 1
   spawnOffset: 0
-  trapSoundIndex: 0
-  soundSource: {fileID: 0}
 --- !u!1001 &1710719080
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -44650,7 +44515,6 @@ MonoBehaviour:
   moveSpeed: 0.7
   moveHeight: 1
   movingUp: 1
-  trapSoundIndex: 0
 --- !u!23 &1716373338
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -45116,7 +44980,6 @@ MonoBehaviour:
   moveSpeed: 0.7
   moveHeight: 1
   movingUp: 1
-  trapSoundIndex: 0
 --- !u!23 &1734376260
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -45447,8 +45310,6 @@ MonoBehaviour:
   spawnInterval: 1
   projectileSpeed: 1
   spawnOffset: 0
-  trapSoundIndex: 0
-  soundSource: {fileID: 0}
 --- !u!1001 &1760062212
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -45760,8 +45621,6 @@ MonoBehaviour:
   spawnInterval: 1
   projectileSpeed: 1
   spawnOffset: 0
-  trapSoundIndex: 0
-  soundSource: {fileID: 0}
 --- !u!4 &1768410116 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 47f7a032c38d6be42a6abb591017a431,
@@ -46470,7 +46329,6 @@ MonoBehaviour:
   moveSpeed: 0.7
   moveHeight: 1
   movingUp: 1
-  trapSoundIndex: 0
 --- !u!23 &1795448025
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -46769,8 +46627,6 @@ MonoBehaviour:
   spawnInterval: 1
   projectileSpeed: 1
   spawnOffset: 0
-  trapSoundIndex: 0
-  soundSource: {fileID: 0}
 --- !u!4 &1811863091 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 47f7a032c38d6be42a6abb591017a431,
@@ -46858,7 +46714,6 @@ MonoBehaviour:
   moveSpeed: 1
   moveHeight: 1
   movingUp: 1
-  trapSoundIndex: 0
 --- !u!23 &1817038985
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -46992,7 +46847,6 @@ MonoBehaviour:
   moveSpeed: 0.7
   moveHeight: 1
   movingUp: 1
-  trapSoundIndex: 0
 --- !u!23 &1827265309
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -47917,7 +47771,6 @@ MonoBehaviour:
   moveSpeed: 1
   moveHeight: 1
   movingUp: 1
-  trapSoundIndex: 0
 --- !u!23 &1864160068
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -48892,7 +48745,6 @@ MonoBehaviour:
   moveSpeed: 0.7
   moveHeight: 1
   movingUp: 1
-  trapSoundIndex: 0
 --- !u!23 &1921811117
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -49597,8 +49449,6 @@ MonoBehaviour:
   spawnInterval: 1
   projectileSpeed: 1
   spawnOffset: 0
-  trapSoundIndex: 0
-  soundSource: {fileID: 0}
 --- !u!1 &1960996848
 GameObject:
   m_ObjectHideFlags: 0
@@ -49843,7 +49693,6 @@ MonoBehaviour:
   moveSpeed: 0.7
   moveHeight: 1
   movingUp: 1
-  trapSoundIndex: 0
 --- !u!23 &1967202920
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -50048,7 +49897,6 @@ MonoBehaviour:
   moveSpeed: 0.7
   moveHeight: 1
   movingUp: 1
-  trapSoundIndex: 0
 --- !u!23 &1972152649
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -50400,8 +50248,6 @@ MonoBehaviour:
   spawnInterval: 1
   projectileSpeed: 1
   spawnOffset: 0
-  trapSoundIndex: 0
-  soundSource: {fileID: 0}
 --- !u!1 &1975288509
 GameObject:
   m_ObjectHideFlags: 0
@@ -50707,7 +50553,6 @@ MonoBehaviour:
   moveSpeed: 0.7
   moveHeight: 1
   movingUp: 1
-  trapSoundIndex: 0
 --- !u!23 &1989023929
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -50901,7 +50746,6 @@ MonoBehaviour:
   moveSpeed: 0.7
   moveHeight: 1
   movingUp: 1
-  trapSoundIndex: 0
 --- !u!23 &1997883792
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -51029,7 +50873,6 @@ MonoBehaviour:
   moveSpeed: 0.7
   moveHeight: 1
   movingUp: 1
-  trapSoundIndex: 0
 --- !u!23 &2000956354
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -51304,7 +51147,6 @@ MonoBehaviour:
   moveSpeed: 1
   moveHeight: 1
   movingUp: 1
-  trapSoundIndex: 0
 --- !u!23 &2025076496
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -51426,7 +51268,6 @@ MonoBehaviour:
   moveSpeed: 0.7
   moveHeight: 1
   movingUp: 1
-  trapSoundIndex: 0
 --- !u!23 &2029664388
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -51631,7 +51472,6 @@ MonoBehaviour:
   moveSpeed: 0.7
   moveHeight: 1
   movingUp: 1
-  trapSoundIndex: 0
 --- !u!23 &2030516831
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -52038,7 +51878,6 @@ MonoBehaviour:
   moveSpeed: 0.7
   moveHeight: 1
   movingUp: 1
-  trapSoundIndex: 0
 --- !u!23 &2056613164
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -53205,7 +53044,6 @@ MonoBehaviour:
   moveSpeed: 0.7
   moveHeight: 1
   movingUp: 1
-  trapSoundIndex: 0
 --- !u!23 &2097382870
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -53440,7 +53278,6 @@ MonoBehaviour:
   moveSpeed: 1
   moveHeight: 1
   movingUp: 1
-  trapSoundIndex: 0
 --- !u!23 &2121947189
 MeshRenderer:
   m_ObjectHideFlags: 0

@@ -12,6 +12,10 @@ public class UISoundsManager : MonoBehaviour
     [SerializeField] private AudioClip background; // Background music
     [SerializeField] private List<SoundEffect> soundEffects; // List of sound effects
 
+    [Header("Player Reference")]
+    [SerializeField] private Transform playerTransform; // Reference to the player's position
+    [SerializeField] private float maxDistance = 20f; // Maximum distance for audible sound
+
     private Dictionary<string, AudioClip> soundEffectDict;
 
     private void Start()
@@ -32,6 +36,25 @@ public class UISoundsManager : MonoBehaviour
             musicSource.clip = background;
             musicSource.loop = true; // Ensures continuous playback
             musicSource.Play();
+        }
+    }
+
+    private void Update()
+    {
+        AdjustVolumeBasedOnDistance();
+    }
+
+    private void AdjustVolumeBasedOnDistance()
+    {
+        if (playerTransform != null && musicSource != null && SFXSource != null)
+        {
+            // Calculate distance between player and UISoundsManager
+            float distance = Vector3.Distance(playerTransform.position, transform.position);
+
+            // Adjust volume based on distance (normalize between 0 and 1)
+            float volumeFactor = Mathf.Clamp01(1 - (distance / maxDistance));
+            musicSource.volume = volumeFactor;
+            SFXSource.volume = volumeFactor;
         }
     }
 
