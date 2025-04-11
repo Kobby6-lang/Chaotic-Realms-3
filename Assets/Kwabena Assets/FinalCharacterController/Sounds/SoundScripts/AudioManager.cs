@@ -48,7 +48,6 @@ public class AudioManager : MonoBehaviour
         if (source == null)
         {
             source = SFXSource;
-            return;
         }
         if (trapSounds != null && trapIndex >= 0 && trapIndex < trapSounds.Count)
         {
