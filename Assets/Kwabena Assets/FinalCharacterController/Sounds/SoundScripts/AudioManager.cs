@@ -37,7 +37,7 @@ public class AudioManager : MonoBehaviour
             if (i >= trapAudioSources.Count) break;
 
             float distance = Vector3.Distance(playerTransform.position, trapSoundLocations[i].position);
-            float volumeFactor = Mathf.Clamp01(10 - (distance / maxDistance));
+            float volumeFactor = Mathf.Clamp01(1 - (distance / maxDistance));
             float minVolume = 0.1f;
 
             trapAudioSources[i].volume = Mathf.Max(volumeFactor, minVolume);
