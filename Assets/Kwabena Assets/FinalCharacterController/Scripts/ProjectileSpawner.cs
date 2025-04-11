@@ -12,6 +12,7 @@ public class ProjectileSpawner : MonoBehaviour
     [Header("Trap Settings")]
     [SerializeField] private int trapSoundIndex; // Index of the trap's sound effect
     private AudioManager audioManager; // Reference to AudioManager
+    public AudioSource soundSource;
 
     private void Start()
     {
@@ -28,9 +29,9 @@ public class ProjectileSpawner : MonoBehaviour
     public void ActivateTrap()
     {
         // Trigger looping sound for the trap
-        if (audioManager != null)
+        if (audioManager != null && soundSource != null)
         {
-            audioManager.PlayLoopingTrapSound(trapSoundIndex);
+            audioManager.PlayLoopingTrapSound(trapSoundIndex, soundSource);
         }
 
         Debug.Log("Trap activated with looping sound!");
@@ -39,9 +40,9 @@ public class ProjectileSpawner : MonoBehaviour
     public void DeactivateTrap()
     {
         // Stop looping sound when trap is deactivated
-        if (audioManager != null)
+        if (audioManager != null && soundSource != null)
         {
-            audioManager.StopLoopingTrapSound();
+            audioManager.StopLoopingTrapSound(soundSource);
         }
 
         Debug.Log("Trap deactivated and looping sound stopped!");
