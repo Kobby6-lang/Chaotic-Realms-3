@@ -11494,6 +11494,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dot: {fileID: 2016031439}
   xOffset: -100
+  audioSource: {fileID: 2141093311}
+  navigationSound: {fileID: 8300000, guid: d5f003d75c9f3d04cb60ccf2b1e4fb92, type: 3}
 --- !u!1 &1959577186
 GameObject:
   m_ObjectHideFlags: 0
