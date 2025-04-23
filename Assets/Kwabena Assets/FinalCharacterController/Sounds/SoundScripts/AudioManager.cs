@@ -11,6 +11,7 @@ public class AudioManager : MonoBehaviour
     [Header("Audio Clips")]
     public AudioClip background;
     public AudioClip jump;
+    public AudioClip footsteps;
 
     [Header("Player Reference")]
     [SerializeField] private Transform playerTransform; // Reference to the player's position

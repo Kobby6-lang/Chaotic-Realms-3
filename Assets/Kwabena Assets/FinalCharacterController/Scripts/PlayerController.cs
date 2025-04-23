@@ -143,7 +143,7 @@ namespace Kwabena.FinalCharacterController
 
             if (_playerLocomotionInput.JumpPressed && isGrounded)
             {
-                _verticalVelocity += Mathf.Sqrt(jumpSpeed * 3 * gravity);
+                _verticalVelocity += Mathf.Sqrt(jumpSpeed * 4 * gravity);
                 _jumpedLastFrame = true;
                 audioManager.PlaySFX(audioManager.jump);
             }
@@ -193,27 +193,6 @@ namespace Kwabena.FinalCharacterController
             // Move character (Unity suggests only calling this once per tick)
             _characterController.Move(newVelocity * Time.deltaTime);
         }
-
-        ////private void HandleCrouchInput()
-        //{
-        //    bool crouch = _playerLocomotionInput.CrouchToggledOn;
-        //    if (crouch != isCrouching) {
-        //        ToggleCrouch();
-        //    }
-        //}
-
-        //private void ToggleCrouch()
-        //{
-        //    Debug.Log("Toggle crouch");
-        //    isCrouching = !isCrouching;
-        //    var characterController = GetComponent<CharacterController>();
-        //    characterController.height = isCrouching ? crouchHeight : originalHeight;
-        //    characterController.center = Vector3.up * characterController.height * 0.5f;
-
-        //    // Update Animator
-        //    Animator animator = GetComponent<Animator>();
-        //    animator.SetBool(isCrouchingHash, isCrouching);
-        //}
         #endregion
 
         #region HandleSteep Walls
