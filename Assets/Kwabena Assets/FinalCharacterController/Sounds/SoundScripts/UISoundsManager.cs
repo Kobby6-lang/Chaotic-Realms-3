@@ -16,6 +16,16 @@ public class UISoundsManager : MonoBehaviour
 
     private void Start()
     {
+        // Set AudioSource to ignore AudioListener's global pause state
+        if (musicSource != null)
+        {
+            musicSource.ignoreListenerPause = true;
+        }
+        if (SFXSource != null)
+        {
+            SFXSource.ignoreListenerPause = true;
+        }
+
         // Initialize the dictionary
         soundEffectDict = new Dictionary<string, AudioClip>();
         foreach (var effect in soundEffects)
