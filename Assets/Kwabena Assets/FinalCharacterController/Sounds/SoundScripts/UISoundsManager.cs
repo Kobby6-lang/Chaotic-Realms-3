@@ -14,6 +14,17 @@ public class UISoundsManager : MonoBehaviour
 
     private Dictionary<string, AudioClip> soundEffectDict;
 
+    private void Awake()
+    {
+        soundEffectDict = new Dictionary<string, AudioClip>();
+        foreach (var effect in soundEffects)
+        {
+            if (!soundEffectDict.ContainsKey(effect.name))
+            {
+                soundEffectDict.Add(effect.name, effect.clip);
+            }
+        }
+    }
     private void Start()
     {
         // Set AudioSource to ignore AudioListener's global pause state
@@ -47,12 +58,28 @@ public class UISoundsManager : MonoBehaviour
 
     public void PlaySFX(string effectName)
     {
+        if (soundEffectDict == null)
+        {
+            Debug.LogError("soundEffectDict is not initialized!");
+            return;
+        }
+
+        if (SFXSource == null)
+        {
+            Debug.LogError("SFXSource is not assigned!");
+            return;
+        }
+
         if (soundEffectDict.ContainsKey(effectName))
         {
             AudioClip clip = soundEffectDict[effectName];
-            if (SFXSource != null && clip != null)
+            if (clip != null)
             {
                 SFXSource.PlayOneShot(clip);
+            }
+            else
+            {
+                Debug.LogWarning("The AudioClip for " + effectName + " is null!");
             }
         }
         else
@@ -60,11 +87,11 @@ public class UISoundsManager : MonoBehaviour
             Debug.LogWarning("Sound effect not found: " + effectName);
         }
     }
-}
 
-[System.Serializable]
-public class SoundEffect
-{
-    public string name; // Unique name for the sound effect
-    public AudioClip clip; // The actual sound clip
+    [System.Serializable]
+    public class SoundEffect
+    {
+        public string name; // Unique name for the sound effect
+        public AudioClip clip; // The actual sound clip
+    }
 }
