@@ -104,11 +104,11 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 15535b02830d5664ca65e6c5d3109457,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: -4005032027563355802}
+      addedObject: {fileID: 4758617060698077762}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 15535b02830d5664ca65e6c5d3109457,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 4758617060698077762}
+      addedObject: {fileID: 8279188636864505120}
   m_SourcePrefab: {fileID: 100100000, guid: 15535b02830d5664ca65e6c5d3109457, type: 3}
 --- !u!1 &6239978289709454515 stripped
 GameObject:
@@ -143,8 +143,21 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!65 &-4005032027563355802
-BoxCollider:
+--- !u!114 &4758617060698077762
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6239978289709454515}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7f733861349771449ec5cd550d5788d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 25
+--- !u!136 &8279188636864505120
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -161,19 +174,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.020000001, y: 0.019999998, z: 0.106410235}
-  m_Center: {x: 0.000000009313227, y: 0, z: 0.049980566}
---- !u!114 &4758617060698077762
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6239978289709454515}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c7f733861349771449ec5cd550d5788d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 25
+  serializedVersion: 2
+  m_Radius: 0.05320512
+  m_Height: 0.019999998
+  m_Direction: 1
+  m_Center: {x: 0.000000009313225, y: 0, z: 0.04998057}

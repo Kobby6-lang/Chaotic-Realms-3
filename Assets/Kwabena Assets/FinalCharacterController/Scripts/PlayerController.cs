@@ -239,21 +239,20 @@ namespace Kwabena.FinalCharacterController
                         break;
 
                     case PlayerMovementState.Idling:
-                        // Stop sound for idle state
-                        StopCurrentMovementSound();
+                        StopCurrentMovementSound(); // Stop sound for idle state
                         return;
 
                     default:
-                        // No sound for other states
-                        StopCurrentMovementSound();
+                        StopCurrentMovementSound(); // Stop sound for other states
                         return;
                 }
 
-                // Only play the new sound if it is different from the currently playing one
-                if (newSound != null && newSound != currentMovementSound)
+                // If the sound is new, update the clip and play it
+                if (newSound != null && audioManager.SFXSource.clip != newSound)
                 {
-                    currentMovementSound = newSound;
-                    audioManager.PlaySFX(currentMovementSound); // Play the new sound
+                    audioManager.SFXSource.clip = newSound; // Assign the new sound
+                    audioManager.SFXSource.loop = true;    // Enable looping for continuous playback
+                    audioManager.SFXSource.Play();        // Start playing the sound
                 }
             }
             else
@@ -264,9 +263,12 @@ namespace Kwabena.FinalCharacterController
 
         private void StopCurrentMovementSound()
         {
-            // Stop the currently playing movement sound
-            currentMovementSound = null;
-            audioManager.SFXSource.Stop(); // Stop the SFXSource from playing
+            // Stop the current movement sound immediately
+            if (audioManager != null && audioManager.SFXSource.isPlaying)
+            {
+                audioManager.SFXSource.Stop();
+                audioManager.SFXSource.clip = null; // Clear the clip
+            }
         }
         #endregion
 
