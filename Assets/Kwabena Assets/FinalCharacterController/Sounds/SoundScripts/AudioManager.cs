@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,12 +7,15 @@ public class AudioManager : MonoBehaviour
 {
     [Header("Audio Source")]
     [SerializeField] private AudioSource musicSource;
-    [SerializeField] private AudioSource SFXSource;
+    [SerializeField] public AudioSource SFXSource;
 
     [Header("Audio Clips")]
     public AudioClip background;
     public AudioClip jump;
-    public AudioClip footsteps;
+    public AudioClip landing;
+    public AudioClip running;
+    public AudioClip sprinting;
+    public AudioClip walking;
 
     [Header("Player Reference")]
     [SerializeField] private Transform playerTransform; // Reference to the player's position
@@ -98,5 +102,10 @@ public class AudioManager : MonoBehaviour
         // Stop the looping sound and disable looping
         source.Stop();
         source.loop = false;
+    }
+
+    internal void PlaySFX(string v)
+    {
+        throw new NotImplementedException();
     }
 }

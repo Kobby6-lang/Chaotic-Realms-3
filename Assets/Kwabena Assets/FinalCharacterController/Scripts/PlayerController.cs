@@ -14,6 +14,8 @@ namespace Kwabena.FinalCharacterController
         [SerializeField] private CharacterController _characterController;
         [SerializeField] private Camera _playerCamera;
 
+        private AudioClip currentMovementSound; // Track the currently playing sound
+
         AudioManager audioManager;
         public float RotationMismatch { get; private set; } = 0f;
         public bool IsRotatingToTarget { get; private set; } = false;
@@ -108,12 +110,18 @@ namespace Kwabena.FinalCharacterController
             bool isGrounded = IsGrounded();
 
             PlayerMovementState lateralState = isWalking ? PlayerMovementState.Walking :
-                                               isSprinting ? PlayerMovementState.Sprinting :
-                                               isMovingLaterally || isMovementInput ? PlayerMovementState.Running : PlayerMovementState.Idling;
+                                                   isSprinting ? PlayerMovementState.Sprinting :
+                                                   isMovingLaterally || isMovementInput ? PlayerMovementState.Running : PlayerMovementState.Idling;
+
+            // Play movement sound only when transitioning to a new lateral state
+            if (_lastMovementState != lateralState)
+            {
+                PlayMovementSound(lateralState);
+            }
 
             _playerState.SetPlayerMovementState(lateralState);
 
-            // Control Airborn State
+            // Control Airborne State
             if ((!isGrounded || _jumpedLastFrame) && _characterController.velocity.y > 0f)
             {
                 _playerState.SetPlayerMovementState(PlayerMovementState.Jumping);
@@ -128,10 +136,15 @@ namespace Kwabena.FinalCharacterController
             }
             else
             {
+                // Play landing sound only if transitioning from Falling or Jumping to Grounded State
+                if (_lastMovementState == PlayerMovementState.Falling || _lastMovementState == PlayerMovementState.Jumping)
+                {
+                    PlayLandingSound();
+                }
+
                 _characterController.stepOffset = _stepOffset;
             }
         }
-
         private void HandleVerticalMovement()
         {
             bool isGrounded = _playerState.InGroundedState();
@@ -145,7 +158,6 @@ namespace Kwabena.FinalCharacterController
             {
                 _verticalVelocity += Mathf.Sqrt(jumpSpeed * 4 * gravity);
                 _jumpedLastFrame = true;
-                audioManager.PlaySFX(audioManager.jump);
             }
 
             if (_playerState.IsStateGroundedState(_lastMovementState) && !isGrounded)
@@ -192,6 +204,69 @@ namespace Kwabena.FinalCharacterController
 
             // Move character (Unity suggests only calling this once per tick)
             _characterController.Move(newVelocity * Time.deltaTime);
+        }
+
+        private void PlayLandingSound()
+        {
+            if (audioManager != null && audioManager.landing != null)
+            {
+                audioManager.PlaySFX(audioManager.landing);
+            }
+            else
+            {
+                Debug.LogWarning("Landing sound not assigned in AudioManager!");
+            }
+        }
+
+        private void PlayMovementSound(PlayerMovementState state)
+        {
+            if (audioManager != null)
+            {
+                // Determine the correct sound effect based on the movement state
+                AudioClip newSound = null;
+                switch (state)
+                {
+                    case PlayerMovementState.Walking:
+                        newSound = audioManager.walking;
+                        break;
+
+                    case PlayerMovementState.Running:
+                        newSound = audioManager.running;
+                        break;
+
+                    case PlayerMovementState.Sprinting:
+                        newSound = audioManager.sprinting;
+                        break;
+
+                    case PlayerMovementState.Idling:
+                        // Stop sound for idle state
+                        StopCurrentMovementSound();
+                        return;
+
+                    default:
+                        // No sound for other states
+                        StopCurrentMovementSound();
+                        return;
+                }
+
+                // Only play the new sound if it is different from the currently playing one
+                if (newSound != null && newSound != currentMovementSound)
+                {
+                    currentMovementSound = newSound;
+                    audioManager.PlaySFX(currentMovementSound); // Play the new sound
+                }
+            }
+            else
+            {
+                Debug.LogWarning("AudioManager is not assigned or sound clips are missing!");
+            }
+        }
+
+        private void StopCurrentMovementSound()
+        {
+            // Stop the currently playing movement sound
+            currentMovementSound = null;
+            audioManager.SFXSource.Stop(); // Stop the SFXSource from playing
         }
         #endregion
 
