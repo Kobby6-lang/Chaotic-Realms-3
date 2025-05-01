@@ -10853,19 +10853,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 376012868}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
-        m_MethodName: PlayGame
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &376012868
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42147,7 +42135,7 @@ MonoBehaviour:
   - name: Toggle Clicks
     clip: {fileID: 8300000, guid: 5d3f9c81d05b9a94499a695ebbf1ef60, type: 3}
   - name: Select Sounds
-    clip: {fileID: 8300000, guid: 2c72495c7f03f9b4087534b35abf6e40, type: 3}
+    clip: {fileID: 8300000, guid: c41901eeb73724a4489e05a33fca5b00, type: 3}
   - name: Slider Sounds
     clip: {fileID: 8300000, guid: c0342b3be4a5fa14c83745d1b9a8b947, type: 3}
 --- !u!1001 &1500588291

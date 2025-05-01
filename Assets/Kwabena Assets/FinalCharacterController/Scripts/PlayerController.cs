@@ -113,12 +113,6 @@ namespace Kwabena.FinalCharacterController
                                                    isSprinting ? PlayerMovementState.Sprinting :
                                                    isMovingLaterally || isMovementInput ? PlayerMovementState.Running : PlayerMovementState.Idling;
 
-            // Play movement sound only when transitioning to a new lateral state
-            if (_lastMovementState != lateralState)
-            {
-                PlayMovementSound(lateralState);
-            }
-
             _playerState.SetPlayerMovementState(lateralState);
 
             // Control Airborne State
@@ -215,59 +209,6 @@ namespace Kwabena.FinalCharacterController
             else
             {
                 Debug.LogWarning("Landing sound not assigned in AudioManager!");
-            }
-        }
-
-        private void PlayMovementSound(PlayerMovementState state)
-        {
-            if (audioManager != null)
-            {
-                // Determine the correct sound effect based on the movement state
-                AudioClip newSound = null;
-                switch (state)
-                {
-                    case PlayerMovementState.Walking:
-                        newSound = audioManager.walking;
-                        break;
-
-                    case PlayerMovementState.Running:
-                        newSound = audioManager.running;
-                        break;
-
-                    case PlayerMovementState.Sprinting:
-                        newSound = audioManager.sprinting;
-                        break;
-
-                    case PlayerMovementState.Idling:
-                        StopCurrentMovementSound(); // Stop sound for idle state
-                        return;
-
-                    default:
-                        StopCurrentMovementSound(); // Stop sound for other states
-                        return;
-                }
-
-                // If the sound is new, update the clip and play it
-                if (newSound != null && audioManager.SFXSource.clip != newSound)
-                {
-                    audioManager.SFXSource.clip = newSound; // Assign the new sound
-                    audioManager.SFXSource.loop = true;    // Enable looping for continuous playback
-                    audioManager.SFXSource.Play();        // Start playing the sound
-                }
-            }
-            else
-            {
-                Debug.LogWarning("AudioManager is not assigned or sound clips are missing!");
-            }
-        }
-
-        private void StopCurrentMovementSound()
-        {
-            // Stop the current movement sound immediately
-            if (audioManager != null && audioManager.SFXSource.isPlaying)
-            {
-                audioManager.SFXSource.Stop();
-                audioManager.SFXSource.clip = null; // Clear the clip
             }
         }
         #endregion

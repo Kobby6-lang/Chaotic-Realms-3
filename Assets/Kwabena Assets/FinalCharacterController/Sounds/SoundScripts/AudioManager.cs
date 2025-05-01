@@ -1,5 +1,6 @@
-using System.Collections.Generic;
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI; // For UI slider functionality
 
@@ -11,11 +12,7 @@ public class AudioManager : MonoBehaviour
 
     [Header("Audio Clips")]
     public AudioClip background;
-    public AudioClip jump;
     public AudioClip landing;
-    public AudioClip running;
-    public AudioClip sprinting;
-    public AudioClip walking;
 
     [Header("Player Reference")]
     [SerializeField] private Transform playerTransform; // Reference to the player's position
@@ -43,8 +40,7 @@ public class AudioManager : MonoBehaviour
 
     private void Update()
     {
-        // Update trap sounds volume based on player distance and slider
-        UpdateTrapSoundsVolume();
+        UpdateTrapSoundsVolume(); // Update trap sounds based on player proximity and slider value
     }
 
     private void UpdateTrapSoundsVolume()
@@ -64,27 +60,18 @@ public class AudioManager : MonoBehaviour
             // Get slider volume (1 = full volume, 0 = muted)
             float sliderVolume = trapVolumeSlider != null ? trapVolumeSlider.value : 1f;
 
-            // Final volume is a combination of distance and slider
+            // Final combined volume
             trapAudioSources[i].volume = distanceFactor * sliderVolume;
 
             // Play or stop sound based on distance threshold
-            if (distance > maxDistance)
+            if (distance > maxDistance && trapAudioSources[i].isPlaying)
             {
-                if (trapAudioSources[i].isPlaying)
-                {
-                    trapAudioSources[i].Stop(); // Stop sound if beyond range
-                }
+                trapAudioSources[i].Stop(); // Stop sound if beyond range
             }
-            else
+            else if (distance <= maxDistance && !trapAudioSources[i].isPlaying)
             {
-                if (!trapAudioSources[i].isPlaying)
-                {
-                    trapAudioSources[i].Play(); // Play sound if within range
-                }
+                trapAudioSources[i].Play(); // Resume sound if within range
             }
-
-            // Debugging to verify volume and playback
-            Debug.Log($"Trap {i}: Distance = {distance}, Volume = {trapAudioSources[i].volume}, Playing = {trapAudioSources[i].isPlaying}");
         }
     }
 
@@ -121,33 +108,5 @@ public class AudioManager : MonoBehaviour
         {
             SFXSource.PlayOneShot(clip);
         }
-    }
-
-    public void PlayLoopingTrapSound(int trapIndex, AudioSource source = null)
-    {
-        if (source == null)
-        {
-            source = SFXSource;
-        }
-        else
-        {
-            Debug.LogWarning("Invalid trap sound index or trapSounds list is not populated!");
-        }
-    }
-
-    public void StopLoopingTrapSound(AudioSource source = null)
-    {
-        if (source == null)
-        {
-            source = SFXSource;
-        }
-
-        source.Stop();
-        source.loop = false; // Ensure looping is disabled
-    }
-
-    internal void PlaySFX(string v)
-    {
-        throw new NotImplementedException();
     }
 }
