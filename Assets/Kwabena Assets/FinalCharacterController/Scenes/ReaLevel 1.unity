@@ -12680,11 +12680,7 @@ MonoBehaviour:
   musicSource: {fileID: 469854420}
   SFXSource: {fileID: 1073441237}
   background: {fileID: 8300000, guid: c9ff0a1bd331f394f9742847251dfb97, type: 3}
-  jump: {fileID: 8300000, guid: 89c23c0f00aba42daab13371654384b4, type: 3}
   landing: {fileID: 8300000, guid: 6eabdf780e4a0cd41876fb6c119d0ce5, type: 3}
-  running: {fileID: 8300000, guid: 84e52ef2eaafa85478bee0ed6daa6dc6, type: 3}
-  sprinting: {fileID: 8300000, guid: 84e52ef2eaafa85478bee0ed6daa6dc6, type: 3}
-  walking: {fileID: 8300000, guid: a45fedc6c51d843409795c6015a87862, type: 3}
   playerTransform: {fileID: 1029893794}
   trapSoundLocations:
   - {fileID: 474184778}
@@ -44818,12 +44814,12 @@ PrefabInstance:
     - target: {fileID: 321673858646865718, guid: aa0dc18b8b0e3924a831420e4edc1397,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 37.3
+      value: 37.698
       objectReference: {fileID: 0}
     - target: {fileID: 321673858646865718, guid: aa0dc18b8b0e3924a831420e4edc1397,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.654
+      value: -3.608
       objectReference: {fileID: 0}
     - target: {fileID: 321673858646865718, guid: aa0dc18b8b0e3924a831420e4edc1397,
         type: 3}
