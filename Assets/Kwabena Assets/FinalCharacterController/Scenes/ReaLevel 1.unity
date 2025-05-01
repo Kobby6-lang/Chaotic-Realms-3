@@ -12735,6 +12735,7 @@ MonoBehaviour:
   - {fileID: 1001713247}
   - {fileID: 764145924}
   maxDistance: 10
+  trapVolumeSlider: {fileID: 898627207}
 --- !u!4 &431360278
 Transform:
   m_ObjectHideFlags: 0
