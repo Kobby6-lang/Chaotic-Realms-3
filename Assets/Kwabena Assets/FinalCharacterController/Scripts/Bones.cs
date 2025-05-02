@@ -1,16 +1,50 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Bones : MonoBehaviour
 {
+    public static int collectedBones = 0;
+    private static int totalBones; // Track total bones collectively
+
+    private void Awake()
+    {
+        // Find all Bones objects in the scene to get correct total count
+        totalBones = FindObjectsOfType<Bones>().Length;
+        Debug.Log("Total bones detected in scene: " + totalBones);
+    }
+
     private void OnTriggerEnter(Collider other)
     {
+        AudioManager audioManager = FindObjectOfType<AudioManager>();
         PlayerInventory playerInventory = other.GetComponent<PlayerInventory>();
+
         if (playerInventory != null)
         {
+            // Play sound effect
+            if (audioManager != null)
+            {
+                audioManager.PlaySFX(audioManager.collectibleSound);
+            }
+
             playerInventory.BonesCollected();
-            gameObject.SetActive(false);
+            gameObject.SetActive(false); // Hide the collectible
+
+            // Increase the counter
+            collectedBones++;
+
+            // Check if all bones are collected
+            if (collectedBones >= totalBones)
+            {
+                EndGame();
+            }
         }
+    }
+
+    void EndGame()
+    {
+        Debug.Log("All bones collected! Game Over!");
+        SceneManager.LoadScene("GameOverScene"); // Ensure "GameOverScene" exists in Build Settings
     }
 }

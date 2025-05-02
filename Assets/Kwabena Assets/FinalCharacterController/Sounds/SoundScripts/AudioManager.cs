@@ -14,6 +14,10 @@ public class AudioManager : MonoBehaviour
     public AudioClip background;
     public AudioClip landing;
 
+    [Header("Audio Clips")]
+    public AudioClip collectibleSound; // Collectible item sound
+
+
     [Header("Player Reference")]
     [SerializeField] private Transform playerTransform; // Reference to the player's position
     [SerializeField] private List<Transform> trapSoundLocations; // Positions of trap sound emitters
