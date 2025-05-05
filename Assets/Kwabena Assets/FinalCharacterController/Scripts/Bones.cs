@@ -8,11 +8,14 @@ public class Bones : MonoBehaviour
     public static int collectedBones = 0;
     private static int totalBones; // Track total bones collectively
 
-    private void Awake()
+    private void Start()
     {
-        // Find all Bones objects in the scene to get correct total count
-        totalBones = FindObjectsOfType<Bones>().Length;
-        Debug.Log("Total bones detected in scene: " + totalBones);
+        // Ensure totalBones is set once and correctly counts all Bones objects
+        if (totalBones == 0)
+        {
+            totalBones = FindObjectsOfType<Bones>().Length;
+            Debug.Log("Total bones detected in scene: " + totalBones);
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -33,6 +36,7 @@ public class Bones : MonoBehaviour
 
             // Increase the counter
             collectedBones++;
+            Debug.Log("Bones collected so far: " + collectedBones + " / " + totalBones);
 
             // Check if all bones are collected
             if (collectedBones >= totalBones)
