@@ -1,44 +1,59 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
+using System.Collections;
+using TMPro;
 
 public class PlayerRespawn : MonoBehaviour
 {
-    public Transform respawnPoint; // The position where the player will respawn
+    public Transform respawnPoint;
     private CharacterController characterController;
+    private int deathCount = 0;
+    public TextMeshProUGUI deathCounterText;
+
+    private bool isRespawning = false;
+    private float respawnCooldown = 1f; // Cooldown time in seconds
 
     private void Start()
     {
-        // Reference the CharacterController component
         characterController = GetComponent<CharacterController>();
 
         if (respawnPoint == null)
         {
-            // Set the default respawn point to the player's current position
             respawnPoint = transform;
         }
+
+        UpdateDeathCounterUI();
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        // Check if the player collides with a "Hazard"
-        if (other.CompareTag("Hazard"))
+        if (other.CompareTag("Hazard") && !isRespawning)
         {
-            RespawnAndResetLevel();
+            StartCoroutine(RespawnAndResetLevel());
         }
     }
 
-    private void RespawnAndResetLevel()
+    private IEnumerator RespawnAndResetLevel()
     {
-        // Disable the CharacterController temporarily to avoid weird collisions
+        isRespawning = true;
+        deathCount++;
+        UpdateDeathCounterUI();
+
         characterController.enabled = false;
-
-        // Move the player to the respawn point
         transform.position = respawnPoint.position;
-
-        // Re-enable the CharacterController
         characterController.enabled = true;
 
-        Debug.Log("Player has respawned at the respawn point.");
+        Debug.Log($"Player has respawned. Death count: {deathCount}");
+
+        yield return new WaitForSeconds(respawnCooldown);
+        isRespawning = false;
+    }
+
+    private void UpdateDeathCounterUI()
+    {
+        if (deathCounterText != null)
+        {
+            deathCounterText.text = $"Deaths: {deathCount}";
+        }
     }
 }
-
+}
