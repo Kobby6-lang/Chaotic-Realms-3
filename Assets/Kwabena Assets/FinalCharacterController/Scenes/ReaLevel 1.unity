@@ -49525,12 +49525,12 @@ PrefabInstance:
     - target: {fileID: 467058489564186117, guid: aa0dc18b8b0e3924a831420e4edc1397,
         type: 3}
       propertyPath: m_Color.g
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 467058489564186117, guid: aa0dc18b8b0e3924a831420e4edc1397,
         type: 3}
       propertyPath: m_Color.r
-      value: 0.47868776
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1881715028841654589, guid: aa0dc18b8b0e3924a831420e4edc1397,
         type: 3}
