@@ -63,6 +63,8 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 0;
         AudioListener.pause = true;
         pauseUI.SetActive(true);
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 
     public void DeactivateMenu()
@@ -71,6 +73,9 @@ public class PauseMenu : MonoBehaviour
         AudioListener.pause = false;
         pauseUI.SetActive(false);
         isPaused = false;
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+
     }
 
     public void MainMenuButton() 
