@@ -9,6 +9,7 @@ namespace Kwabena.FinalCharacterController
     {
         [SerializeField] private Animator _animator;
         [SerializeField] private float locomotionBlendSpeed = 4f;
+        [SerializeField] private AudioSource walkAudio;
 
         private PlayerLocomotionInput _playerLocomotionInput;
         private PlayerState _playerState;
@@ -41,6 +42,16 @@ namespace Kwabena.FinalCharacterController
         private void Update()
         {
             UpdateAnimationState();
+        }
+
+        public void PlayFootstep() 
+        {
+            print("Walking");
+            if (walkAudio.isPlaying == false)
+            {
+                walkAudio.Play();
+
+            }
         }
 
         private void UpdateAnimationState()
