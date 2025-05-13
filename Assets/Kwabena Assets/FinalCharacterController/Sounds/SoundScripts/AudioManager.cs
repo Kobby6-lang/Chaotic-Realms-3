@@ -14,7 +14,10 @@ public class AudioManager : MonoBehaviour
     [Header("Audio Clips")]
     public AudioClip background;
     public AudioClip landing;
-    public AudioClip walking;
+    public AudioClip running;
+    public AudioClip runBackwards;
+    public AudioClip strafeLeft;
+    public AudioClip strafeRight;
 
     [Header("Audio Clips")]
     public AudioClip collectibleSound; // Collectible item sound

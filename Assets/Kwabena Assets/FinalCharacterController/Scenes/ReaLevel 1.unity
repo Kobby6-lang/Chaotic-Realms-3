@@ -13938,7 +13938,8 @@ MonoBehaviour:
   footstepSource: {fileID: 517680124}
   background: {fileID: 8300000, guid: c9ff0a1bd331f394f9742847251dfb97, type: 3}
   landing: {fileID: 8300000, guid: 6eabdf780e4a0cd41876fb6c119d0ce5, type: 3}
-  walking: {fileID: 8300000, guid: 85dcc18f677f4114f9d0dd6ee388e6ae, type: 3}
+  running: {fileID: 8300000, guid: e58f86705aae8d247b66ca1d91e1a609, type: 3}
+  runBackwards: {fileID: 8300000, guid: 54fc7254b0a816747bb3d453a826e83b, type: 3}
   collectibleSound: {fileID: 8300000, guid: 936956e2b14b5f7498d91ed70459bbb9, type: 3}
   playerTransform: {fileID: 1029893794}
   trapSoundLocations:

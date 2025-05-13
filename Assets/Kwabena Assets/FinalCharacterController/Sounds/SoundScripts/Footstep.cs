@@ -27,7 +27,10 @@ public class Footstep : MonoBehaviour
             if (speed > 0.1f && !audioManager.footstepSource.isPlaying)
             {
                 audioManager.footstepSource.volume = audioManager.SFXSource.volume; // Sync footstep volume with SFX slider
-                audioManager.PlaySFX(audioManager.walking);
+                audioManager.PlaySFX(audioManager.running);
+                audioManager.PlaySFX(audioManager.runBackwards);
+                audioManager.PlaySFX(audioManager.strafeLeft);
+                audioManager.PlaySFX(audioManager.strafeRight);
             }
             else if (speed <= 0.1f)
             {
