@@ -9,10 +9,12 @@ public class AudioManager : MonoBehaviour
     [Header("Audio Source")]
     [SerializeField] private AudioSource musicSource;
     [SerializeField] public AudioSource SFXSource;
+    [SerializeField] public AudioSource footstepSource;
 
     [Header("Audio Clips")]
     public AudioClip background;
     public AudioClip landing;
+    public AudioClip walking;
 
     [Header("Audio Clips")]
     public AudioClip collectibleSound; // Collectible item sound
@@ -31,6 +33,10 @@ public class AudioManager : MonoBehaviour
 
     private void Start()
     {
+        if (footstepSource == null)
+        {
+            footstepSource = GetComponent<AudioSource>();
+        }
         // Play background music
         PlayBackgroundMusic(background);
 
@@ -108,9 +114,21 @@ public class AudioManager : MonoBehaviour
 
     public void PlaySFX(AudioClip clip)
     {
-        if (clip != null)
+        if (footstepSource != null && clip != null)
         {
-            SFXSource.PlayOneShot(clip);
+            footstepSource.PlayOneShot(clip);
+        }
+        else
+        {
+            Debug.LogWarning("AudioSource or AudioClip is missing!");
+        }
+    }
+
+    public void StopSFX()
+    {
+        if (footstepSource != null && footstepSource.isPlaying)
+        {
+            footstepSource.Stop();
         }
     }
 }

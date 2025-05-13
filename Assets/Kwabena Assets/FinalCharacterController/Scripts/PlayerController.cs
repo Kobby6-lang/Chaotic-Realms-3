@@ -13,7 +13,6 @@ namespace Kwabena.FinalCharacterController
         [Header("Components")]
         [SerializeField] private CharacterController _characterController;
         [SerializeField] private Camera _playerCamera;
-        [SerializeField] private AudioSource walkAudio;
 
         private AudioClip currentMovementSound; // Track the currently playing sound
 
@@ -109,14 +108,6 @@ namespace Kwabena.FinalCharacterController
             bool isSprinting = _playerLocomotionInput.SprintToggledOn && isMovingLaterally;          //order
             bool isWalking = isMovingLaterally && (!canRun || _playerLocomotionInput.WalkToggledOn); //matters
             bool isGrounded = IsGrounded();
-            if (isWalking)
-            {
-                if (walkAudio.isPlaying == false)
-                {
-                   //walkAudio.Play();
-
-                }
-            }
             PlayerMovementState lateralState = isWalking ? PlayerMovementState.Walking :
                                                    isSprinting ? PlayerMovementState.Sprinting :
                                                    isMovingLaterally || isMovementInput ? PlayerMovementState.Running : PlayerMovementState.Idling;

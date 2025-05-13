@@ -49,7 +49,7 @@ ModelImporter:
       loopBlendOrientation: 0
       loopBlendPositionY: 0
       loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
+      keepOriginalOrientation: 1
       keepOriginalPositionY: 1
       keepOriginalPositionXZ: 0
       heightFromFeet: 0
@@ -60,7 +60,7 @@ ModelImporter:
       - time: 0.34074074
         functionName: PlayFootstep
         data: 
-        objectReferenceParameter: {fileID: 11500000, guid: d015a2dfbd3791849a8c184d57c68c14,
+        objectReferenceParameter: {fileID: 11500000, guid: 5a76695bea4e883428259998a7db9b1c,
           type: 3}
         floatParameter: 0
         intParameter: 0
@@ -68,7 +68,7 @@ ModelImporter:
       - time: 0.837037
         functionName: PlayFootstep
         data: 
-        objectReferenceParameter: {fileID: 11500000, guid: d015a2dfbd3791849a8c184d57c68c14,
+        objectReferenceParameter: {fileID: 11500000, guid: 5a76695bea4e883428259998a7db9b1c,
           type: 3}
         floatParameter: 0
         intParameter: 0
