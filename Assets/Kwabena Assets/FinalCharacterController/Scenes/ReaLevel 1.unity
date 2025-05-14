@@ -13940,6 +13940,8 @@ MonoBehaviour:
   landing: {fileID: 8300000, guid: 6eabdf780e4a0cd41876fb6c119d0ce5, type: 3}
   running: {fileID: 8300000, guid: e58f86705aae8d247b66ca1d91e1a609, type: 3}
   runBackwards: {fileID: 8300000, guid: 54fc7254b0a816747bb3d453a826e83b, type: 3}
+  strafeLeft: {fileID: 0}
+  strafeRight: {fileID: 0}
   collectibleSound: {fileID: 8300000, guid: 936956e2b14b5f7498d91ed70459bbb9, type: 3}
   playerTransform: {fileID: 1029893794}
   trapSoundLocations:
@@ -29573,7 +29575,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1c8df3540c18e34fbdddb500b1eb41e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collectedBones: 0
+  collectedBones: 58
 --- !u!4 &917724912 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 47f7a032c38d6be42a6abb591017a431,
@@ -49589,7 +49591,7 @@ PrefabInstance:
     - target: {fileID: 321673858646865718, guid: aa0dc18b8b0e3924a831420e4edc1397,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 39.7
+      value: 36
       objectReference: {fileID: 0}
     - target: {fileID: 321673858646865718, guid: aa0dc18b8b0e3924a831420e4edc1397,
         type: 3}
@@ -49599,7 +49601,7 @@ PrefabInstance:
     - target: {fileID: 321673858646865718, guid: aa0dc18b8b0e3924a831420e4edc1397,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -4.9
+      value: -4.1
       objectReference: {fileID: 0}
     - target: {fileID: 321673858646865718, guid: aa0dc18b8b0e3924a831420e4edc1397,
         type: 3}
