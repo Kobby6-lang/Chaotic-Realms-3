@@ -1,10 +1,12 @@
 using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 using TMPro;
 
 public class PlayerRespawn : MonoBehaviour
 {
-    public Transform respawnPoint;
+    public Transform[] respawnPoints; // All possible respawn points
+    private List<Transform> visitedRespawnPoints = new List<Transform>(); // Tracks points visited
     private CharacterController characterController;
     private int deathCount = 0;
     public TextMeshProUGUI deathCounterText;
@@ -16,9 +18,9 @@ public class PlayerRespawn : MonoBehaviour
     {
         characterController = GetComponent<CharacterController>();
 
-        if (respawnPoint == null)
+        if (respawnPoints == null || respawnPoints.Length == 0)
         {
-            respawnPoint = transform;
+            Debug.LogError("No respawn points set!");
         }
 
         UpdateDeathCounterUI();
@@ -30,6 +32,10 @@ public class PlayerRespawn : MonoBehaviour
         {
             StartCoroutine(RespawnAndResetLevel());
         }
+        else if (other.CompareTag("RespawnPoint"))
+        {
+            RegisterRespawnPoint(other.transform);
+        }
     }
 
     private IEnumerator RespawnAndResetLevel()
@@ -38,14 +44,37 @@ public class PlayerRespawn : MonoBehaviour
         deathCount++;
         UpdateDeathCounterUI();
 
+        Transform respawnLocation = FindEligibleRespawnPoint();
+
         characterController.enabled = false;
-        transform.position = respawnPoint.position;
+        transform.position = respawnLocation.position;
         characterController.enabled = true;
 
-        Debug.Log($"Player has respawned. Death count: {deathCount}");
+        Debug.Log($"Player respawned at {respawnLocation.position}. Death count: {deathCount}");
 
         yield return new WaitForSeconds(respawnCooldown);
         isRespawning = false;
+    }
+
+    private void RegisterRespawnPoint(Transform point)
+    {
+        if (!visitedRespawnPoints.Contains(point))
+        {
+            visitedRespawnPoints.Add(point);
+            Debug.Log($"Respawn point {point.position} has been registered.");
+        }
+    }
+
+    private Transform FindEligibleRespawnPoint()
+    {
+        if (visitedRespawnPoints.Count > 0)
+        {
+            return visitedRespawnPoints[visitedRespawnPoints.Count - 1]; // Last visited point
+        }
+        else
+        {
+            return respawnPoints[0]; // Default respawn location
+        }
     }
 
     private void UpdateDeathCounterUI()
