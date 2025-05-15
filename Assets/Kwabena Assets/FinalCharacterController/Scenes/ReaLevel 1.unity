@@ -29575,7 +29575,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1c8df3540c18e34fbdddb500b1eb41e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collectedBones: 58
+  collectedBones: 0
 --- !u!4 &917724912 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 47f7a032c38d6be42a6abb591017a431,
@@ -49663,6 +49663,16 @@ PrefabInstance:
       propertyPath: deathCounterText
       value: 
       objectReference: {fileID: 204752525}
+    - target: {fileID: 3537141761879057930, guid: aa0dc18b8b0e3924a831420e4edc1397,
+        type: 3}
+      propertyPath: lookSenseH
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3537141761879057930, guid: aa0dc18b8b0e3924a831420e4edc1397,
+        type: 3}
+      propertyPath: lookSenseV
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 4389807745426357149, guid: aa0dc18b8b0e3924a831420e4edc1397,
         type: 3}
       propertyPath: m_Name
