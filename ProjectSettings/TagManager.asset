@@ -11,6 +11,7 @@ TagManager:
   - TrapDoor
   - Hazard
   - WayPoints
+  - RespawnPoint
   layers:
   - Default
   - TransparentFX
